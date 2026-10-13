@@ -1,0 +1,385 @@
+/* HeroSection.module.css — Part 2 */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-burgundy-deep);
+}
+
+/* ── Video Background ─────────────────────────────────────── */
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sanctumBackdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sanctumSvg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(61, 26, 14, 0.72) 0%,
+    rgba(92, 18, 32, 0.60) 40%,
+    rgba(61, 26, 14, 0.75) 100%
+  );
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(30, 10, 5, 0.55) 100%);
+}
+
+/* ── Sacred Corner Frame ──────────────────────────────────── */
+
+.borderFrame {
+  position: absolute;
+  inset: 24px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cornerTL, .cornerTR, .cornerBL, .cornerBR {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: rgba(200, 150, 60, 0.55);
+  border-style: solid;
+}
+
+.cornerTL { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.cornerTR { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.cornerBL { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.cornerBR { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* ── Content ──────────────────────────────────────────────── */
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-block: 6rem 4rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.contentVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Invocation Row ───────────────────────────────────────── */
+
+.invocation {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 640px;
+}
+
+.invocationLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200, 150, 60, 0.7));
+}
+
+.invocationLine:last-child {
+  background: linear-gradient(to left, transparent, rgba(200, 150, 60, 0.7));
+}
+
+.invocationCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.om {
+  font-family: var(--font-sanskrit);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-gold);
+  line-height: 1;
+  animation: om-pulse 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(200, 150, 60, 0.6));
+}
+
+.deityLabel {
+  font-family: var(--font-body);
+  font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  color: var(--color-cream-light);
+  text-shadow: 0 2px 24px rgba(61, 26, 14, 0.6);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.headingAccent {
+  color: var(--color-gold-light);
+}
+
+/* ── Telugu / Regional Script ─────────────────────────────── */
+
+.telugu {
+  font-family: var(--font-sanskrit);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: rgba(226, 184, 96, 0.85);
+  letter-spacing: 0.06em;
+  margin-top: -0.5rem;
+}
+
+/* ── Ornamental Divider ───────────────────────────────────── */
+
+.heroDivider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 0.25rem;
+}
+
+.heroDividerLine {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200, 150, 60, 0.6));
+}
+
+.heroDividerLine:last-child {
+  background: linear-gradient(to left, transparent, rgba(200, 150, 60, 0.6));
+}
+
+.heroDividerGem {
+  color: var(--color-gold);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+}
+
+/* ── Tagline ──────────────────────────────────────────────── */
+
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  color: rgba(251, 246, 238, 0.88);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.location {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-light);
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+/* ── CTA Buttons ──────────────────────────────────────────── */
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.ctaPrimary {
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 20px rgba(200, 150, 60, 0.35);
+}
+
+.ctaSecondary {
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+}
+
+/* ── Quick Timings Strip ──────────────────────────────────── */
+
+.quickTimings {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(61, 26, 14, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 150, 60, 0.35);
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.quickTiming {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qtIcon {
+  font-size: 1.125rem;
+  filter: drop-shadow(0 0 4px rgba(200, 150, 60, 0.5));
+}
+
+.qtLabel {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  font-family: var(--font-body);
+}
+
+.qtTime {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-cream-light);
+  font-family: var(--font-display);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.qtDivider {
+  color: rgba(200, 150, 60, 0.4);
+  font-size: 0.875rem;
+}
+
+/* ── Scroll Hint ──────────────────────────────────────────── */
+
+.scrollHint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  opacity: 0.55;
+}
+
+.scrollMouse {
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid var(--color-cream-light);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollWheel {
+  width: 3px;
+  height: 8px;
+  background-color: var(--color-cream-light);
+  border-radius: var(--radius-pill);
+  animation: scroll-wheel 2s ease-in-out infinite;
+}
+
+.scrollLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cream-light);
+  font-family: var(--font-body);
+}
+
+/* ── Bottom Arch ──────────────────────────────────────────── */
+
+.bottomArch {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 3;
+}
+
+.bottomArch svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+
+@keyframes om-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(200, 150, 60, 0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(200, 150, 60, 0.9));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scroll-wheel {
+  0%   { transform: translateY(0); opacity: 1; }
+  80%  { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .borderFrame { inset: 12px; }
+  .cornerTL, .cornerTR, .cornerBL, .cornerBR { width: 24px; height: 24px; }
+
+  .quickTimings {
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+  }
+
+  .qtDivider { display: none; }
+
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ctaPrimary, .ctaSecondary {
+    justify-content: center;
+    text-align: center;
+  }
+}

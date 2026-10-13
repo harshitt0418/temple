@@ -1,0 +1,100 @@
+/* AnnouncementStrip.module.css */
+
+.strip {
+  background-color: var(--color-burgundy-deep);
+  border-bottom: 1px solid var(--color-gold);
+  position: relative;
+  z-index: var(--z-nav);
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+
+.label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 1rem 1.25rem;
+  border-right: 1px solid rgba(200, 150, 60, 0.4);
+  height: 100%;
+}
+
+.om {
+  font-family: var(--font-sanskrit);
+  font-size: 1rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.labelText {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.tickerWrapper {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ticker {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 50s linear infinite;
+  will-change: transform;
+}
+
+.ticker:hover {
+  animation-play-state: paused;
+}
+
+.tickerItem {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-cream-light);
+  padding-inline: 0.5rem;
+}
+
+.separator {
+  color: var(--color-gold);
+  margin-inline: 0.5rem;
+  font-size: 0.6rem;
+}
+
+.close {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-pale);
+  font-size: 0.75rem;
+  border-left: 1px solid rgba(200, 150, 60, 0.3);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.close:hover {
+  color: var(--color-cream-light);
+  background-color: rgba(200, 150, 60, 0.1);
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

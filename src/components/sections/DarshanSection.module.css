@@ -1,0 +1,296 @@
+/* DarshanSection.module.css — Part 2 */
+
+.darshan {
+  background-color: var(--color-burgundy-deep);
+  padding-block: 5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background radial pattern */
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(123, 28, 43, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(92, 18, 32, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.topWave, .bottomWave {
+  position: absolute;
+  left: 0; right: 0;
+  height: 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+.topWave { top: 0; }
+.bottomWave { bottom: 0; }
+.topWave svg, .bottomWave svg { width: 100%; height: 100%; }
+
+.darshan .container { position: relative; z-index: 2; }
+
+/* ── Timings Grid ─────────────────────────────────────────── */
+
+.timingsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.timingCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 150, 60, 0.28);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+  cursor: default;
+}
+
+.timingCard:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(200, 150, 60, 0.12) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.timingCard:hover .cardGlow { opacity: 1; }
+
+.timingTop {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.timingIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(200, 150, 60, 0.12);
+  border: 1px solid rgba(200, 150, 60, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timingIcon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 6px rgba(200, 150, 60, 0.5));
+}
+
+.timingSession {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-cream-light);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.timingTelugu {
+  font-family: var(--font-sanskrit);
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  margin-top: 0.125rem;
+}
+
+.timingTimeLine {
+  height: 1px;
+  background: linear-gradient(to right, rgba(200, 150, 60, 0.4), transparent);
+}
+
+.timingTime {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-gold-light);
+  letter-spacing: 0.02em;
+}
+
+.timingNote {
+  font-size: 0.725rem;
+  color: rgba(251, 246, 238, 0.5);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ── Seva Intro ───────────────────────────────────────────── */
+
+.sevaIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sevaHeaderText {
+  text-align: center;
+}
+
+.sevaTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--color-cream-light);
+  font-weight: 400;
+}
+
+.sevaSubtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-gold-pale);
+  margin-top: 0.375rem;
+}
+
+/* ── Seva Grid ────────────────────────────────────────────── */
+
+.sevaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.sevaCard {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(200,150,60,0.03));
+  border: 1px solid rgba(200, 150, 60, 0.28);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.sevaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-gold);
+}
+
+.sevaCorner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) 0 0;
+  opacity: 0.4;
+}
+
+.sevaTop { display: flex; align-items: flex-start; justify-content: space-between; }
+
+.sevaName {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  color: var(--color-cream-light);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sevaTelugu {
+  font-family: var(--font-sanskrit);
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  margin-top: 0.2rem;
+}
+
+.sevaDesc {
+  font-size: 0.875rem;
+  color: rgba(251, 246, 238, 0.68);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.sevaMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-gold-pale);
+  padding-top: 0.625rem;
+  border-top: 1px solid rgba(200, 150, 60, 0.2);
+}
+
+.sevaMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-style: italic;
+}
+
+.sevaBtn {
+  font-size: 0.8125rem;
+  padding: 0.5rem 1rem;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+/* ── Donate Nudge ─────────────────────────────────────────── */
+
+.donateNudge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 150, 60, 0.35);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+}
+
+.nudgeContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.nudgeIcon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.nudgeText {
+  font-size: 0.925rem;
+  color: rgba(251, 246, 238, 0.8);
+  line-height: 1.65;
+}
+
+.nudgeText strong {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .timingsGrid { grid-template-columns: repeat(2, 1fr); }
+  .sevaGrid    { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .timingsGrid { grid-template-columns: 1fr; }
+  .sevaGrid    { grid-template-columns: 1fr; }
+  .donateNudge { flex-direction: column; }
+}

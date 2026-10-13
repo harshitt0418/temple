@@ -1,0 +1,215 @@
+/* VisitSection.module.css — Part 2 */
+
+.visit {
+  background-color: var(--color-cream-dark);
+  padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* ── Map ──────────────────────────────────────────────────── */
+
+.mapCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mapWrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--color-gold);
+  box-shadow: var(--shadow-lg);
+  min-height: 380px;
+}
+
+.mapPlaceholder {
+  background: linear-gradient(135deg, var(--color-cream-light), var(--color-cream-dark));
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.mapPinIcon {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 8px rgba(123,28,43,0.3));
+  animation: pin-bounce 2s ease-in-out infinite;
+}
+
+@keyframes pin-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.mapPlaceholderTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-burgundy-deep);
+}
+
+.mapPlaceholderSub {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.mapNote {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  background: rgba(200,150,60,0.08);
+  border: 1px dashed var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.625rem 0.875rem;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.mapCode {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--color-burgundy);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.directionsBtn { align-self: flex-start; }
+
+.quickContact {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.contactBtn {
+  flex: 1;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  background-color: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+}
+
+.contactBtn:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream-light);
+  border-color: var(--color-burgundy);
+}
+
+/* ── Info Column ──────────────────────────────────────────── */
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.infoCard {
+  background-color: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--radius-md);
+  padding: 1.375rem 1.5rem;
+}
+
+.infoCardTitle {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-burgundy);
+  letter-spacing: 0.04em;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-gold);
+  margin-bottom: 0.875rem;
+}
+
+.address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.address strong { color: var(--color-text-primary); }
+
+.timingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  padding: 0.375rem 0;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.timingRow:last-child { border-bottom: none; }
+.timingName { flex: 1; color: var(--color-text-primary); font-weight: 500; }
+.timingTime { color: var(--color-burgundy); font-style: italic; font-family: var(--font-display); white-space: nowrap; }
+
+.reachList { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.reachItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.reachItem strong { color: var(--color-text-primary); }
+.reachIcon { flex-shrink: 0; margin-top: 0.1rem; }
+
+.tipsCard { background-color: rgba(200,150,60,0.05); border-color: var(--color-gold); }
+
+.tipsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tipsList li {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.tipsList li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-size: 0.5rem;
+  top: 0.35rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 960px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .quickContact { flex-direction: row; } }

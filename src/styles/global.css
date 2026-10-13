@@ -1,0 +1,491 @@
+/* ================================================================
+   GLOBAL BASE STYLES — Hindu Temple Website
+   Reset, typography, body defaults, utility classes
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&family=Hind:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Latin:ital@0;1&display=swap');
+
+@import './tokens.css';
+
+/* ── Reset & Box Model ────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.75;
+  color: var(--color-text-primary);
+  background-color: var(--color-cream);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Images & Media ──────────────────────────────────────────── */
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Links ───────────────────────────────────────────────────── */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-burgundy-light);
+}
+
+/* ── Lists ───────────────────────────────────────────────────── */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Focus Visible (Accessibility) ──────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Container ───────────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ── Typography Scale ────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-burgundy-deep);
+  line-height: 1.25;
+  font-weight: 400; /* Yatra One is inherently bold—400 renders correctly */
+}
+
+h1 { font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl)); }
+h2 { font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl)); }
+h3 { font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl)); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+  font-size: var(--text-md);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* Sanskrit / devotional label */
+.text-sanskrit {
+  font-family: var(--font-sanskrit);
+  color: var(--color-burgundy);
+  letter-spacing: 0.02em;
+}
+
+/* Display subheading */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* ── Dividers ────────────────────────────────────────────────── */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold-pale), transparent);
+}
+
+.divider__ornament {
+  font-size: var(--text-xl);
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+/* ── Sacred Border Utility ───────────────────────────────────── */
+
+.border-sacred {
+  border: 1px solid var(--color-gold);
+  border-image: repeating-linear-gradient(
+    90deg,
+    var(--color-gold) 0,
+    var(--color-gold) 4px,
+    transparent 4px,
+    transparent 8px
+  ) 1;
+}
+
+/* ── Gold Line (thin decorative accent) ──────────────────────── */
+
+.gold-line {
+  width: 64px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  margin-inline: auto;
+}
+
+.gold-line--left {
+  margin-inline: 0;
+}
+
+/* ── Section Wrapper ─────────────────────────────────────────── */
+
+.section {
+  padding-block: clamp(var(--space-16), 8vw, var(--space-32));
+  position: relative;
+}
+
+.section--cream {
+  background-color: var(--color-cream);
+}
+
+.section--cream-light {
+  background-color: var(--color-cream-light);
+}
+
+.section--cream-dark {
+  background-color: var(--color-cream-dark);
+}
+
+.section--burgundy {
+  background-color: var(--color-burgundy-deep);
+  color: var(--color-cream);
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: clamp(var(--space-12), 6vw, var(--space-20));
+}
+
+.section__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.section__title {
+  color: var(--color-burgundy-deep);
+}
+
+.section--burgundy .section__title {
+  color: var(--color-cream);
+}
+
+.section__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+
+/* ── Primary Button ──────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream-light);
+  border: 2px solid var(--color-burgundy);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-burgundy-deep);
+  border-color: var(--color-burgundy-deep);
+  color: var(--color-cream-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-burgundy);
+  border: 2px solid var(--color-burgundy);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream-light);
+  transform: translateY(-1px);
+}
+
+.btn--gold {
+  background-color: var(--color-gold);
+  color: var(--color-burgundy-deep);
+  border: 2px solid var(--color-gold);
+}
+
+.btn--gold:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  color: var(--color-burgundy-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn--outline-cream {
+  background-color: transparent;
+  color: var(--color-cream-light);
+  border: 2px solid var(--color-cream-light);
+}
+
+.btn--outline-cream:hover {
+  background-color: var(--color-cream-light);
+  color: var(--color-burgundy-deep);
+}
+
+/* ── Placeholder Box ─────────────────────────────────────────── */
+/* Used for all image/video placeholders throughout the prototype */
+
+.placeholder-box {
+  background-color: var(--color-cream-dark);
+  border: 2px dashed var(--color-gold);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-align: center;
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.placeholder-box__icon {
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  opacity: 0.7;
+}
+
+.placeholder-box__label {
+  font-weight: 600;
+  color: var(--color-burgundy);
+  font-size: var(--text-base);
+}
+
+.placeholder-box__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ── Accessibility — Skip to Content ─────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  background: var(--color-burgundy);
+  color: var(--color-cream);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  z-index: var(--z-toast);
+  transition: top var(--transition-base);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ── Visually Hidden (Screen Readers) ────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-burgundy);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burgundy-light);
+}
+
+/* ── Selection ───────────────────────────────────────────────── */
+
+::selection {
+  background: var(--color-burgundy);
+  color: var(--color-cream-light);
+}
+
+/* ── Responsive Utilities ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Scroll Reveal Animations ────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1; transform: none; transition: none;
+  }
+}

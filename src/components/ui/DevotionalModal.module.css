@@ -1,0 +1,305 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(61, 26, 14, 0.72);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease;
+}
+
+.modalContainer {
+  background-color: var(--color-cream-light);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sacred Corner Marks */
+.cornerTL, .cornerTR, .cornerBL, .cornerBR {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.cornerTL { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.cornerTR { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.cornerBL { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.cornerBR { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--color-burgundy);
+  background-color: var(--color-cream-dark);
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-gold-pale);
+}
+
+.modalOm {
+  font-size: 2rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(200, 150, 60, 0.4));
+}
+
+.modalTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 1.625rem);
+  color: var(--color-burgundy-deep);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.modalSubtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-family: var(--font-display);
+  margin-top: 0.2rem;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.input,
+.select,
+.textarea {
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--radius-sm);
+  padding: 0.625rem 0.875rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(200, 150, 60, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* Amount Pills for Donation */
+.amountPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.amountBtn {
+  flex: 1;
+  min-width: 70px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  transition: all var(--transition-fast);
+}
+
+.amountBtn:hover,
+.amountBtn:focus {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream-light);
+}
+
+/* Event View */
+.eventView {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eventDescription {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.eventScheduleBox {
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-cream-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1rem 1.25rem;
+}
+
+.scheduleTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  margin-bottom: 0.5rem;
+}
+
+.scheduleList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.scheduleList li {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.scheduleList strong {
+  color: var(--color-text-primary);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-cream-border);
+}
+
+/* Success State */
+.successState {
+  text-align: center;
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.successOm {
+  font-family: var(--font-sanskrit);
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-burgundy-deep);
+}
+
+.successTelugu {
+  font-family: var(--font-sanskrit);
+  font-size: 1rem;
+  color: var(--color-gold);
+}
+
+.successDivider {
+  color: var(--color-gold);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  opacity: 0.6;
+}
+
+.successMessage {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+.prototypeNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: var(--color-cream-dark);
+  border: 1px dashed var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: left;
+  line-height: 1.45;
+  margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 600px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
