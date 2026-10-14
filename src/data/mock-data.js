@@ -79,6 +79,7 @@ export const sevaServices = [
     description: 'Sacred ritual bathing of Lord Krishna with panchamrit and holy substances.',
     timings: 'Daily · 7:00 AM',
     duration: '45 minutes',
+    image: '/assets/images/service-aarti.jpg',
   },
   {
     id: 2,
@@ -103,6 +104,7 @@ export const sevaServices = [
     description: 'Sponsor a community meal in the divine name of Lord Krishna.',
     timings: 'Daily · 12:30 PM',
     duration: 'Ongoing',
+    image: '/assets/images/service-annadanam.jpg',
   },
 ];
 
@@ -192,14 +194,14 @@ export const schoolActivities = [
   },
 ];
 
-// ── Gallery (placeholder frames) ──────────────────────────────
+// ── Gallery Items ──────────────────────────────────────────────
 export const galleryItems = [
-  { id: 1, label: 'Temple Exterior', type: 'image', aspect: 'landscape' },
-  { id: 2, label: 'Sri Krishna Deity', type: 'image', aspect: 'portrait' },
-  { id: 3, label: 'Janmashtami Celebration', type: 'image', aspect: 'landscape' },
-  { id: 4, label: 'Evening Aarti', type: 'image', aspect: 'portrait' },
-  { id: 5, label: 'Vedic School', type: 'image', aspect: 'landscape' },
-  { id: 6, label: 'Community Gathering', type: 'image', aspect: 'landscape' },
+  { id: 1, label: 'Temple Architecture & Gopuram', image: '/assets/images/gallery-1.jpg', aspect: 'landscape' },
+  { id: 2, label: 'Lord Sri Krishna Sanctum Sanctorum', image: '/assets/images/gallery-2.jpg', aspect: 'portrait' },
+  { id: 3, label: 'Janmashtami Celebrations & Shringar', image: '/assets/images/gallery-3.jpg', aspect: 'landscape' },
+  { id: 4, label: 'Evening Deepa Aarti & Devotees', image: '/assets/images/gallery-4.jpg', aspect: 'portrait' },
+  { id: 5, label: 'Devotee Community Gathering', image: '/assets/images/community-gathering.jpg', aspect: 'landscape' },
+  { id: 6, label: 'Annadanam Seva & Prasad Distribution', image: '/assets/images/gallery-6.jpg', aspect: 'landscape' },
 ];
 
 // ── Navigation Links ───────────────────────────────────────────

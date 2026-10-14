@@ -29,7 +29,7 @@ export default function SectionLabel({
       <h2
         className="section__title"
         style={{
-          color: light ? 'var(--color-cream-light)' : 'var(--color-burgundy-deep)',
+          color: light ? 'var(--color-cream-light)' : 'var(--color-text-primary)',
         }}
       >
         {title}
@@ -45,7 +45,7 @@ export default function SectionLabel({
         <p
           className="section__subtitle"
           style={{
-            color: light ? 'var(--color-cream-dark)' : 'var(--color-text-muted)',
+            color: light ? 'var(--color-cream-dark)' : 'var(--color-text-secondary)',
           }}
         >
           {subtitle}

@@ -178,6 +178,26 @@
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
+.sevaImgWrapper {
+  width: 100%;
+  height: 120px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+  border: 1px solid rgba(221, 216, 206, 0.2);
+}
+
+.sevaImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.sevaCard:hover .sevaImg {
+  transform: scale(1.05);
+}
+
 .sevaCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);

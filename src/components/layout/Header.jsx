@@ -10,27 +10,16 @@ import { navLinks, templeInfo } from '../../data/mock-data';
 import { useModal } from '../../context/ModalContext';
 import styles from './Header.module.css';
 
-// Logo placeholder — SVG Om symbol with "TEMPLE" wordmark
-// This will be replaced with the real logo asset in Part 2
-function LogoPlaceholder() {
+// Real Temple Logo from supplied assets
+function TempleLogo() {
   return (
     <div className={styles.logo} aria-label={`${templeInfo.name} Logo`}>
       <div className={styles.logoIcon} aria-hidden="true">
-        {/* Stylised Om — sacred character */}
-        <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-          <circle cx="24" cy="24" r="22" stroke="var(--color-gold)" strokeWidth="1.5" />
-          <text
-            x="50%"
-            y="55%"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontFamily="Noto Serif Devanagari, serif"
-            fontSize="26"
-            fill="var(--color-burgundy-deep)"
-          >
-            ॐ
-          </text>
-        </svg>
+        <img
+          src="/assets/logos/logo-primary.png"
+          alt={`${templeInfo.name} Sacred Icon`}
+          className={styles.logoImg}
+        />
       </div>
       <div className={styles.logoText}>
         <span className={styles.logoName}>{templeInfo.name}</span>
@@ -88,7 +77,7 @@ export default function Header() {
             className={styles.logoLink}
             aria-label="Go to home"
           >
-            <LogoPlaceholder />
+            <TempleLogo />
           </a>
 
           {/* Desktop Navigation */}

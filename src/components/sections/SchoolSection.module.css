@@ -21,7 +21,7 @@
   line-height: 1.8;
 }
 
-.intro strong { color: var(--color-burgundy); }
+.intro strong { color: var(--color-text-primary); }
 
 /* ── Activity Cards ───────────────────────────────────────── */
 

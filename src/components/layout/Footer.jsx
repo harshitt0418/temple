@@ -41,7 +41,7 @@ export default function Footer() {
         {/* ── Column 1: Temple Identity ── */}
         <div className={styles.col}>
           <div className={styles.footerBrand}>
-            <div className={styles.footerOm} aria-hidden="true">ॐ</div>
+            <img src="/assets/logos/logo-reverse.png" alt="Shri Krishna Mandir Logo" className={styles.footerLogoImg} />
             <div>
               <h3 className={styles.footerName}>{templeInfo.name}</h3>
               <p className={styles.footerDeity}>{templeInfo.deityDevanagari}</p>

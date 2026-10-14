@@ -62,7 +62,24 @@ export default function GallerySection() {
               aria-label={item.label}
               onClick={() => openModal('event', { name: item.label, description: `Sacred photography of ${item.label} at Shri Krishna Mandir, Kurnool.` })}
             >
-              <OrnamentalPanel label={item.label} number={item.id} />
+              {item.image ? (
+                <div className={styles.imgWrapper}>
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className={styles.galleryImg}
+                    loading="lazy"
+                  />
+                  <div className={styles.imgOverlay} aria-hidden="true" />
+                  {/* Corner frame marks */}
+                  <span className={`${styles.corner} ${styles.cornerTL}`} aria-hidden="true" />
+                  <span className={`${styles.corner} ${styles.cornerTR}`} aria-hidden="true" />
+                  <span className={`${styles.corner} ${styles.cornerBL}`} aria-hidden="true" />
+                  <span className={`${styles.corner} ${styles.cornerBR}`} aria-hidden="true" />
+                </div>
+              ) : (
+                <OrnamentalPanel label={item.label} number={item.id} />
+              )}
               <figcaption className={styles.caption}>
                 <span className={styles.captionText}>{item.label}</span>
               </figcaption>
@@ -73,7 +90,7 @@ export default function GallerySection() {
         {/* Note */}
         <div className={`${styles.galleryNote} reveal ${gridVisible ? 'is-visible' : ''}`}>
           <span aria-hidden="true">✦</span>
-          <p>Photography gallery coming soon — real temple photos will be placed here once provided.</p>
+          <p>Authentic glimpses of Shri Krishna Mandir — sanctum deity, sacred celebrations, and temple architecture.</p>
         </div>
 
         <div className={`${styles.viewAll} reveal ${gridVisible ? 'is-visible' : ''}`}>

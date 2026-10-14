@@ -84,6 +84,11 @@ export default function DarshanSection() {
               key={seva.id}
               className={`${styles.sevaCard} reveal reveal-delay-${i + 1} ${sevaVisible ? 'is-visible' : ''}`}
             >
+              {seva.image && (
+                <div className={styles.sevaImgWrapper}>
+                  <img src={seva.image} alt={seva.name} className={styles.sevaImg} loading="lazy" />
+                </div>
+              )}
               <div className={styles.sevaTop}>
                 <div>
                   <h4 className={styles.sevaName}>{seva.name}</h4>

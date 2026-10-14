@@ -54,7 +54,7 @@
 .mapPlaceholderTitle {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  color: var(--color-burgundy-deep);
+  color: var(--color-text-primary);
 }
 
 .mapPlaceholderSub {
@@ -134,7 +134,7 @@
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-burgundy);
+  color: var(--color-text-primary);
   letter-spacing: 0.04em;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--color-gold);
@@ -167,7 +167,7 @@
 
 .timingRow:last-child { border-bottom: none; }
 .timingName { flex: 1; color: var(--color-text-primary); font-weight: 500; }
-.timingTime { color: var(--color-burgundy); font-style: italic; font-family: var(--font-display); white-space: nowrap; }
+.timingTime { color: var(--color-text-primary); font-weight: 600; font-style: italic; font-family: var(--font-display); white-space: nowrap; }
 
 .reachList { display: flex; flex-direction: column; gap: 0.625rem; }
 

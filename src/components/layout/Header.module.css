@@ -50,26 +50,35 @@
 
 .logoIcon {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
 }
 
 .logoText {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .logoName {
   font-family: var(--font-heading);
-  font-size: 1.125rem;
-  color: var(--color-burgundy-deep);
+  font-size: 1.15rem;
+  color: var(--color-text-primary); /* Dark Forest Green */
   white-space: nowrap;
   letter-spacing: 0.01em;
 }
 
 .logoTagline {
   font-family: var(--font-sanskrit);
-  font-size: 0.75rem;
-  color: var(--color-gold);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary); /* Dark Forest Green */
   letter-spacing: 0.05em;
 }
 
@@ -93,8 +102,8 @@
 
 .navLink {
   font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--color-text-secondary);
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-sm);
@@ -110,7 +119,7 @@
   bottom: 4px;
   left: 50%;
   width: 0;
-  height: 1.5px;
+  height: 2px;
   background-color: var(--color-gold);
   transform: translateX(-50%);
   transition: width var(--transition-base);
@@ -118,7 +127,7 @@
 }
 
 .navLink:hover {
-  color: var(--color-burgundy);
+  color: var(--color-text-primary);
   background-color: var(--color-cream-dark);
 }
 
@@ -128,8 +137,8 @@
 }
 
 .navLink.active {
-  color: var(--color-burgundy);
-  font-weight: 600;
+  color: var(--color-text-primary);
+  font-weight: 700;
 }
 
 /* ── CTA Actions ──────────────────────────────────────────── */

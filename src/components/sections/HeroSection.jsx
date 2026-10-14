@@ -66,6 +66,16 @@ export default function HeroSection() {
 
       {/* ── Sacred Sanctum Background ── */}
       <div className={styles.background} aria-hidden="true">
+        <video
+          className={styles.heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/assets/images/hero-poster.jpg"
+        >
+          <source src="/assets/videos/temple-hero.mp4" type="video/mp4" />
+        </video>
         <SanctumBackdrop />
         <div className={styles.overlay} aria-hidden="true" />
         <div className={styles.vignette} aria-hidden="true" />

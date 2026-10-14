@@ -146,9 +146,26 @@ export default function AboutSection() {
             ref={imageRef}
             className={`${styles.visualCol} reveal-right ${imageVisible ? 'is-visible' : ''}`}
           >
-            {/* Main illustration panel */}
+            {/* Main photograph panel */}
             <div className={styles.mainPanel}>
-              <TempleSilhouette />
+              <img
+                src="/assets/images/about-temple.jpg"
+                alt="Shri Krishna Mandir Temple Architecture"
+                className={styles.templePhoto}
+                loading="lazy"
+              />
+              <div className={styles.photoOverlay} aria-hidden="true" />
+
+              {/* Deity sanctum inset */}
+              <div className={styles.deityInset} title="Lord Sri Krishna Sanctum Sanctorum">
+                <img
+                  src="/assets/images/about-deity.jpg"
+                  alt="Lord Sri Krishna Sanctum Sanctorum"
+                  className={styles.deityPhoto}
+                  loading="lazy"
+                />
+                <span className={styles.deityInsetLabel}>Sanctum</span>
+              </div>
 
               {/* Floating Om badge */}
               <div className={styles.omBadge} aria-hidden="true">
