@@ -12,46 +12,31 @@
 
 .header.scrolled {
   background-color: var(--color-cream-light);
-  box-shadow: 0 4px 20px rgba(19, 40, 31, 0.1);
-}
-
-/* ── Toran Banner (Top Scalloped Pennants) ────────────────────── */
-.toranContainer {
-  width: 100%;
-  height: 18px;
-  overflow: hidden;
-  background-color: #6B1822;
-  line-height: 0;
-}
-
-.toranSvg {
-  width: 100%;
-  height: 18px;
-  display: block;
+  box-shadow: 0 2px 20px rgba(19, 40, 31, 0.08);
 }
 
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1.5rem;
-  height: 72px;
+  height: 76px;
   max-width: var(--container-max);
 }
 
-.bottomAccent {
-  height: 1.5px;
+.goldAccent {
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-cream-border) 20%,
-    var(--color-red-sacred) 50%,
-    var(--color-cream-border) 80%,
+    var(--color-gold-pale) 20%,
+    var(--color-gold) 50%,
+    var(--color-gold-pale) 80%,
     transparent
   );
 }
 
 /* ── Logo ─────────────────────────────────────────────────── */
+
 .logoLink {
   text-decoration: none;
   flex-shrink: 0;
@@ -60,44 +45,36 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
-.logoBadge {
+.logoIcon {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-fast);
-}
-
-.logoLink:hover .logoBadge {
-  transform: scale(1.05);
 }
 
 .logoText {
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .logoName {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--color-green-dark);
+  font-size: 1.125rem;
+  color: var(--color-burgundy-deep);
   white-space: nowrap;
   letter-spacing: 0.01em;
 }
 
-.logoTelugu {
-  font-family: var(--font-telugu);
-  font-size: 0.825rem;
-  font-weight: 600;
-  color: var(--color-telugu);
-  letter-spacing: 0.02em;
+.logoTagline {
+  font-family: var(--font-sanskrit);
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
 }
 
 /* ── Desktop Navigation ───────────────────────────────────── */
+
 .nav {
   flex: 1;
   display: flex;
@@ -107,7 +84,7 @@
 .navList {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.125rem;
 }
 
 .navItem {
@@ -116,10 +93,10 @@
 
 .navLink {
   font-family: var(--font-body);
-  font-size: 0.925rem;
-  font-weight: 600;
-  color: var(--color-green-dark);
-  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 0.5rem 0.75rem;
   border-radius: var(--radius-sm);
   transition: color var(--transition-base), background-color var(--transition-base);
   white-space: nowrap;
@@ -130,58 +107,39 @@
 .navLink::after {
   content: '';
   position: absolute;
-  bottom: 2px;
+  bottom: 4px;
   left: 50%;
   width: 0;
-  height: 2px;
-  background-color: var(--color-red-sacred);
+  height: 1.5px;
+  background-color: var(--color-gold);
   transform: translateX(-50%);
   transition: width var(--transition-base);
   border-radius: var(--radius-pill);
 }
 
 .navLink:hover {
-  color: var(--color-red-sacred);
-  background-color: rgba(24, 61, 47, 0.05);
+  color: var(--color-burgundy);
+  background-color: var(--color-cream-dark);
 }
 
 .navLink:hover::after,
 .navLink.active::after {
-  width: calc(100% - 1.25rem);
+  width: calc(100% - 1.5rem);
 }
 
 .navLink.active {
-  color: var(--color-red-sacred);
-  font-weight: 700;
+  color: var(--color-burgundy);
+  font-weight: 600;
 }
 
-/* ── Actions ──────────────────────────────────────────────── */
+/* ── CTA Actions ──────────────────────────────────────────── */
+
 .actions {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
   flex-shrink: 0;
 }
 
-.heartButton {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: var(--color-red-sacred);
-  border: 1.5px solid #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform var(--transition-fast), background-color var(--transition-fast);
-}
-
-.heartButton:hover {
-  background-color: var(--color-red-deep);
-  transform: scale(1.08);
-}
-
 /* ── Hamburger ────────────────────────────────────────────── */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -198,15 +156,15 @@
 .bar {
   display: block;
   width: 100%;
-  height: 2.5px;
-  background-color: var(--color-green-dark);
+  height: 2px;
+  background-color: var(--color-burgundy);
   border-radius: var(--radius-pill);
   transition: transform var(--transition-base), opacity var(--transition-base), width var(--transition-base);
   transform-origin: center;
 }
 
 .hamburgerOpen .bar:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
 }
 
 .hamburgerOpen .bar:nth-child(2) {
@@ -215,10 +173,11 @@
 }
 
 .hamburgerOpen .bar:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 /* ── Mobile Drawer ────────────────────────────────────────── */
+
 .mobileDrawer {
   position: fixed;
   top: 0;
@@ -232,8 +191,8 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  border-left: 1px solid var(--color-cream-border);
-  box-shadow: -8px 0 32px rgba(19, 40, 31, 0.2);
+  border-left: 1px solid var(--color-gold);
+  box-shadow: -8px 0 32px rgba(19, 40, 31, 0.16);
 }
 
 .mobileDrawer.mobileOpen {
@@ -243,44 +202,23 @@
 .drawerHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  background-color: var(--color-green-dark);
-  border-bottom: 2px solid var(--color-red-sacred);
-}
-
-.drawerLogoWrap {
-  display: flex;
-  align-items: center;
   gap: 0.75rem;
+  padding: 1.5rem;
+  background-color: var(--color-burgundy-deep);
+  border-bottom: 2px solid var(--color-gold);
 }
 
 .drawerOm {
   font-family: var(--font-sanskrit);
-  font-size: 1.85rem;
-  color: #FFFFFF;
+  font-size: 2rem;
+  color: var(--color-gold);
   line-height: 1;
 }
 
 .drawerTitle {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: #FFFFFF;
-  display: block;
-}
-
-.drawerTelugu {
-  font-family: var(--font-telugu);
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.85);
-  display: block;
-}
-
-.drawerClose {
-  color: #FFFFFF;
-  font-size: 1.25rem;
-  cursor: pointer;
-  padding: 0.25rem;
+  font-size: 1.125rem;
+  color: var(--color-cream-light);
 }
 
 .mobileNavList {
@@ -292,9 +230,9 @@
   display: block;
   padding: 0.875rem 1.5rem;
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-green-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
   border-bottom: 1px solid var(--color-cream-border);
   transition: background-color var(--transition-fast), color var(--transition-fast), padding-left var(--transition-fast);
 }
@@ -302,30 +240,33 @@
 .mobileNavLink:hover,
 .mobileNavLink.mobileActive {
   background-color: var(--color-cream-dark);
-  color: var(--color-red-sacred);
+  color: var(--color-burgundy);
   padding-left: 2rem;
 }
 
 .mobileNavLink.mobileActive {
-  border-left: 4px solid var(--color-red-sacred);
+  font-weight: 600;
+  border-left: 3px solid var(--color-gold);
 }
 
 .drawerCta {
   padding: 1.5rem;
-  border-top: 1px solid var(--color-cream-border);
+  border-top: 1px solid var(--color-gold);
 }
 
 /* ── Overlay ──────────────────────────────────────────────── */
+
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(19, 40, 31, 0.6);
+  background-color: rgba(19, 40, 31, 0.5);
   z-index: calc(var(--z-nav) + 5);
   backdrop-filter: blur(2px);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 960px) {
+
+@media (max-width: 900px) {
   .nav,
   .actions {
     display: none;

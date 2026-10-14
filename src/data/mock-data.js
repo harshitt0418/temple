@@ -1,27 +1,20 @@
 /**
  * mock-data.js
- * Aligned with Client Reference Designs:
- * Sri Krishna Temple / శ్రీ కృష్ణ దేవాలయం (Kurnool)
- * ZERO Yellow: Clean text and neutral symbols
+ * Real temple identity populated from Instagram @kurnool_spiritucal
+ * (Sri Krishna temple, Kurnool, Andhra Pradesh)
  */
 
 // ── Temple Identity ────────────────────────────────────────────
 export const templeInfo = {
-  name: 'Sri Krishna Temple',
-  nameTelugu: 'శ్రీ కృష్ణ దేవాలయం',
+  name: 'Shri Krishna Mandir',
+  nameDevanagari: 'శ్రీ కృష్ణ మందిర్',
   tagline: 'A Sacred Sanctuary of Devotion, Culture & Community — Kurnool',
   established: '1987',
   deity: 'Lord Sri Krishna',
-  deityTelugu: 'శ్రీ కృష్ణ స్వామి వారి ఆలయం',
-
-  sacredQuote: {
-    telugu: 'నా భక్తుడు నశింపడు',
-    english: 'MY DEVOTEE NEVER PERISHES',
-    source: 'Bhagavad Gita 9.31',
-  },
+  deityDevanagari: 'శ్రీ కృష్ణ భగవాన్',
 
   address: {
-    line1: 'Near Old Bus Stand, Temple Road',
+    line1: '[Street Address, Locality]',
     line2: 'Kurnool',
     city: 'Kurnool',
     state: 'Andhra Pradesh',
@@ -30,345 +23,218 @@ export const templeInfo = {
   },
 
   contact: {
-    phone1: '+91 8518 220XXX',
-    phone2: '+91 94400 XXXXX',
-    email: 'contact@srikrishnatemple-kurnool.org',
-    website: 'www.srikrishnatemple-kurnool.org',
+    phone1: '[+91-XXXXX-XXXXX]',
+    phone2: '[+91-XXXXX-XXXXX]',
+    email: '[info@shrikrishnamandir-kurnool.org]',
+    website: '[www.shrikrishnamandir-kurnool.org]',
   },
 
   social: {
     instagram: 'https://www.instagram.com/kurnool_spiritucal/',
     facebook: '#',
     youtube: '#',
-    whatsapp: 'https://wa.me/919440000000',
+    whatsapp: '#',
   },
 };
 
-// ── Quick Action Cards (Reference: 02.20.48) ────────────────────
-export const quickActions = [
+// ── Darshan Timings ────────────────────────────────────────────
+export const darshanTimings = [
   {
-    id: 'daily-puja',
-    title: 'Daily Puja Schedule',
-    subtitle: 'నిత్య పూజా సమయాలు',
-    icon: 'clock',
-    color: 'red',
-    target: '#darshan',
+    id: 1,
+    session: 'Morning Darshan',
+    sessionHindi: 'ప్రాతః దర్శన్',
+    time: '6:00 AM – 12:00 PM',
+    icon: '✦',
   },
   {
-    id: 'book-seva',
-    title: 'Book a Seva',
-    subtitle: 'సేవా బుకింగ్',
-    icon: 'lotus',
-    color: 'red',
-    target: 'modal-seva',
+    id: 2,
+    session: 'Afternoon Bhog',
+    sessionHindi: 'మధ్యాహ్న భోగ్',
+    time: '12:00 PM – 4:00 PM',
+    icon: '✦',
+    note: 'Sanctum closed for Bhog offering',
   },
   {
-    id: 'festival-calendar',
-    title: 'Festival Calendar',
-    subtitle: 'ఉత్సవాల క్యాలెండర్',
-    icon: 'calendar',
-    color: 'red',
-    target: '#festivals',
+    id: 3,
+    session: 'Evening Darshan',
+    sessionHindi: 'సాయం దర్శన్',
+    time: '4:00 PM – 8:30 PM',
+    icon: '✦',
   },
   {
-    id: 'temple-store',
-    title: 'Temple Store',
-    subtitle: 'ఆలయ ప్రసాదం & పుస్తకాలు',
-    icon: 'store',
-    color: 'green',
-    target: '#store',
+    id: 4,
+    session: 'Aarti & Closing',
+    sessionHindi: 'ఆరతి',
+    time: '8:00 PM – 8:30 PM',
+    icon: '✦',
   },
 ];
 
-// ── Day Schedule (Reference: 02.20.49) ─────────────────────────
-export const daySchedule = [
-  {
-    time: '05:30 AM',
-    title: 'Suprabhata Seva',
-    telugu: 'సుప్రభాత సేవ',
-    desc: 'Awakening chants, divine mangala arati and sacred suprabhatam recitation.',
-    highlight: false,
-  },
-  {
-    time: '06:00 AM',
-    title: 'Nitya Abhishekam',
-    telugu: 'నిత్య అభిషేకం',
-    desc: 'Panchamrita snanam and sacred herbal water bath to Lord Sri Krishna.',
-    highlight: false,
-  },
-  {
-    time: '07:00 AM',
-    title: 'Alankaram & Archana',
-    telugu: 'అలంకారం & తులసి అర్చన',
-    desc: 'Fresh flower ornamentation, tulasi garland offering, and ashtottara shatanama archana.',
-    highlight: false,
-  },
-  {
-    time: '07:30 AM',
-    title: 'Sarva Darshanam',
-    telugu: 'సర్వ దర్శనం ప్రారంభం',
-    desc: 'Free darshan opens for all visiting devotees across the sanctum sanctorum.',
-    highlight: true,
-  },
-  {
-    time: '10:00 AM',
-    title: 'Sahasranama Archana',
-    telugu: 'సహస్రనామ అర్చన',
-    desc: 'Chanting of Vishnu Sahasranamam with sacred bilva, tulasi and lotus offerings.',
-    highlight: false,
-  },
-  {
-    time: '12:30 PM',
-    title: 'Maha Naivedyam & Annadanam',
-    telugu: 'మహా నైవేద్యం & అన్నదానం',
-    desc: 'Divine noon offering followed by complimentary blessed meals for all pilgrims.',
-    highlight: true,
-  },
-  {
-    time: '06:00 PM',
-    title: 'Sandhya Arati & Deeparadhana',
-    telugu: 'సంధ్యా ఆరతి & దీపారాధన',
-    desc: 'Grand evening lamp arati accompanied by traditional mridangam and bells.',
-    highlight: true,
-  },
-  {
-    time: '08:30 PM',
-    title: 'Shayanotsavam & Ekantha Seva',
-    telugu: 'శయనోత్సవం & ఏకాంత సేవ',
-    desc: 'Night lullaby song (Lali paata), floral swing ceremony, and sanctum closure.',
-    highlight: false,
-  },
-];
-
-// ── Visiting Hours (Reference: 02.20.49 1) ───────────────────────
-export const visitingHours = {
-  morning: '5:30 AM – 1:00 PM',
-  evening: '4:30 PM – 9:00 PM',
-  isOpenNow: true,
-  closesAt: '8:30 PM',
-  statusText: 'Open now · closes at 8:30 PM',
-};
-
-// ── Seva Offerings ─────────────────────────────────────────────
+// ── Pooja & Seva Services ──────────────────────────────────────
 export const sevaServices = [
   {
     id: 1,
-    name: 'Suprabhata & Abhishekam',
-    nameTelugu: 'సుప్రభాత & పంచామృత అభిషేకం',
-    description: 'Participate in the divine morning sacred bath and alankaram of Lord Sri Krishna.',
-    timings: 'Daily · 6:00 AM',
-    duration: '45 mins',
-    suggestedDonation: '₹ 500',
+    name: 'Abhishek Pooja',
+    nameHindi: 'అభిషేక పూజ',
+    description: 'Sacred ritual bathing of Lord Krishna with panchamrit and holy substances.',
+    timings: 'Daily · 7:00 AM',
+    duration: '45 minutes',
   },
   {
     id: 2,
-    name: 'Sahasranama Archana',
-    nameTelugu: 'సహస్రనామ కుంకుమ/తులసి అర్చన',
-    description: 'Special chanting of 1008 divine holy names with tulasi leaves for family welfare.',
-    timings: 'Daily · 10:00 AM & 6:30 PM',
-    duration: '30 mins',
-    suggestedDonation: '₹ 250',
+    name: 'Satyanarayan Katha',
+    nameHindi: 'సత్యనారాయణ కథ',
+    description: "Devotional reading and narration of Lord Vishnu's glory.",
+    timings: 'Sundays & Festival days',
+    duration: '2.5 hours',
   },
   {
     id: 3,
-    name: 'Nitya Annadanam Seva',
-    nameTelugu: 'నిత్య అన్నదాన సేవ',
-    description: 'Sponsor a full day of wholesome meals for 100+ visiting pilgrims and devotees.',
-    timings: 'Daily · 12:30 PM',
-    duration: 'Continuous',
-    suggestedDonation: '₹ 1,500',
+    name: 'Navagraha Homa',
+    nameHindi: 'నవగ్రహ హోమ',
+    description: 'Sacred fire ritual to appease the nine celestial bodies.',
+    timings: 'By prior booking',
+    duration: '3 hours',
   },
   {
     id: 4,
-    name: 'Kalyanotsavam',
-    nameTelugu: 'శ్రీ కృష్ణ కళ్యాణోత్సవం',
-    description: 'Grand celestial marriage ritual conducted with traditional Vedic rites.',
-    timings: 'Every Ekadashi & Festival Days',
-    duration: '2 hours',
-    suggestedDonation: '₹ 2,100',
+    name: 'Annadanam Seva',
+    nameHindi: 'అన్నదాన సేవ',
+    description: 'Sponsor a community meal in the divine name of Lord Krishna.',
+    timings: 'Daily · 12:30 PM',
+    duration: 'Ongoing',
   },
 ];
 
-// ── Upcoming Festivals (Reference: 02.20.49 1 & 2) ─────────────
+// ── Upcoming Festivals ─────────────────────────────────────────
 export const upcomingFestivals = [
   {
     id: 1,
-    dateBadge: 'OCT 11',
-    month: 'OCT',
-    day: '11',
-    title: 'Sri Krishna Navaratri Brahmotsavam',
-    telugu: 'నవరాత్రి బ్రహ్మోత్సవాలు',
-    time: 'Special Alankaram & Rathotsavam · 8:00 AM – 9:30 PM',
-    desc: 'Grand 9-day annual festival with special chariot procession, pushpa yagam and daily classical kirtan recitals.',
+    name: 'Sri Krishna Janmashtami',
+    nameTelugu: 'శ్రీ కృష్ణ జన్మాష్టమి',
+    date: 'August 2027',
+    day: 'Ashtami — Krishna Paksha',
+    description: 'Grand celebration of Lord Krishna\'s birth. Special midnight pooja, devotional music, prasad distribution, and cultural programmes for all.',
     highlight: true,
   },
   {
     id: 2,
-    dateBadge: 'OCT 20',
-    month: 'OCT',
-    day: '20',
-    title: 'Kartika Deepotsavam & Tulasi Kalyanam',
-    telugu: 'కార్తీక దీపోత్సవం & తులసి కళ్యాణం',
-    time: 'Evening Deeparadhana · 6:00 PM onwards',
-    desc: 'Lighting of 1,008 sacred lamps in the temple courtyard with special laksha tulasi archana ceremony.',
+    name: 'Govardhan Pooja',
+    nameTelugu: 'గోవర్ధన పూజ',
+    date: 'November 2026',
+    day: 'Pratipada — Kartik Shukla',
+    description: 'Community celebration with anna koot offering and cultural programme.',
     highlight: false,
   },
   {
     id: 3,
-    dateBadge: 'NOV 01',
-    month: 'NOV',
-    day: '01',
-    title: 'Vaikuntha Ekadashi & Uttara Dwara Darshanam',
-    telugu: 'వైకుంఠ ఏకాదశి ఉత్తర ద్వార దర్శనం',
-    time: 'Special Gate Opens · 4:30 AM',
-    desc: 'Auspicious gateway darshan with uninterrupted darshan, special prasadam distribution and continuous chanting.',
-    highlight: true,
-  },
-];
-
-// ── Chitramalika Gallery (Reference: 02.20.50 3 & 02.20.52 2) ──
-export const galleryCategories = [
-  { id: 'all', label: 'All Photos', telugu: 'అన్నీ' },
-  { id: 'sanctum', label: 'Sanctum & Deities', telugu: 'గర్భాలయం' },
-  { id: 'campus', label: 'Temple Campus', telugu: 'ఆలయ ప్రాంగణం' },
-  { id: 'festivals', label: 'Festivals', telugu: 'ఉత్సవాలు' },
-  { id: 'annadanam', label: 'Annadanam', telugu: 'అన్నదానం' },
-];
-
-export const galleryItems = [
-  {
-    id: 1,
-    title: 'Lord Sri Krishna in Divyabharan Alankaram',
-    category: 'sanctum',
-    image: '/assets/images/krishna-sanctum.jpg',
-    tag: 'Moolavar Deity',
-  },
-  {
-    id: 2,
-    title: 'Sacred Sanctum Portal & Divine Form',
-    category: 'sanctum',
-    image: '/assets/images/krishna-hero.jpg',
-    tag: 'Sanctum Arati',
-  },
-  {
-    id: 3,
-    title: 'Maha Annadanam Prasad Distribution',
-    category: 'annadanam',
-    image: '/assets/images/annadanam-prasad.jpg',
-    tag: 'Daily Prasad',
+    name: 'Monthly Satyanarayan Katha',
+    nameTelugu: 'మాసిక సత్యనారాయణ కథ',
+    date: 'Every Full Moon',
+    day: 'Purnima',
+    description: 'Open to all devotees. Prasad provided. Conducted by temple priests.',
+    highlight: false,
   },
   {
     id: 4,
-    title: 'Pushpa Alankaram & Sacred Rituals',
-    category: 'festivals',
-    image: '/assets/images/gallery-1.jpg',
-    tag: 'Special Puja',
-  },
-  {
-    id: 5,
-    title: 'Temple Gopuram & Courtyard',
-    category: 'campus',
-    image: '/assets/images/gallery-2.jpg',
-    tag: 'Gopuram',
-  },
-  {
-    id: 6,
-    title: 'Devotee Pradakshina & Morning Gathering',
-    category: 'campus',
-    image: '/assets/images/gallery-3.jpg',
-    tag: 'Darshan Queue',
-  },
-  {
-    id: 7,
-    title: 'Festive Illumination & Deeparadhana',
-    category: 'festivals',
-    image: '/assets/images/gallery-4.jpg',
-    tag: 'Evening Deepam',
+    name: 'Radha Ashtami',
+    nameTelugu: 'రాధా అష్టమి',
+    date: 'September 2027',
+    day: 'Ashtami — Bhadrapad Shukla',
+    description: 'Celebration of Radharani\'s appearance. Special shringar and bhajan sandhya.',
+    highlight: false,
   },
 ];
 
 // ── Announcements (Ticker) ─────────────────────────────────────
 export const announcements = [
-  '✦ Daily Darshan: 5:30 AM – 1:00 PM & 4:30 PM – 9:00 PM',
-  '✦ Sri Krishna Navaratri Brahmotsavam celebrations ongoing — all are cordially invited',
-  '✦ Nitya Annadanam served daily at 12:30 PM — open to all pilgrims and devotees',
-  '✦ Book special Archana and Kalyana Seva online or at the temple counter',
-  '✦ Sri Krishna Temple, Kurnool, Andhra Pradesh · Serving with devotion since 1987',
+  '✦ Special Janmashtami darshan extended till midnight — all devotees welcome',
+  '✦ Monthly Satyanarayan Katha every Purnima — 10:00 AM onwards',
+  '✦ Vedic School admissions open — Saturdays & Sundays · Ages 6–16',
+  '✦ Darshan Timings: Morning 6 AM – 12 PM  |  Evening 4 PM – 8:30 PM',
+  '✦ Seva bookings: Call [+91-XXXXX-XXXXX]  |  Hari Bol!',
+  '✦ Sri Krishna Mandir, Kurnool — Serving the community since 1987',
 ];
 
-// ── School & Cultural Heritage ─────────────────────────────────
+// ── School / Education ─────────────────────────────────────────
 export const schoolActivities = [
   {
     id: 1,
-    name: 'Veda Pathashala & Sanskrit',
-    telugu: 'వేద పాఠశాల & సంస్కృత అధ్యయనం',
+    name: 'Vedic Studies & Sanskrit',
     icon: '✦',
-    description: 'Chanting of Vedic Suktams, Bhagavad Gita shlokas and foundational Sanskrit for children and youth.',
-    schedule: 'Saturdays & Sundays · 8:00 AM – 11:00 AM',
-    ageGroup: 'Ages 6–18',
+    description: 'Introduction to Sanskrit shlokas, Gita chanting, and Dharmic values for children.',
+    schedule: 'Saturdays · 9:00 AM – 12:00 PM',
+    ageGroup: 'Ages 6–16',
   },
   {
     id: 2,
-    name: 'Vaishnava Kirtan & Bhajans',
-    telugu: 'సంకీర్తన & భజన శిక్షణ',
+    name: 'Bhajan & Kirtan',
     icon: '✦',
-    description: 'Learning classical Annamacharya and Tyagaraja kirtans with mridangam and harmonium accompaniment.',
-    schedule: 'Sundays · 4:00 PM – 6:00 PM',
-    ageGroup: 'All age groups',
+    description: 'Devotional singing classes — learn traditional Vaishnav kirtans and bhajans.',
+    schedule: 'Sundays · 9:00 AM – 11:00 AM',
+    ageGroup: 'All ages',
   },
   {
     id: 3,
-    name: 'Nitya Annadanam Trust',
-    telugu: 'నిత్య అన్నదాన ట్రస్ట్',
+    name: 'Yoga & Pranayama',
     icon: '✦',
-    description: 'Over 500 meals served daily with pure ghee, sambar, rice and sweet pongal prasadam.',
-    schedule: 'Every day · 12:30 PM onwards',
-    ageGroup: 'Open to everyone',
+    description: 'Traditional Hatha Yoga and breathing techniques. All levels welcome.',
+    schedule: 'Mon, Wed, Fri · 6:30 AM – 7:30 AM',
+    ageGroup: 'Adults',
   },
   {
     id: 4,
-    name: 'Dharmic Values & Cultural Workshops',
-    telugu: 'ధార్మిక విలువల శిక్షణ',
+    name: 'Annadanam — Free Meals',
     icon: '✦',
-    description: 'Interactive moral education, Ramayana & Mahabharata story circles, and Indian heritage seminars.',
-    schedule: 'First Sunday of each month',
-    ageGroup: 'Families & Children',
+    description: 'Free prasad meals for all on festival days and Ekadashi. Volunteer and donate.',
+    schedule: 'Festival Days & Ekadashi',
+    ageGroup: 'Open to all',
   },
+];
+
+// ── Gallery (placeholder frames) ──────────────────────────────
+export const galleryItems = [
+  { id: 1, label: 'Temple Exterior', type: 'image', aspect: 'landscape' },
+  { id: 2, label: 'Sri Krishna Deity', type: 'image', aspect: 'portrait' },
+  { id: 3, label: 'Janmashtami Celebration', type: 'image', aspect: 'landscape' },
+  { id: 4, label: 'Evening Aarti', type: 'image', aspect: 'portrait' },
+  { id: 5, label: 'Vedic School', type: 'image', aspect: 'landscape' },
+  { id: 6, label: 'Community Gathering', type: 'image', aspect: 'landscape' },
 ];
 
 // ── Navigation Links ───────────────────────────────────────────
 export const navLinks = [
   { label: 'Home', href: '#hero' },
+  { label: 'About', href: '#about' },
   { label: 'Darshan & Seva', href: '#darshan' },
-  { label: 'Day Schedule', href: '#schedule' },
   { label: 'Festivals', href: '#festivals' },
-  { label: 'Chitramalika', href: '#gallery' },
-  { label: 'Heritage & School', href: '#school' },
+  { label: 'Gallery', href: '#gallery' },
+  { label: 'School', href: '#school' },
   { label: 'Visit', href: '#visit' },
   { label: 'Contact', href: '#contact' },
 ];
 
-// ── Devotee Words ──────────────────────────────────────────────
+// ── Testimonials / Devotee Words ───────────────────────────────
 export const devoteeWords = [
   {
     id: 1,
-    name: 'Lakshmi Devi Garu',
+    name: 'Lakshmi Devi',
     city: 'Kurnool',
-    text: 'Visiting Sri Krishna Temple brings supreme tranquility. The morning Suprabhatam and Tulasi Archana fill the entire day with positive spiritual energy.',
+    text: 'This mandir has been a spiritual home for our family for over two decades. The peace one feels here is beyond words — it is truly a place of divine grace.',
     initials: 'LD',
   },
   {
     id: 2,
-    name: 'Dr. K. Ramaiah',
-    city: 'Nandyal',
-    text: 'The priests chant the Vedic hymns with flawless devotion and authenticity. The Annadanam prasadam is served with utmost cleanliness and warmth.',
-    initials: 'KR',
+    name: 'Ramaiah Garu',
+    city: 'Kurnool',
+    text: 'The Janmashtami celebrations here are the most authentic and moving I have attended. The priests are deeply knowledgeable and the atmosphere is always serene.',
+    initials: 'RG',
   },
   {
     id: 3,
-    name: 'Srinivasa Rao & Family',
+    name: 'Sunita & Family',
     city: 'Hyderabad',
-    text: 'A truly divine temple right in the heart of Kurnool. Our children participate enthusiastically in the weekend Veda Pathashala chanting.',
-    initials: 'SR',
+    text: 'We make it a point to visit whenever we are in Kurnool. Our children have learned so much from the Vedic school here. A true community treasure.',
+    initials: 'SF',
   },
 ];

@@ -1,12 +1,11 @@
 /**
- * VisitSection.jsx
- * Aligned with Client Reference:
- * ZERO Yellow: All icons are clean SVGs, all borders and badges are red, green or stone.
+ * VisitSection.jsx — Part 2 (Full build)
+ * How to reach + contact + map placeholder with full detail.
  */
 
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import SectionLabel from '../ui/SectionLabel';
-import { templeInfo } from '../../data/mock-data';
+import { templeInfo, darshanTimings } from '../../data/mock-data';
 import { useModal } from '../../context/ModalContext';
 import styles from './VisitSection.module.css';
 
@@ -16,143 +15,118 @@ export default function VisitSection() {
   const [gridRef, gridVisible] = useScrollAnimation({ threshold: 0.06 });
 
   return (
-    <section id="visit" className={styles.section} aria-label="Visiting the temple">
+    <section id="visit" className={`section ${styles.visit}`} aria-label="Visiting the temple">
       <div className="container">
         <div ref={headRef} className={`reveal ${headVisible ? 'is-visible' : ''}`}>
           <SectionLabel
-            eyebrow="PLAN YOUR PILGRIMAGE"
-            title="Come, Seek Divine Blessings"
-            subtitle="దర్శన సమాచారం & ఆలయ మార్గదర్శిని"
+            eyebrow="Plan Your Visit"
+            title="Come, Seek Blessings"
+            subtitle="All are welcome — with folded hands and open hearts"
           />
         </div>
 
         <div ref={gridRef} className={styles.grid}>
 
-          {/* ── Left: Map & Contact Actions ── */}
+          {/* ── Left: Map placeholder ── */}
           <div className={`${styles.mapCol} reveal-left ${gridVisible ? 'is-visible' : ''}`}>
-            <div className={styles.mapCard}>
-              <div className={styles.mapHeader}>
-                <span className={styles.mapHeaderIcon}>
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#FFFFFF" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </span>
-                <div>
-                  <h3 className={styles.mapTempleName}>{templeInfo.name}</h3>
-                  <p className={styles.mapCity}>Kurnool, Andhra Pradesh · 518 001</p>
-                </div>
+            <div className={styles.mapWrap}>
+              {/* Map placeholder — replace with Google Maps iframe */}
+              <div className={styles.mapPlaceholder}>
+                <div className={styles.mapPinIcon} aria-hidden="true">✦</div>
+                <p className={styles.mapPlaceholderTitle}>Shri Krishna Mandir</p>
+                <p className={styles.mapPlaceholderSub}>Kurnool, Andhra Pradesh</p>
+                <p className={styles.mapNote}>
+                  Replace this block with a Google Maps embed:
+                  <br />
+                  <code className={styles.mapCode}>{'<iframe src="https://maps.google.com/..." />'}</code>
+                </p>
               </div>
-
-              <div className={styles.mapFrame}>
-                <div className={styles.mapMock}>
-                  <div className={styles.mapPin}>
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="var(--color-red-sacred)" strokeWidth="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <div className={styles.pinPulse} />
-                  </div>
-                  <p className={styles.mapLocationText}>Temple Road, Near Old Bus Stand, Kurnool</p>
-                </div>
-              </div>
-
-              <a
-                href={`https://maps.google.com/?q=Sri+Krishna+Temple+Kurnool+Andhra+Pradesh`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`btn btn--primary ${styles.directionsBtn}`}
-              >
-                Open Directions in Google Maps
-              </a>
             </div>
 
-            {/* Quick Contact Buttons */}
+            <a
+              href={`https://maps.google.com/?q=Shri+Krishna+Mandir+Kurnool+Andhra+Pradesh`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`btn btn--primary ${styles.directionsBtn}`}
+            >
+              ✦ Get Directions on Google Maps
+            </a>
+
+            {/* Quick contact */}
             <div className={styles.quickContact}>
               <a href={`tel:${templeInfo.contact.phone1}`} className={styles.contactBtn}>
-                Call Desk: {templeInfo.contact.phone1}
+                ✦ Call Us
               </a>
-              <a
-                href={templeInfo.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contactBtn}
-              >
-                WhatsApp Chat
+              <a href={`https://wa.me/?text=Jai%20Shri%20Krishna!%20I%20would%20like%20to%20enquire%20about%20Shri%20Krishna%20Mandir%20Kurnool`}
+                target="_blank" rel="noopener noreferrer"
+                className={styles.contactBtn}>
+                ✦ WhatsApp
               </a>
               <button
                 type="button"
                 onClick={() => openModal('contact')}
                 className={styles.contactBtn}
               >
-                Send Message to Temple Trust
+                ✦ Email Desk
               </button>
             </div>
           </div>
 
-          {/* ── Right: Guidelines & Timings ── */}
+          {/* ── Right: Info cards ── */}
           <div className={`${styles.infoCol} reveal-right ${gridVisible ? 'is-visible' : ''}`}>
 
-            {/* Address Card */}
+            {/* Address */}
             <div className={styles.infoCard}>
-              <h3 className={styles.infoCardTitle}>Sacred Address</h3>
+              <h3 className={styles.infoCardTitle}>✦ Temple Address</h3>
               <address className={styles.address}>
-                <strong>{templeInfo.name} ({templeInfo.nameTelugu})</strong><br />
+                <strong>Shri Krishna Mandir</strong><br />
                 {templeInfo.address.line1}<br />
                 {templeInfo.address.city}, {templeInfo.address.state}<br />
-                PIN Code: {templeInfo.address.pincode}
+                PIN: {templeInfo.address.pincode}
               </address>
             </div>
 
-            {/* Key Darshan Timings */}
+            {/* Timings */}
             <div className={styles.infoCard}>
-              <h3 className={styles.infoCardTitle}>General Darshan Timings</h3>
+              <h3 className={styles.infoCardTitle}>✦ Darshan Timings</h3>
               <ul className={styles.timingsList}>
-                <li className={styles.timingRow}>
-                  <span className={styles.bullet}>✦</span>
-                  <span className={styles.timingName}>Morning Darshan:</span>
-                  <span className={styles.timingTime}>5:30 AM – 1:00 PM</span>
-                </li>
-                <li className={styles.timingRow}>
-                  <span className={styles.bullet}>✦</span>
-                  <span className={styles.timingName}>Evening Darshan:</span>
-                  <span className={styles.timingTime}>4:30 PM – 9:00 PM</span>
-                </li>
-                <li className={styles.timingRow}>
-                  <span className={styles.bullet}>✦</span>
-                  <span className={styles.timingName}>Nitya Annadanam:</span>
-                  <span className={styles.timingTime}>12:30 PM – 2:30 PM</span>
-                </li>
+                {darshanTimings.map((t) => (
+                  <li key={t.id} className={styles.timingRow}>
+                    <span>✦</span>
+                    <span className={styles.timingName}>{t.session}</span>
+                    <span className={styles.timingTime}>{t.time}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* How to Reach */}
+            {/* How to reach */}
             <div className={styles.infoCard}>
-              <h3 className={styles.infoCardTitle}>Reaching Kurnool</h3>
+              <h3 className={styles.infoCardTitle}>✦ How to Reach</h3>
               <ul className={styles.reachList}>
-                <li className={styles.reachItem}>
-                  <span className={styles.reachBullet}>✦</span>
-                  <span><strong>APSRTC Bus:</strong> Frequent buses connect Kurnool bus stand directly to the temple.</span>
-                </li>
-                <li className={styles.reachItem}>
-                  <span className={styles.reachBullet}>✦</span>
-                  <span><strong>Railway:</strong> Kurnool City Railway Station (KRNT) is approx. 3.2 km away.</span>
-                </li>
-                <li className={styles.reachItem}>
-                  <span className={styles.reachBullet}>✦</span>
-                  <span><strong>By Road:</strong> Located right along the historic route connected to NH-44.</span>
-                </li>
+                {[
+                  { icon: '✦', label: 'Bus', val: 'Multiple APSRTC buses stop near the temple' },
+                  { icon: '✦', label: 'By Road', val: 'Kurnool is connected via NH-44 · Parking available' },
+                  { icon: '✦', label: 'Train', val: 'Kurnool City Railway Station — 3 km away' },
+                  { icon: '✦', label: 'Nearest Airport', val: 'Kurnool Airport — under development · Hyderabad 215 km' },
+                ].map((item) => (
+                  <li key={item.label} className={styles.reachItem}>
+                    <span className={styles.reachIcon}>{item.icon}</span>
+                    <span><strong>{item.label}:</strong> {item.val}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Devotee Guidelines */}
+            {/* Visitor tips */}
             <div className={`${styles.infoCard} ${styles.tipsCard}`}>
-              <h3 className={styles.infoCardTitle}>Devotee Sanctum Guidelines</h3>
+              <h3 className={styles.infoCardTitle}>✦ Visitor Guidelines</h3>
               <ul className={styles.tipsList}>
-                <li>Traditional Indian attire is encouraged for sanctum darshan</li>
-                <li>Please deposit footwear safely at the temple counters outside</li>
-                <li>Maintain peaceful silence and refrain from mobile usage inside the sanctum</li>
-                <li>Free blessed prasadam (teertha & tulasi) is distributed to every devotee</li>
+                <li>Remove footwear at the temple entrance</li>
+                <li>Dress modestly — traditional attire preferred</li>
+                <li>Maintain silence in the sanctum</li>
+                <li>Photography permitted in common areas only</li>
+                <li>Free prasad distributed after each aarti</li>
               </ul>
             </div>
 

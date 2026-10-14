@@ -1,9 +1,7 @@
 /**
- * TestimonialsSection.jsx
- * Aligned with Client Reference:
- * - Soothing cream background (zero yellow cast)
- * - Dark green headings & text
- * - Telugu subtitle
+ * TestimonialsSection.jsx — Part 2 (New section)
+ * Devotee words / community testimonials.
+ * Deep burgundy background with elegant quote cards.
  */
 
 import useScrollAnimation from '../../hooks/useScrollAnimation';
@@ -17,15 +15,16 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className={styles.section}
+      className={`section ${styles.testimonials}`}
       aria-label="Words from our devotees"
     >
       <div className="container">
         <div ref={headRef} className={`reveal ${headVisible ? 'is-visible' : ''}`}>
           <SectionLabel
-            eyebrow="DEVOTEE EXPERIENCES & BLESSINGS"
-            title="Voices of Faith"
-            subtitle="భక్తుల అనుభవాలు & దివ్య ఆశీస్సులు"
+            eyebrow="Devotee Stories"
+            title="Words of Faith"
+            subtitle="What our devotees say about Shri Krishna Mandir"
+            light={true}
           />
         </div>
 
@@ -35,9 +34,12 @@ export default function TestimonialsSection() {
               key={devotee.id}
               className={`${styles.card} reveal reveal-delay-${i + 1} ${cardsVisible ? 'is-visible' : ''}`}
             >
-              <div className={styles.quoteMarkTop} aria-hidden="true">“</div>
+              {/* Large quote mark */}
+              <div className={styles.quoteMarkTop} aria-hidden="true">"</div>
 
               <p className={styles.quoteText}>{devotee.text}</p>
+
+              <div className={styles.quoteMark} aria-hidden="true">"</div>
 
               <footer className={styles.cardFooter}>
                 <div className={styles.avatar} aria-hidden="true">

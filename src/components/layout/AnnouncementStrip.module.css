@@ -1,8 +1,8 @@
 /* AnnouncementStrip.module.css */
 
 .strip {
-  background-color: var(--color-green-dark);
-  border-bottom: 1.5px solid var(--color-red-sacred);
+  background-color: var(--color-burgundy-deep);
+  border-bottom: 1px solid var(--color-gold);
   position: relative;
   z-index: var(--z-nav);
   overflow: hidden;
@@ -20,14 +20,14 @@
   align-items: center;
   gap: 0.5rem;
   padding-inline: 1rem 1.25rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(221, 216, 206, 0.35);
   height: 100%;
 }
 
 .om {
   font-family: var(--font-sanskrit);
   font-size: 1rem;
-  color: #FFFFFF;
+  color: var(--color-gold);
   line-height: 1;
 }
 
@@ -35,7 +35,7 @@
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: #FFFFFF;
+  color: var(--color-gold);
   font-family: var(--font-body);
   white-space: nowrap;
 }
@@ -71,7 +71,7 @@
 }
 
 .separator {
-  color: var(--color-red-sacred);
+  color: var(--color-gold);
   margin-inline: 0.5rem;
   font-size: 0.6rem;
 }
@@ -83,15 +83,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: var(--color-gold-pale);
   font-size: 0.75rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(221, 216, 206, 0.35);
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .close:hover {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-cream-light);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes ticker-scroll {

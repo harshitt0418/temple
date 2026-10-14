@@ -1,9 +1,7 @@
-/* DevotionalModal.module.css */
-
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(19, 40, 31, 0.75);
+  background-color: rgba(19, 40, 31, 0.72);
   backdrop-filter: blur(4px);
   z-index: var(--z-modal);
   display: flex;
@@ -15,7 +13,7 @@
 
 .modalContainer {
   background-color: var(--color-cream-light);
-  border: 2px solid var(--color-red-sacred);
+  border: 2px solid var(--color-gold);
   border-radius: var(--radius-lg);
   padding: clamp(1.75rem, 4vw, 2.5rem);
   width: 100%;
@@ -23,7 +21,7 @@
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: var(--shadow-lg), 0 8px 30px rgba(139, 38, 38, 0.2);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
   animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -32,7 +30,7 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  border-color: var(--color-red-sacred);
+  border-color: var(--color-gold);
   border-style: solid;
   pointer-events: none;
 }
@@ -57,7 +55,7 @@
 }
 
 .closeBtn:hover {
-  color: var(--color-green-dark);
+  color: var(--color-burgundy);
   background-color: var(--color-cream-dark);
 }
 
@@ -68,28 +66,28 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-cream-border);
+  border-bottom: 1px solid var(--color-gold-pale);
 }
 
 .modalOm {
   font-size: 2rem;
   flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(139, 38, 38, 0.3));
+  filter: drop-shadow(0 0 6px rgba(139, 38, 38, 0.35));
 }
 
 .modalTitle {
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 3vw, 1.625rem);
-  color: var(--color-green-dark);
+  color: var(--color-burgundy-deep);
   font-weight: 400;
   line-height: 1.2;
 }
 
 .modalSubtitle {
   font-size: 0.85rem;
-  color: var(--color-telugu);
-  font-family: var(--font-telugu);
-  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-family: var(--font-display);
   margin-top: 0.2rem;
 }
 
@@ -115,7 +113,7 @@
 .label {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-green-dark);
+  color: var(--color-text-primary);
   letter-spacing: 0.02em;
 }
 
@@ -128,7 +126,7 @@
   padding: 0.625rem 0.875rem;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--color-green-dark);
+  color: var(--color-text-primary);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -136,8 +134,8 @@
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-red-sacred);
-  box-shadow: 0 0 0 3px rgba(139, 38, 38, 0.15);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(139, 38, 38, 0.18);
 }
 
 .textarea {
@@ -155,20 +153,19 @@
   flex: 1;
   min-width: 70px;
   background-color: var(--color-cream);
-  border: 1.5px solid var(--color-red-sacred);
+  border: 1px solid var(--color-gold);
   border-radius: var(--radius-pill);
   padding: 0.45rem 0.75rem;
   font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-green-dark);
+  font-weight: 600;
+  color: var(--color-burgundy);
   transition: all var(--transition-fast);
 }
 
 .amountBtn:hover,
 .amountBtn:focus {
-  background-color: var(--color-red-sacred);
-  border-color: var(--color-red-sacred);
-  color: #FFFFFF;
+  background-color: var(--color-burgundy);
+  color: var(--color-cream-light);
 }
 
 /* Event View */
@@ -187,7 +184,7 @@
 .eventScheduleBox {
   background-color: var(--color-cream);
   border: 1px solid var(--color-cream-border);
-  border-left: 3px solid var(--color-red-sacred);
+  border-left: 3px solid var(--color-gold);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 1rem 1.25rem;
 }
@@ -195,7 +192,7 @@
 .scheduleTitle {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-green-dark);
+  color: var(--color-burgundy);
   margin-bottom: 0.5rem;
 }
 
@@ -213,7 +210,7 @@
 }
 
 .scheduleList strong {
-  color: var(--color-green-dark);
+  color: var(--color-text-primary);
 }
 
 /* Actions */
@@ -239,25 +236,24 @@
 .successOm {
   font-family: var(--font-sanskrit);
   font-size: 3.5rem;
-  color: var(--color-red-sacred);
+  color: var(--color-gold);
   line-height: 1;
 }
 
 .successTitle {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  color: var(--color-green-dark);
+  color: var(--color-burgundy-deep);
 }
 
 .successTelugu {
-  font-family: var(--font-telugu);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-telugu);
+  font-family: var(--font-sanskrit);
+  font-size: 1rem;
+  color: var(--color-gold);
 }
 
 .successDivider {
-  color: var(--color-red-sacred);
+  color: var(--color-gold);
   font-size: 0.65rem;
   letter-spacing: 0.4em;
   opacity: 0.6;
@@ -275,7 +271,7 @@
   align-items: flex-start;
   gap: 0.5rem;
   background-color: var(--color-cream-dark);
-  border: 1px dashed var(--color-red-sacred);
+  border: 1px dashed var(--color-gold);
   border-radius: var(--radius-sm);
   padding: 0.75rem 1rem;
   font-size: 0.8rem;

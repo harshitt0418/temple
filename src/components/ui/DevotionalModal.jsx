@@ -43,7 +43,7 @@ export default function DevotionalModal() {
             Jai Shri Krishna! Your details have been recorded for this <strong>official prototype demonstration</strong>.
           </p>
           <div className={styles.prototypeNotice}>
-            <span aria-hidden="true" style={{ color: 'var(--color-red-sacred)' }}>✦</span>
+            <span aria-hidden="true" style={{ color: 'var(--color-red)' }}>✦</span>
             <span>
               In the live release, this connects to the temple’s secure priest coordination or receipt desk. No live transaction was processed.
             </span>

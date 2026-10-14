@@ -29,15 +29,15 @@ export default function SectionLabel({
       <h2
         className="section__title"
         style={{
-          color: light ? 'var(--color-cream-light)' : 'var(--color-green-dark)',
+          color: light ? 'var(--color-cream-light)' : 'var(--color-burgundy-deep)',
         }}
       >
         {title}
       </h2>
 
       {showDivider && (
-        <div style={{ marginBlock: '0.75rem', display: 'flex', justifyContent: align === 'center' ? 'center' : 'flex-start' }}>
-          <OrnamentalDivider color={light ? 'var(--color-cream-border)' : 'var(--color-red-sacred)'} />
+        <div style={{ marginBlock: '1rem', display: 'flex', justifyContent: align === 'center' ? 'center' : 'flex-start' }}>
+          <OrnamentalDivider color={light ? 'var(--color-gold-pale)' : 'var(--color-gold)'} />
         </div>
       )}
 
@@ -45,7 +45,7 @@ export default function SectionLabel({
         <p
           className="section__subtitle"
           style={{
-            color: light ? 'rgba(250, 246, 238, 0.85)' : 'var(--color-telugu)',
+            color: light ? 'var(--color-cream-dark)' : 'var(--color-text-muted)',
           }}
         >
           {subtitle}

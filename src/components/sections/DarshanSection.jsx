@@ -1,176 +1,143 @@
 /**
- * DarshanSection.jsx
- * Aligned with Client Reference:
- * ZERO Yellow: All icons, buttons, badges, borders are red, green, white or stone.
+ * DarshanSection.jsx — Part 2 (Full build)
+ * Darshan timings + Seva services on deep burgundy background.
+ * Full detail, animations, interactive seva cards.
  */
 
-import { useState } from 'react';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import SectionLabel from '../ui/SectionLabel';
-import { daySchedule, visitingHours, sevaServices } from '../../data/mock-data';
+import OrnamentalDivider from '../ui/OrnamentalDivider';
+import { darshanTimings, sevaServices } from '../../data/mock-data';
 import { useModal } from '../../context/ModalContext';
 import styles from './DarshanSection.module.css';
 
 export default function DarshanSection() {
   const { openModal } = useModal();
   const [headRef, headVisible] = useScrollAnimation();
-  const [currentDateIndex, setCurrentDateIndex] = useState(0);
-
-  const dates = [
-    'Today · Oct 11, 2026 (Navaratri Day 7)',
-    'Tomorrow · Oct 12, 2026 (Durgashtami)',
-    'Sun · Oct 13, 2026 (Mahanavami)',
-    'Mon · Oct 14, 2026 (Vijayadashami)',
-  ];
-
-  const handlePrevDate = () => {
-    setCurrentDateIndex((prev) => (prev > 0 ? prev - 1 : dates.length - 1));
-  };
-
-  const handleNextDate = () => {
-    setCurrentDateIndex((prev) => (prev < dates.length - 1 ? prev + 1 : 0));
-  };
+  const [cardRef, cardVisible] = useScrollAnimation({ threshold: 0.08 });
+  const [sevaRef, sevaVisible] = useScrollAnimation({ threshold: 0.06 });
 
   return (
-    <section id="darshan" className={styles.section} aria-label="Darshan timings and day schedule">
+    <section id="darshan" className={`section ${styles.darshan}`} aria-label="Darshan timings and seva services">
+
+      {/* Top arch */}
+      <div className={styles.topWave} aria-hidden="true">
+        <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none">
+          <path d="M0,0 C480,60 960,-20 1440,0 L1440,0 L0,0 Z" fill="var(--color-cream)" />
+        </svg>
+      </div>
+
+      {/* Background pattern */}
+      <div className={styles.bgPattern} aria-hidden="true" />
+
       <div className="container">
 
-        {/* Section Heading */}
         <div ref={headRef} className={`reveal ${headVisible ? 'is-visible' : ''}`}>
           <SectionLabel
-            eyebrow="DAILY SCHEDULE & TIMINGS"
-            title="Today at the Temple"
-            subtitle="శ్రీవారి నిత్య పూజా & దర్శన విశేషాలు"
+            eyebrow="Temple Schedule"
+            title="Darshan, Pooja & Seva"
+            subtitle="आओ, दर्शन करो — Come, seek the blessings of Lord Krishna"
+            light={true}
           />
         </div>
 
-        {/* Main Schedule Container */}
-        <div className={styles.scheduleWrapper}>
+        {/* ── Darshan Timings Grid ── */}
+        <div ref={cardRef} className={styles.timingsGrid}>
+          {darshanTimings.map((t, i) => (
+            <div
+              key={t.id}
+              className={`${styles.timingCard} reveal reveal-delay-${i + 1} ${cardVisible ? 'is-visible' : ''}`}
+            >
+              {/* Glow effect on hover */}
+              <div className={styles.cardGlow} aria-hidden="true" />
 
-          {/* 1. Date Selector Header Bar */}
-          <div className={styles.dateBar}>
-            <button
-              className={styles.dateNavBtn}
-              onClick={handlePrevDate}
-              aria-label="Previous date"
-            >
-              ‹
-            </button>
-            <span className={styles.dateText}>{dates[currentDateIndex]}</span>
-            <button
-              className={styles.dateNavBtn}
-              onClick={handleNextDate}
-              aria-label="Next date"
-            >
-              ›
-            </button>
+              <div className={styles.timingTop}>
+                <div className={styles.timingIconWrap} aria-hidden="true">
+                  <span className={styles.timingIcon}>{t.icon}</span>
+                </div>
+                <div>
+                  <h3 className={styles.timingSession}>{t.session}</h3>
+                  <p className={styles.timingTelugu} lang="te">{t.sessionHindi}</p>
+                </div>
+              </div>
+
+              <div className={styles.timingTimeLine} aria-hidden="true" />
+              <div className={styles.timingTime}>{t.time}</div>
+              {t.note && <p className={styles.timingNote}>⚠ {t.note}</p>}
+            </div>
+          ))}
+        </div>
+
+        {/* ── Seva section header ── */}
+        <div className={styles.sevaIntro}>
+          <OrnamentalDivider color="var(--color-gold-pale)" />
+          <div className={styles.sevaHeaderText}>
+            <h3 className={styles.sevaTitle}>Pooja & Seva Bookings</h3>
+            <p className={styles.sevaSubtitle}>Offer seva in the divine name of Lord Sri Krishna — open to all devotees</p>
           </div>
+        </div>
 
-          {/* 2. Timeline List */}
-          <div className={styles.timelineList}>
-            {daySchedule.map((item, index) => (
-              <div
-                key={index}
-                className={`${styles.timelineItem} ${item.highlight ? styles.itemHighlight : ''}`}
+        {/* ── Seva Cards ── */}
+        <div ref={sevaRef} className={styles.sevaGrid}>
+          {sevaServices.map((seva, i) => (
+            <div
+              key={seva.id}
+              className={`${styles.sevaCard} reveal reveal-delay-${i + 1} ${sevaVisible ? 'is-visible' : ''}`}
+            >
+              <div className={styles.sevaTop}>
+                <div>
+                  <h4 className={styles.sevaName}>{seva.name}</h4>
+                  <p className={styles.sevaTelugu} lang="te">{seva.nameHindi}</p>
+                </div>
+              </div>
+
+              <p className={styles.sevaDesc}>{seva.description}</p>
+
+              <div className={styles.sevaMeta}>
+                <span className={styles.sevaMetaItem}>
+                  <span aria-hidden="true">✦</span> {seva.timings}
+                </span>
+                <span className={styles.sevaMetaItem}>
+                  <span aria-hidden="true">✦</span> {seva.duration}
+                </span>
+              </div>
+
+              <button
+                className={`btn btn--outline-cream ${styles.sevaBtn}`}
+                onClick={() => openModal('seva', seva)}
               >
-                <div className={styles.timeBadge}>
-                  <span className={styles.timeText}>{item.time}</span>
-                </div>
-                <div className={styles.itemContent}>
-                  <div className={styles.itemHeader}>
-                    <h3 className={styles.itemTitle}>{item.title}</h3>
-                    <span className={styles.itemTelugu}>{item.telugu}</span>
-                  </div>
-                  <p className={styles.itemDesc}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+                Book Seva
+              </button>
 
+              {/* Gold corner accent */}
+              <div className={styles.sevaCorner} aria-hidden="true" />
+            </div>
+          ))}
         </div>
 
-        {/* 3. Visiting Hours Card */}
-        <div id="visiting-hours" className={styles.visitingCard}>
-          <div className={styles.visitingLeft}>
-            <div className={styles.visitingIconWrap} aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FFFFFF" strokeWidth="2">
-                <circle cx="12" cy="12" r="9" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <div className={styles.visitingText}>
-              <h3 className={styles.visitingTitle}>Temple Visiting Hours</h3>
-              <p className={styles.visitingHoursText}>
-                Morning: <strong>{visitingHours.morning}</strong> &nbsp;|&nbsp; Evening: <strong>{visitingHours.evening}</strong>
+        {/* Donation nudge */}
+        <div className={`${styles.donateNudge} reveal ${sevaVisible ? 'is-visible' : ''}`}>
+          <div className={styles.nudgeContent}>
+            <span className={styles.nudgeIcon} aria-hidden="true">✦</span>
+            <div>
+              <p className={styles.nudgeText}>
+                Support the temple through <strong>Annadanam</strong>, <strong>Nityaseva</strong>,
+                or <strong>Utsav Sponsorship</strong>. Every offering, big or small, is received by the Lord.
               </p>
-              {/* Live Status Indicator */}
-              <div className={styles.liveStatus}>
-                <span className={styles.pulseDot} aria-hidden="true" />
-                <span className={styles.liveText}>{visitingHours.statusText}</span>
-              </div>
             </div>
           </div>
-
-          <div className={styles.visitingRight}>
-            <a
-              href="#visit"
-              className="btn btn--primary"
-              style={{ padding: '0.65rem 1.4rem', fontSize: '0.9rem' }}
-            >
-              Plan Your Visit
-            </a>
-          </div>
+          <button className="btn btn--gold" onClick={() => openModal('donation')}>
+            Donate to the Temple
+          </button>
         </div>
 
-        {/* 4. Sacred Seva Bookings Grid */}
-        <div className={styles.sevaSection}>
-          <div className={styles.sevaHeader}>
-            <span className={styles.sevaEyebrow}>DIVINE OFFERINGS</span>
-            <h3 className={styles.sevaSectionTitle}>Pooja &amp; Seva Bookings</h3>
-            <p className={styles.sevaSectionSubtitle}>
-              శ్రీ కృష్ణ స్వామి వారికి భక్తితో సమర్పించు నిత్య సేవలు
-            </p>
-          </div>
+      </div>
 
-          <div className={styles.sevaGrid}>
-            {sevaServices.map((seva) => (
-              <div key={seva.id} className={styles.sevaCard}>
-                <div className={styles.sevaCardTop}>
-                  <div className={styles.sevaIconCircle}>
-                    {/* Clean Sacred Red Diya SVG — ZERO yellow */}
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-                      <path d="M12 2 C11 5 9 7 9 10 C9 12 10.3 13 12 13 C13.7 13 15 12 15 10 C15 7 13 5 12 2 Z" fill="#8B2626" />
-                      <path d="M4 14 C4 18 7.5 21 12 21 C16.5 21 20 18 20 14 C19 16 16 17 12 17 C8 17 5 16 4 14 Z" fill="#13281F" />
-                    </svg>
-                  </div>
-                  <span className={styles.sevaDonationBadge}>{seva.suggestedDonation}</span>
-                </div>
-
-                <h4 className={styles.sevaName}>{seva.name}</h4>
-                <p className={styles.sevaTelugu}>{seva.nameTelugu}</p>
-                <p className={styles.sevaDesc}>{seva.description}</p>
-
-                <div className={styles.sevaMeta}>
-                  <span className={styles.sevaMetaItem}>
-                    <span>✦</span> {seva.timings}
-                  </span>
-                  <span className={styles.sevaMetaItem}>
-                    <span>⏱</span> {seva.duration}
-                  </span>
-                </div>
-
-                <button
-                  className="btn btn--primary"
-                  style={{ width: '100%', marginTop: '1rem', padding: '0.6rem 1rem', fontSize: '0.875rem' }}
-                  onClick={() => openModal('seva', seva)}
-                >
-                  Book This Seva
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
+      {/* Bottom wave */}
+      <div className={styles.bottomWave} aria-hidden="true">
+        <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none">
+          <path d="M0,50 C480,-10 960,60 1440,50 L1440,50 L0,50 Z" fill="var(--color-cream-light)" />
+        </svg>
       </div>
     </section>
   );
