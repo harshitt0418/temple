@@ -1,236 +1,227 @@
-/* SchoolSection.module.css — Part 2 */
+/* SchoolSection.module.css */
 
-.school { overflow: hidden; }
+.section {
+  background-color: var(--color-cream);
+  padding: 4rem 0;
+  border-top: 1px solid var(--color-cream-border);
+}
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 6vw, 5rem);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
   align-items: start;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .intro {
-  font-size: var(--text-md);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
   color: var(--color-text-secondary);
-  line-height: 1.8;
+  line-height: 1.75;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.intro strong { color: var(--color-burgundy); }
-
-/* ── Activity Cards ───────────────────────────────────────── */
+.intro strong {
+  color: var(--color-green-dark);
+}
 
 .activitiesGrid {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .activityCard {
+  background-color: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1rem 1.25rem;
-  background-color: var(--color-cream-light);
-  border: 1px solid var(--color-cream-border);
-  border-left: 3px solid var(--color-gold);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  transition: border-color var(--transition-base), transform var(--transition-base), background-color var(--transition-base);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .activityCard:hover {
-  transform: translateX(5px);
-  border-left-color: var(--color-burgundy);
-  background-color: var(--color-cream-dark);
+  transform: translateX(4px);
+  border-color: var(--color-gold);
 }
 
 .activityIcon {
-  font-size: 1.625rem;
+  font-size: 1.5rem;
+  background-color: var(--color-cream-dark);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  line-height: 1;
-  margin-top: 0.1rem;
 }
 
-.activityContent { flex: 1; min-width: 0; }
+.activityContent {
+  flex: 1;
+}
 
 .activityName {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+
+.activityTelugu {
+  font-family: var(--font-telugu);
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: 0.25rem;
+  color: var(--color-telugu);
+  margin-top: 0.1rem;
 }
 
 .activityDesc {
-  font-size: 0.825rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
-  line-height: 1.55;
-  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  margin-top: 0.25rem;
 }
 
 .activityMeta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
-}
-
-.metaTag {
-  font-size: 0.7rem;
-  font-weight: 600;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   color: var(--color-text-muted);
-  background-color: var(--color-cream-dark);
-  padding: 0.2rem 0.625rem;
-  border-radius: var(--radius-pill);
-  white-space: nowrap;
 }
 
 .actions {
   display: flex;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-/* ── Visual ───────────────────────────────────────────────── */
-
+/* ── Visual Column: Annadanam Card ── */
 .visual {
-  position: sticky;
-  top: 100px;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.visualPanel {
-  background: linear-gradient(145deg, var(--color-burgundy-deep), var(--color-burgundy));
-  border: 2px solid var(--color-gold);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-  box-shadow: var(--shadow-lg), var(--shadow-gold);
-}
-
-.panelInner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.875rem;
-  text-align: center;
-}
-
-.panelOm {
-  font-family: var(--font-sanskrit);
-  font-size: 3rem;
-  color: var(--color-gold);
-  line-height: 1;
-  text-shadow: 0 0 20px rgba(200,150,60,0.5);
-}
-
-.panelTitle {
-  font-family: var(--font-heading);
-  font-size: 1.375rem;
-  color: var(--color-cream-light);
-  font-weight: 400;
-}
-
-.panelSubtitle {
-  font-size: 0.8rem;
-  color: var(--color-gold-pale);
-  letter-spacing: 0.06em;
-  font-family: var(--font-body);
-}
-
-.panelDivider {
-  color: var(--color-gold);
-  font-size: 0.5rem;
-  letter-spacing: 0.4em;
-  opacity: 0.6;
-}
-
-.panelList {
-  list-style: none;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border: 1px solid rgba(200,150,60,0.25);
+.annadanamCard {
+  background-color: var(--color-cream-light);
+  border: 1.5px solid var(--color-gold);
   border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(19, 40, 31, 0.08);
+}
+
+.imageWrap {
+  position: relative;
   width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background-color: #0E2018;
 }
 
-.panelList li {
+.annadanamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.annadanamCard:hover .annadanamImage {
+  transform: scale(1.04);
+}
+
+.annadanamBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--color-red-sacred);
+  color: var(--color-cream-light);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.annadanamBody {
+  padding: 1.5rem;
+}
+
+.annadanamTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-green-dark);
+  margin-bottom: 0.4rem;
+}
+
+.annadanamDesc {
+  font-family: var(--font-body);
   font-size: 0.875rem;
-  color: rgba(251,246,238,0.82);
-  padding: 0.25rem 0;
-  border-bottom: 1px solid rgba(200,150,60,0.12);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
-.panelList li:last-child { border-bottom: none; }
-
-.panelCta {
+.sponsorBar {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  background: rgba(200,150,60,0.1);
-  border: 1px solid rgba(200,150,60,0.3);
-  border-radius: var(--radius-pill);
-  padding: 0.5rem 1.25rem;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-cream-border);
 }
 
-.panelCtaText {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-gold-light);
+.sponsorLabel {
   font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: block;
 }
 
-.panelCtaBadge {
-  background-color: var(--color-gold);
-  color: var(--color-burgundy-deep);
-  font-size: 0.7rem;
+.sponsorAmount {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-red-sacred);
   font-weight: 700;
-  padding: 0.2rem 0.625rem;
-  border-radius: var(--radius-pill);
+  display: block;
 }
-
-/* ── Values Chips ─────────────────────────────────────────── */
 
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: center;
 }
 
 .chip {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-burgundy);
-  background-color: var(--color-cream-dark);
-  border: 1px solid var(--color-gold);
+  background-color: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-pill);
-  padding: 0.35rem 0.875rem;
-  letter-spacing: 0.04em;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
-}
-
-.chip:hover {
-  background-color: var(--color-burgundy);
-  color: var(--color-cream-light);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-green-dark);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-
-@media (max-width: 960px) {
-  .layout { grid-template-columns: 1fr; }
-  .visual { position: static; max-width: 480px; margin: 0 auto; }
-}
-
-@media (max-width: 480px) {
-  .actions { flex-direction: column; }
-  .actions .btn { text-align: center; justify-content: center; }
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }

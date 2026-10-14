@@ -1,7 +1,9 @@
+/* DevotionalModal.module.css */
+
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(61, 26, 14, 0.72);
+  background-color: rgba(19, 40, 31, 0.75);
   backdrop-filter: blur(4px);
   z-index: var(--z-modal);
   display: flex;
@@ -55,7 +57,7 @@
 }
 
 .closeBtn:hover {
-  color: var(--color-burgundy);
+  color: var(--color-green-dark);
   background-color: var(--color-cream-dark);
 }
 
@@ -78,16 +80,16 @@
 .modalTitle {
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 3vw, 1.625rem);
-  color: var(--color-burgundy-deep);
+  color: var(--color-green-dark);
   font-weight: 400;
   line-height: 1.2;
 }
 
 .modalSubtitle {
   font-size: 0.85rem;
-  color: var(--color-text-secondary);
-  font-style: italic;
-  font-family: var(--font-display);
+  color: var(--color-telugu);
+  font-family: var(--font-telugu);
+  font-weight: 600;
   margin-top: 0.2rem;
 }
 
@@ -113,7 +115,7 @@
 .label {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: var(--color-green-dark);
   letter-spacing: 0.02em;
 }
 
@@ -126,7 +128,7 @@
   padding: 0.625rem 0.875rem;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--color-text-primary);
+  color: var(--color-green-dark);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -153,18 +155,19 @@
   flex: 1;
   min-width: 70px;
   background-color: var(--color-cream);
-  border: 1px solid var(--color-gold);
+  border: 1.5px solid var(--color-gold);
   border-radius: var(--radius-pill);
   padding: 0.45rem 0.75rem;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-burgundy);
+  font-weight: 700;
+  color: var(--color-green-dark);
   transition: all var(--transition-fast);
 }
 
 .amountBtn:hover,
 .amountBtn:focus {
-  background-color: var(--color-burgundy);
+  background-color: var(--color-red-sacred);
+  border-color: var(--color-gold);
   color: var(--color-cream-light);
 }
 
@@ -192,7 +195,7 @@
 .scheduleTitle {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-burgundy);
+  color: var(--color-green-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -210,7 +213,7 @@
 }
 
 .scheduleList strong {
-  color: var(--color-text-primary);
+  color: var(--color-green-dark);
 }
 
 /* Actions */
@@ -243,13 +246,14 @@
 .successTitle {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  color: var(--color-burgundy-deep);
+  color: var(--color-green-dark);
 }
 
 .successTelugu {
-  font-family: var(--font-sanskrit);
-  font-size: 1rem;
-  color: var(--color-gold);
+  font-family: var(--font-telugu);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-telugu);
 }
 
 .successDivider {

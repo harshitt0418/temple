@@ -1,385 +1,354 @@
-/* HeroSection.module.css — Part 2 */
+/* HeroSection.module.css */
 
 .hero {
   position: relative;
-  min-height: 100svh;
+  background-color: var(--color-cream);
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── 1. Vaishnava Emblems Strip (Top Gold Plaque) ───────────── */
+.emblemsContainer {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  overflow: hidden;
-  background-color: var(--color-burgundy-deep);
+  padding: 0.25rem 0;
 }
 
-/* ── Video Background ─────────────────────────────────────── */
-
-.background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.emblemsBar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.5rem 1.75rem;
+  background: linear-gradient(180deg, #FDFBF7 0%, #F5ECE0 100%);
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 10px rgba(19, 40, 31, 0.06);
 }
 
-.sanctumBackdrop {
-  position: absolute;
-  inset: 0;
+.emblemItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.emblemItem:hover {
+  transform: translateY(-2px);
+}
+
+.emblemNamam {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(139, 38, 38, 0.25));
+}
+
+.emblemDivider {
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ── 2. Sacred Quote Frame ───────────────────────────────────── */
+.quoteCard {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  max-width: 680px;
+  background-color: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(19, 40, 31, 0.04);
+  position: relative;
 }
 
-.sanctumSvg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
+.quoteCard::before {
+  content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(61, 26, 14, 0.72) 0%,
-    rgba(92, 18, 32, 0.60) 40%,
-    rgba(61, 26, 14, 0.75) 100%
-  );
-}
-
-.vignette {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at center, transparent 40%, rgba(30, 10, 5, 0.55) 100%);
-}
-
-/* ── Sacred Corner Frame ──────────────────────────────────── */
-
-.borderFrame {
-  position: absolute;
-  inset: 24px;
-  z-index: 2;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px dashed rgba(200, 150, 60, 0.4);
+  border-radius: calc(var(--radius-md) - 3px);
   pointer-events: none;
 }
 
-.cornerTL, .cornerTR, .cornerBL, .cornerBR {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-color: rgba(200, 150, 60, 0.55);
-  border-style: solid;
-}
-
-.cornerTL { top: 0; left: 0; border-width: 2px 0 0 2px; }
-.cornerTR { top: 0; right: 0; border-width: 2px 2px 0 0; }
-.cornerBL { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
-.cornerBR { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
-
-/* ── Content ──────────────────────────────────────────────── */
-
-.content {
+.quoteInner {
   position: relative;
-  z-index: 3;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  padding-block: 6rem 4rem;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  z-index: 1;
 }
 
-.contentVisible {
-  opacity: 1;
-  transform: translateY(0);
+.quoteTelugu {
+  font-family: var(--font-telugu);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-telugu);
+  line-height: 1.3;
 }
 
-/* ── Invocation Row ───────────────────────────────────────── */
-
-.invocation {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  width: 100%;
-  max-width: 640px;
-}
-
-.invocationLine {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(200, 150, 60, 0.7));
-}
-
-.invocationLine:last-child {
-  background: linear-gradient(to left, transparent, rgba(200, 150, 60, 0.7));
-}
-
-.invocationCenter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  flex-shrink: 0;
-}
-
-.om {
-  font-family: var(--font-sanskrit);
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--color-gold);
-  line-height: 1;
-  animation: om-pulse 3.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px rgba(200, 150, 60, 0.6));
-}
-
-.deityLabel {
-  font-family: var(--font-body);
-  font-size: clamp(0.6rem, 1.2vw, 0.75rem);
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-gold-light);
-}
-
-/* ── Heading ──────────────────────────────────────────────── */
-
-.heading {
+.quoteEnglish {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 9vw, 5.5rem);
-  color: var(--color-cream-light);
-  text-shadow: 0 2px 24px rgba(61, 26, 14, 0.6);
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-  max-width: 900px;
-}
-
-.headingAccent {
-  color: var(--color-gold-light);
-}
-
-/* ── Telugu / Regional Script ─────────────────────────────── */
-
-.telugu {
-  font-family: var(--font-sanskrit);
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: rgba(226, 184, 96, 0.85);
-  letter-spacing: 0.06em;
-  margin-top: -0.5rem;
-}
-
-/* ── Ornamental Divider ───────────────────────────────────── */
-
-.heroDivider {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-block: 0.25rem;
-}
-
-.heroDividerLine {
-  width: 80px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(200, 150, 60, 0.6));
-}
-
-.heroDividerLine:last-child {
-  background: linear-gradient(to left, transparent, rgba(200, 150, 60, 0.6));
-}
-
-.heroDividerGem {
-  color: var(--color-gold);
-  font-size: 0.5rem;
-  letter-spacing: 0.2rem;
-}
-
-/* ── Tagline ──────────────────────────────────────────────── */
-
-.tagline {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1rem, 2vw, 1.375rem);
-  color: rgba(251, 246, 238, 0.88);
-  max-width: 580px;
-  line-height: 1.7;
-}
-
-.location {
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  font-size: 1.1rem;
   font-weight: 500;
+  color: var(--color-green-dark);
   letter-spacing: 0.08em;
-  color: var(--color-gold-light);
-  display: inline-block;
-  margin-top: 0.25rem;
-}
-
-/* ── CTA Buttons ──────────────────────────────────────────── */
-
-.ctas {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-
-.ctaPrimary {
-  font-size: 1rem;
-  padding: 0.875rem 2rem;
-  letter-spacing: 0.04em;
-  box-shadow: 0 4px 20px rgba(200, 150, 60, 0.35);
-}
-
-.ctaSecondary {
-  font-size: 1rem;
-  padding: 0.875rem 2rem;
-}
-
-/* ── Quick Timings Strip ──────────────────────────────────── */
-
-.quickTimings {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background-color: rgba(61, 26, 14, 0.55);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(200, 150, 60, 0.35);
-  border-radius: var(--radius-pill);
-  padding: 0.75rem 2rem;
-  margin-top: 0.5rem;
-}
-
-.quickTiming {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.qtIcon {
-  font-size: 1.125rem;
-  filter: drop-shadow(0 0 4px rgba(200, 150, 60, 0.5));
-}
-
-.qtLabel {
-  display: block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold-light);
+  margin-top: 0.2rem;
+}
+
+.quoteSource {
   font-family: var(--font-body);
-}
-
-.qtTime {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--color-cream-light);
-  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
   font-style: italic;
-  white-space: nowrap;
+  margin-top: 0.2rem;
 }
 
-.qtDivider {
-  color: rgba(200, 150, 60, 0.4);
-  font-size: 0.875rem;
+/* ── 3. Hero Deity Arched Portal ─────────────────────────────── */
+.portalWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
 }
 
-/* ── Scroll Hint ──────────────────────────────────────────── */
+.portalArch {
+  width: min(420px, 92vw);
+  position: relative;
+}
 
-.scrollHint {
+.archBorderOuter {
+  background: linear-gradient(180deg, #183D2F 0%, #13281F 100%);
+  padding: 6px;
+  border-top-left-radius: 220px;
+  border-top-right-radius: 220px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 8px 32px rgba(19, 40, 31, 0.22);
+}
+
+.archBorderInner {
+  background-color: #FAF6EE;
+  border: 3px solid #8B2626;
+  border-top-left-radius: 214px;
+  border-top-right-radius: 214px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  height: 480px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  opacity: 0.55;
+  justify-content: flex-end;
 }
 
-.scrollMouse {
-  width: 22px;
-  height: 36px;
-  border: 1.5px solid var(--color-cream-light);
-  border-radius: 11px;
+/* Radial Sunburst Rays */
+.raysContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.45;
+}
+
+.sunburstRays {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(200, 150, 60, 0.25) 0deg 10deg,
+    transparent 10deg 20deg
+  );
+  border-radius: 50%;
+  animation: rotateRays 120s linear infinite;
+}
+
+@keyframes rotateRays {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Real Deity Image */
+.deityImageWrapper {
+  position: absolute;
+  inset: 0;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  padding-top: 6px;
 }
 
-.scrollWheel {
-  width: 3px;
-  height: 8px;
-  background-color: var(--color-cream-light);
-  border-radius: var(--radius-pill);
-  animation: scroll-wheel 2s ease-in-out infinite;
+.deityImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.scrollLabel {
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-cream-light);
-  font-family: var(--font-body);
+.deityImage.loaded {
+  opacity: 1;
 }
 
-/* ── Bottom Arch ──────────────────────────────────────────── */
-
-.bottomArch {
+.deityFade {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  z-index: 3;
+  height: 100px;
+  background: linear-gradient(to top, rgba(19, 40, 31, 0.85) 0%, transparent 100%);
+  pointer-events: none;
 }
 
-.bottomArch svg {
+.deityBadge {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, #183D2F 0%, #13281F 100%);
+  color: var(--color-cream);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-top: 1.5px solid var(--color-gold);
+}
+
+.badgeOm {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.badgeTitle {
+  font-family: var(--font-telugu);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-cream-light);
+}
+
+/* ── 4. Quick Action Cards (4-Grid) ──────────────────────────── */
+.quickGrid {
   width: 100%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  max-width: 680px;
+  margin-top: 0.5rem;
 }
 
-/* ── Animations ───────────────────────────────────────────── */
-
-@keyframes om-pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 8px rgba(200, 150, 60, 0.4));
-    transform: scale(1);
-  }
-  50% {
-    filter: drop-shadow(0 0 20px rgba(200, 150, 60, 0.9));
-    transform: scale(1.05);
-  }
+.actionCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1.15rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-@keyframes scroll-wheel {
-  0%   { transform: translateY(0); opacity: 1; }
-  80%  { transform: translateY(14px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 0; }
+.actionCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(19, 40, 31, 0.16);
+}
+
+/* Sacred Red Card */
+.card_red {
+  background-color: var(--color-red-sacred);
+  color: var(--color-cream-light);
+  border-left: 4px solid var(--color-gold);
+}
+
+.card_red:hover {
+  background-color: var(--color-red-deep);
+}
+
+/* Forest Green Card */
+.card_green {
+  background-color: var(--color-green-dark);
+  color: var(--color-cream-light);
+  border-left: 4px solid var(--color-gold);
+}
+
+.card_green:hover {
+  background-color: var(--color-green-forest);
+}
+
+.actionIconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-cream-light);
+}
+
+.actionText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.actionTitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.actionSubtitle {
+  font-family: var(--font-telugu);
+  font-size: 0.78rem;
+  opacity: 0.9;
+  margin-top: 0.15rem;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .quickGrid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
 
-@media (max-width: 768px) {
-  .borderFrame { inset: 12px; }
-  .cornerTL, .cornerTR, .cornerBL, .cornerBR { width: 24px; height: 24px; }
+  .archBorderInner {
+    height: 420px;
+  }
 
-  .quickTimings {
-    flex-direction: column;
+  .emblemsBar {
     gap: 0.75rem;
-    border-radius: var(--radius-md);
-    padding: 1rem 1.5rem;
+    padding: 0.4rem 1rem;
   }
 
-  .qtDivider { display: none; }
-
-  .ctas {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 320px;
+  .quoteTelugu {
+    font-size: 1.05rem;
   }
 
-  .ctaPrimary, .ctaSecondary {
-    justify-content: center;
-    text-align: center;
+  .quoteEnglish {
+    font-size: 0.95rem;
   }
 }

@@ -1,15 +1,17 @@
 /**
  * Footer.jsx
- * Rich cultural footer with temple info, quick links, timings,
- * and social icons. Deep burgundy background.
+ * Aligned with Client Reference:
+ * - Deep dark green background
+ * - Sri Krishna Temple / శ్రీ కృష్ణ దేవాలయం
+ * - Quick links, timings, Kurnool address, social links
  */
 
-import { templeInfo, darshanTimings, navLinks } from '../../data/mock-data';
+import { templeInfo, daySchedule, navLinks } from '../../data/mock-data';
 import OrnamentalDivider from '../ui/OrnamentalDivider';
 import { useModal } from '../../context/ModalContext';
 import styles from './Footer.module.css';
 
-// Social icon placeholder SVGs
+// Social icon SVGs
 const SocialIcons = {
   Instagram: () => (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
@@ -34,21 +36,30 @@ export default function Footer() {
 
   return (
     <footer id="contact" className={styles.footer} role="contentinfo">
-      {/* Top ornamental border */}
+      {/* Top gold ornamental border */}
       <div className={styles.topBorder} aria-hidden="true" />
 
       <div className={`container ${styles.inner}`}>
         {/* ── Column 1: Temple Identity ── */}
         <div className={styles.col}>
           <div className={styles.footerBrand}>
-            <div className={styles.footerOm} aria-hidden="true">ॐ</div>
+            <div className={styles.footerLogoBadge} aria-hidden="true">
+              <svg viewBox="0 0 36 36" width="36" height="36" fill="none">
+                <circle cx="18" cy="18" r="17" fill="#13281F" stroke="#C8963C" strokeWidth="1.5" />
+                <path d="M18 6 C13 11 11 17 18 30 C25 17 23 11 18 6 Z" fill="#1E4D38" stroke="#C8963C" strokeWidth="0.8" />
+                <circle cx="18" cy="14" r="3" fill="#8B2626" />
+                <circle cx="18" cy="13.5" r="1" fill="#FFFFFF" />
+              </svg>
+            </div>
             <div>
               <h3 className={styles.footerName}>{templeInfo.name}</h3>
-              <p className={styles.footerDeity}>{templeInfo.deityDevanagari}</p>
+              <p className={styles.footerTelugu}>{templeInfo.nameTelugu}</p>
             </div>
           </div>
 
-          <p className={styles.footerTagline}>{templeInfo.tagline}</p>
+          <p className={styles.footerTagline}>
+            "నా భక్తుడు నశింపడు" — A sacred haven of spiritual enlightenment, Vedic rituals and community service in Kurnool since 1987.
+          </p>
 
           <OrnamentalDivider color="var(--color-gold-pale)" />
 
@@ -102,34 +113,33 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* ── Column 3: Darshan Timings ── */}
+        {/* ── Column 3: Daily Key Timings ── */}
         <div className={styles.col}>
-          <h4 className={styles.colHeading}>Darshan Timings</h4>
+          <h4 className={styles.colHeading}>Daily Timings</h4>
           <ul className={styles.timingsList}>
-            {darshanTimings.map((t) => (
-              <li key={t.id} className={styles.timingItem}>
-                <span className={styles.timingIcon} aria-hidden="true">{t.icon}</span>
+            {daySchedule.slice(0, 4).map((t, idx) => (
+              <li key={idx} className={styles.timingItem}>
+                <span className={styles.timingIcon} aria-hidden="true">🪔</span>
                 <div>
-                  <span className={styles.timingSession}>{t.session}</span>
+                  <span className={styles.timingSession}>{t.title}</span>
                   <span className={styles.timingTime}>{t.time}</span>
-                  {t.note && <span className={styles.timingNote}>{t.note}</span>}
                 </div>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* ── Column 4: Contact ── */}
+        {/* ── Column 4: Visit & Contact ── */}
         <div className={styles.col}>
-          <h4 className={styles.colHeading}>Visit & Contact</h4>
+          <h4 className={styles.colHeading}>Visit &amp; Contact</h4>
 
           <address className={styles.address}>
             <div className={styles.addressItem}>
               <span className={styles.addressIcon} aria-hidden="true">📍</span>
               <span>
+                {templeInfo.name},<br />
                 {templeInfo.address.line1},<br />
-                {templeInfo.address.line2},<br />
-                {templeInfo.address.city} — {templeInfo.address.pincode}
+                {templeInfo.address.city}, {templeInfo.address.state} — {templeInfo.address.pincode}
               </span>
             </div>
 
@@ -138,9 +148,6 @@ export default function Footer() {
               <div>
                 <a href={`tel:${templeInfo.contact.phone1}`} className={styles.contactLink}>
                   {templeInfo.contact.phone1}
-                </a>
-                <a href={`tel:${templeInfo.contact.phone2}`} className={styles.contactLink}>
-                  {templeInfo.contact.phone2}
                 </a>
               </div>
             </div>
@@ -153,13 +160,13 @@ export default function Footer() {
             </div>
           </address>
 
-          {/* Enquiry CTA */}
           <button
             type="button"
-            className={`btn btn--outline-cream ${styles.enquiryBtn}`}
+            className="btn btn--gold"
+            style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', marginTop: '0.5rem' }}
             onClick={() => openModal('contact')}
           >
-            Send Enquiry
+            Contact Desk
           </button>
         </div>
       </div>
@@ -168,11 +175,11 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
           <p className={styles.copyright}>
-            © {currentYear} {templeInfo.name}. All rights reserved.
+            © {currentYear} {templeInfo.name} (శ్రీ కృష్ణ దేవాలయం). All rights reserved.
           </p>
           <p className={styles.devotion}>
             <span aria-hidden="true">🙏</span>&nbsp;
-            Designed with devotion · सर्वे भवन्तु सुखिनः
+            Designed with devotion · కర్నూలు, ఆంధ్రప్రదేశ్
           </p>
         </div>
       </div>

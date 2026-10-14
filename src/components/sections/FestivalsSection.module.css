@@ -1,252 +1,193 @@
-/* FestivalsSection.module.css — Part 2 */
+/* FestivalsSection.module.css */
 
-.festivals { overflow: hidden; position: relative; }
-
-.topBorder {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 20px;
-  pointer-events: none;
-}
-.topBorder svg { width: 100%; height: 100%; }
-
-/* ── Featured Card (Janmashtami) ──────────────────────────── */
-
-.featuredCard {
-  display: grid;
-  grid-template-columns: 160px 1fr 120px;
-  gap: 0;
-  background: linear-gradient(135deg, var(--color-burgundy-deep) 0%, var(--color-burgundy) 100%);
-  border: 2px solid var(--color-gold);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-bottom: 3rem;
-  box-shadow: var(--shadow-lg), var(--shadow-gold);
-}
-
-.featuredLeft {
-  background: rgba(0,0,0,0.2);
-  border-right: 1px solid rgba(200,150,60,0.3);
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  text-align: center;
-}
-
-.featuredOm {
-  font-size: 3rem;
-  filter: drop-shadow(0 0 12px rgba(200,150,60,0.6));
-  animation: peacock-sway 4s ease-in-out infinite;
-}
-
-@keyframes peacock-sway {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
-
-.featuredDate {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.875rem;
-  color: var(--color-gold-light);
-  line-height: 1.3;
-}
-
-.featuredDay {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(200,150,60,0.8);
-  font-family: var(--font-body);
-}
-
-.featuredContent {
-  padding: 2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.featuredBadge {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  font-family: var(--font-body);
-}
-
-.featuredName {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  color: var(--color-cream-light);
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-.featuredTelugu {
-  font-family: var(--font-sanskrit);
-  font-size: 1rem;
-  color: var(--color-gold-light);
-  margin-top: -0.25rem;
-}
-
-.featuredDesc {
-  font-size: 0.9rem;
-  color: rgba(251,246,238,0.78);
-  line-height: 1.65;
-  max-width: 560px;
-}
-
-.featuredActions {
-  display: flex;
-  gap: 0.875rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-
-.featuredDecor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  border-left: 1px solid rgba(200,150,60,0.2);
-}
-
-.featuredSvg { width: 100px; height: auto; }
-
-/* ── More Events Title ────────────────────────────────────── */
-
-.moreEventsTitle {
-  font-family: var(--font-heading);
-  font-size: 1.375rem;
-  color: var(--color-burgundy-deep);
-  font-weight: 400;
-  margin-bottom: 1.25rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--color-gold);
-}
-
-/* ── Grid ─────────────────────────────────────────────────── */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
-}
-
-.card {
+.section {
   background-color: var(--color-cream);
-  border: 1px solid var(--color-cream-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-gold);
-  transform: translateY(-3px);
-}
-
-.dateRibbon {
-  background: linear-gradient(135deg, var(--color-burgundy-deep), var(--color-burgundy));
-  padding: 0.875rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.dateText {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.925rem;
-  color: var(--color-gold-light);
-}
-
-.dayText {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(200,150,60,0.75);
-  font-family: var(--font-body);
-}
-
-.cardBody {
-  padding: 1.25rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.cardName {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--color-burgundy-deep);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.cardTelugu {
-  font-family: var(--font-sanskrit);
-  font-size: 0.8rem;
-  color: var(--color-gold);
-}
-
-.cardDesc {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-  flex: 1;
-}
-
-.cardFooter {
-  padding: 1rem 1.25rem;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--color-cream-border);
 }
 
-/* ── Calendar CTA ─────────────────────────────────────────── */
+.festivalsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-.calendarCta {
-  text-align: center;
+.festivalCard {
+  background-color: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: 0 4px 16px rgba(19, 40, 31, 0.05);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.festivalCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(19, 40, 31, 0.1);
+  border-color: var(--color-gold);
+}
+
+.cardHighlight {
+  border-left: 5px solid var(--color-red-sacred);
+  background: linear-gradient(180deg, #FCFAF4 0%, #F8F2E4 100%);
+}
+
+/* Date Badge (OCT 11) */
+.dateBadge {
+  background-color: var(--color-green-dark);
+  color: var(--color-cream-light);
+  border-radius: var(--radius-sm);
+  width: 72px;
+  height: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 2rem;
-  background: var(--color-cream-dark);
-  border: 1px solid var(--color-gold);
-  border-radius: var(--radius-md);
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-gold);
 }
 
-.calendarText {
-  font-size: 0.925rem;
+.cardHighlight .dateBadge {
+  background-color: var(--color-red-sacred);
+}
+
+.dateMonth {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+.dateDay {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+/* Content */
+.cardContent {
+  flex: 1;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.eventTitle {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+
+.eventTelugu {
+  font-family: var(--font-telugu);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-telugu);
+  margin-top: 0.15rem;
+}
+
+.featuredBadge {
+  background-color: rgba(139, 38, 38, 0.1);
+  color: var(--color-red-sacred);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.eventTimeWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.eventDesc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
-  max-width: 480px;
-  line-height: 1.65;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Calendar Banner */
+.calendarBanner {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  background-color: var(--color-cream-light);
+  border: 1.5px dashed var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.calendarTextWrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.calendarIcon {
+  font-size: 2.2rem;
+}
+
+.calendarTitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+}
+
+.calendarSubtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.2rem;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .festivalCard {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
 
-@media (max-width: 1024px) {
-  .featuredCard { grid-template-columns: 130px 1fr; }
-  .featuredDecor { display: none; }
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
+  .calendarBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
 
-@media (max-width: 640px) {
-  .featuredCard { grid-template-columns: 1fr; }
-  .featuredLeft { border-right: none; border-bottom: 1px solid rgba(200,150,60,0.3); padding: 1.25rem; flex-direction: row; }
-  .grid { grid-template-columns: 1fr; }
-  .featuredActions { flex-direction: column; }
+  .calendarBanner button {
+    width: 100%;
+  }
 }

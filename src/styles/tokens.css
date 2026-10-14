@@ -1,52 +1,59 @@
 /* ================================================================
-   DESIGN TOKENS — Hindu Temple Website
-   Sacred colour palette, typography scale, spacing, and motion
+   DESIGN TOKENS — Sri Krishna Temple (శ్రీ కృష్ణ దేవాలయం)
+   Client-approved design system:
+   - Background: Pure warm cream / parchment (zero yellow cast)
+   - Primary Headings & Text: Dark forest green (#13281F / #183D2F)
+   - Sacred Accents: Deep temple red / sindoor (#8B2626 / #A3241E)
+   - Ornamental accents: Traditional temple gold (#C8963C)
    ================================================================ */
 
 :root {
   /* ── Colour Palette ─────────────────────────────────────────── */
 
-  /* Backgrounds */
-  --color-cream:          #F8F0E3;   /* primary page bg — warm parchment */
-  --color-cream-light:    #FBF6EE;   /* lighter parchment for cards */
-  --color-cream-dark:     #F0E4CC;   /* deeper parchment, section dividers */
-  --color-cream-border:   #E8D9BF;   /* subtle borders */
+  /* Backgrounds — Pure Cream / Parchment (no yellow tint) */
+  --color-cream:          #FAF6EE;   /* primary page bg — soothing cream parchment */
+  --color-cream-light:    #FCFAF4;   /* pure light cream for cards & modals */
+  --color-cream-dark:     #F1ECE0;   /* soft muted cream for card borders & bands */
+  --color-cream-border:   #E4DCcb;   /* subtle borders */
 
-  /* Primary — Burgundy / Deep Red */
-  --color-burgundy:       #7B1C2B;   /* primary brand — sacred red */
-  --color-burgundy-deep:  #5C1220;   /* deeper shade — headers, strong UI */
-  --color-burgundy-light: #9E2D3E;   /* hover states */
-  --color-red:            #A0272F;   /* accent red */
-  --color-red-dark:       #8B1E25;   /* button fills */
+  /* Primary Brand — Dark Forest Green (text, headings & deep surfaces) */
+  --color-green-dark:     #13281F;   /* primary text, brand logo, deep green */
+  --color-green-deep:     #0D1D16;   /* ultra deep green for gallery & dark cards */
+  --color-green-forest:   #183D2F;   /* rich forest green for badges, icons */
+  --color-green-light:    #2A5944;   /* hover states & lighter accents */
+  --color-green-card:     #173427;   /* visiting hours & store card background */
 
-  /* Secondary — Warm Dark Brown (text) */
-  --color-text-primary:   #3D1A0E;   /* richest body text — near-black brown */
-  --color-text-secondary: #6B3A2A;   /* secondary text, captions */
-  --color-text-muted:     #9A6A52;   /* muted labels, meta */
+  /* Sacred Accents — Deep Temple Red / Sindoor */
+  --color-red-sacred:     #8B2626;   /* sacred red — buttons, toran, quick actions */
+  --color-red-deep:       #6C1A1A;   /* deep brick red */
+  --color-red-light:      #A53232;   /* hover states & highlights */
+  --color-red-toran:      #7B1C28;   /* traditional toran banner red */
 
-  /* Gold — sacred ornamental accent ONLY */
-  --color-gold:           #C8963C;   /* thin borders, icon strokes */
-  --color-gold-light:     #E2B860;   /* hover glint on gold elements */
-  --color-gold-pale:      #F0D9A0;   /* very light gold wash for dividers */
+  /* Typography Colors */
+  --color-text-primary:   #13281F;   /* Dark green heading and strong text */
+  --color-text-body:      #22392E;   /* Highly readable dark green-slate body */
+  --color-text-secondary: #3D5549;   /* Secondary text, descriptions */
+  --color-text-muted:     #5E776A;   /* Muted labels, timestamps */
+  --color-heading:        #13281F;   /* Dark green for all h1-h6 */
+  --color-telugu:         #8B2626;   /* Deep red for Telugu subtitles */
+
+  /* Temple Gold — Sacred Ornamental Accent ONLY */
+  --color-gold:           #C8963C;   /* sacred emblems, thin ornamental lines */
+  --color-gold-light:     #DFB056;   /* hover glint */
+  --color-gold-pale:      #E8DCBE;   /* subtle dividers */
 
   /* Utility */
   --color-white:          #FFFFFF;
-  --color-overlay:        rgba(61, 26, 14, 0.55);  /* dark brown overlay on hero */
-  --color-overlay-light:  rgba(248, 240, 227, 0.92);
+  --color-overlay:        rgba(19, 40, 31, 0.65);
+  --color-overlay-light:  rgba(250, 246, 238, 0.94);
+  --color-live-green:     #10B981;   /* live status indicator dot */
 
   /* ── Typography ─────────────────────────────────────────────── */
-
-  /* Heading: Yatra One gives a classical Devanagari-inspired feel */
   --font-heading:  'Yatra One', 'Noto Serif Devanagari', 'Georgia', serif;
-
-  /* Display sub-heading: Tiro Devanagari Latin — classical elegance */
-  --font-display:  'Tiro Devanagari Latin', 'Cormorant Garamond', serif;
-
-  /* Body: Hind — highly legible Devanagari-friendly Google font */
+  --font-display:  'Cormorant Garamond', 'Tiro Devanagari Latin', serif;
   --font-body:     'Hind', 'Noto Sans', 'Segoe UI', sans-serif;
-
-  /* Sanskrit / Devanagari text */
   --font-sanskrit: 'Noto Serif Devanagari', 'Sanskrit Text', serif;
+  --font-telugu:   'Noto Sans Telugu', 'Segoe UI', sans-serif;
 
   /* ── Type Scale ─────────────────────────────────────────────── */
   --text-xs:    0.75rem;   /* 12px */
@@ -83,16 +90,16 @@
   --container-pad:   clamp(1rem, 5vw, 4rem);
 
   /* ── Border Radius ───────────────────────────────────────────── */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   16px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
   --radius-pill: 9999px;
 
   /* ── Shadows ─────────────────────────────────────────────────── */
-  --shadow-sm:  0 1px 4px rgba(61, 26, 14, 0.10);
-  --shadow-md:  0 4px 16px rgba(61, 26, 14, 0.14);
-  --shadow-lg:  0 8px 32px rgba(61, 26, 14, 0.18);
-  --shadow-gold: 0 2px 12px rgba(200, 150, 60, 0.25);
+  --shadow-sm:  0 2px 6px rgba(19, 40, 31, 0.08);
+  --shadow-md:  0 6px 20px rgba(19, 40, 31, 0.12);
+  --shadow-lg:  0 12px 36px rgba(19, 40, 31, 0.16);
+  --shadow-gold: 0 4px 16px rgba(200, 150, 60, 0.28);
 
   /* ── Transitions ─────────────────────────────────────────────── */
   --transition-fast:   150ms ease;
@@ -107,4 +114,5 @@
   --z-modal:    200;
   --z-toast:    300;
   --z-nav:      400;
+  --z-sticky:   500;
 }

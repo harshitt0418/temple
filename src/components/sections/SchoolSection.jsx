@@ -1,5 +1,10 @@
 /**
- * SchoolSection.jsx — Part 2 (Full build)
+ * SchoolSection.jsx
+ * Aligned with Client Reference:
+ * - Pure cream background (no yellow)
+ * - Dark green headings & text
+ * - Telugu subtitles for activities
+ * - Real photograph of Annadanam Prasad (/assets/images/annadanam-prasad.jpg)
  */
 
 import useScrollAnimation from '../../hooks/useScrollAnimation';
@@ -14,24 +19,22 @@ export default function SchoolSection() {
   const [cardsRef, cardsVisible] = useScrollAnimation({ threshold: 0.08 });
 
   return (
-    <section id="school" className={`section section--cream ${styles.school}`} aria-label="Temple school and community">
+    <section id="school" className={styles.section} aria-label="Temple school and community">
       <div className="container">
         <div className={styles.layout}>
 
           {/* ── Left: Content ── */}
           <div ref={textRef} className={`${styles.content} reveal-left ${textVisible ? 'is-visible' : ''}`}>
             <SectionLabel
-              eyebrow="Grow in Dharma"
-              title="School & Community"
-              subtitle="Rooted in tradition. Growing with the community."
+              eyebrow="COMMUNITY & DHARMIC LEARNING"
+              title="Heritage School & Annadanam"
+              subtitle="వేద పాఠశాల & నిత్య అన్నదాన ట్రస్ట్"
               align="left"
               showDivider={true}
             />
 
             <p className={styles.intro}>
-              The temple runs a vibrant <strong>Vedic Cultural School</strong> every weekend,
-              offering children and adults an authentic connection to Indian heritage — Sanskrit,
-              devotional music, yoga, and Dharmic values — all taught by trained and dedicated teachers.
+              Rooted in timeless Vedic traditions, <strong>Sri Krishna Temple</strong> conducts a weekend Veda Pathashala, Sanskrit shloka circles, and spiritual education to instill cultural pride and devotion in younger generations.
             </p>
 
             <div ref={cardsRef} className={styles.activitiesGrid}>
@@ -43,6 +46,7 @@ export default function SchoolSection() {
                   <div className={styles.activityIcon} aria-hidden="true">{activity.icon}</div>
                   <div className={styles.activityContent}>
                     <h4 className={styles.activityName}>{activity.name}</h4>
+                    <p className={styles.activityTelugu}>{activity.telugu}</p>
                     <p className={styles.activityDesc}>{activity.description}</p>
                     <div className={styles.activityMeta}>
                       <span className={styles.metaTag}>📅 {activity.schedule}</span>
@@ -62,46 +66,59 @@ export default function SchoolSection() {
               </button>
               <button
                 className="btn btn--outline"
-                onClick={() => openModal('school', { program: 'Brochure Request' })}
+                onClick={() => openModal('donation', { cause: 'Nitya Annadanam' })}
               >
-                Download Brochure
+                Sponsor Annadanam
               </button>
             </div>
           </div>
 
-          {/* ── Right: Visual panel ── */}
+          {/* ── Right: Visual panel with Real Annadanam Photo ── */}
           <div className={`${styles.visual} reveal-right ${textVisible ? 'is-visible' : ''}`}>
-            {/* School illustration panel */}
-            <div className={styles.visualPanel}>
-              <div className={styles.panelInner}>
-                <div className={styles.panelOm} aria-hidden="true">ॐ</div>
-                <div className={styles.panelTitle}>Vedic Cultural School</div>
-                <div className={styles.panelSubtitle}>Shri Krishna Mandir, Kurnool</div>
+            {/* Real Annadanam Card */}
+            <div className={styles.annadanamCard}>
+              <div className={styles.imageWrap}>
+                <img
+                  src="/assets/images/annadanam-prasad.jpg"
+                  alt="Maha Annadanam hot pongal and meal distribution at Sri Krishna Temple"
+                  className={styles.annadanamImage}
+                  loading="lazy"
+                />
+                <div className={styles.annadanamBadge}>
+                  <span>🍲 నిత్య అన్నదానం · Nitya Annadanam</span>
+                </div>
+              </div>
 
-                <div className={styles.panelDivider} aria-hidden="true">✦ ✦ ✦</div>
+              <div className={styles.annadanamBody}>
+                <h4 className={styles.annadanamTitle}>Over 500 Blessed Meals Served Daily</h4>
+                <p className={styles.annadanamDesc}>
+                  Every pilgrim visiting the temple is fed with wholesome ghee pongal, hot sambar rice, and prasadam prepared in pure temple kitchen with sacred devotion.
+                </p>
 
-                <ul className={styles.panelList}>
-                  <li>📖 Sanskrit & Vedic Studies</li>
-                  <li>🎵 Bhajan & Kirtan</li>
-                  <li>🧘 Yoga & Pranayama</li>
-                  <li>💃 Classical Arts</li>
-                  <li>🍲 Annadanam Seva</li>
-                </ul>
-
-                <div className={styles.panelCta}>
-                  <span className={styles.panelCtaText}>Admissions Open</span>
-                  <span className={styles.panelCtaBadge}>2027–28</span>
+                <div className={styles.sponsorBar}>
+                  <div>
+                    <span className={styles.sponsorLabel}>One Day Sponsorship</span>
+                    <span className={styles.sponsorAmount}>₹ 1,500</span>
+                  </div>
+                  <button
+                    className="btn btn--primary"
+                    style={{ padding: '0.45rem 1rem', fontSize: '0.825rem' }}
+                    onClick={() => openModal('donation', { cause: 'Annadanam One Day' })}
+                  >
+                    Donate Now
+                  </button>
                 </div>
               </div>
             </div>
 
             {/* Values chips */}
             <div className={styles.chips}>
-              {['Devotion', 'Culture', 'Sanskrit', 'Yoga', 'Community', 'Seva'].map(v => (
-                <span key={v} className={styles.chip}>{v}</span>
+              {['Veda Chanting', 'Annadanam', 'Sanskrit', 'Vaishnava Kirtan', 'Gita Classes', 'Seva'].map((v) => (
+                <span key={v} className={styles.chip}>✦ {v}</span>
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

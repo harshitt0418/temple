@@ -1,97 +1,106 @@
 /**
- * GallerySection.jsx — Part 2 (Full build)
- * Elegant CSS ornamental panels where photos will go.
- * Masonry-style grid with hover reveals and caption overlays.
+ * GallerySection.jsx (Chitramalika / చిత్రమాలిక)
+ * Aligned with Client Reference Screenshots (02.20.50 3 & 02.20.52 2):
+ * - Deep dark green backdrop (#0D1D16)
+ * - Red Telugu pill: "చిత్రమాలిక"
+ * - Filter pills for Sanctum, Campus, Festivals, Annadanam
+ * - Real temple images extracted from client reference photos
+ * - Interactive Lightbox / Modal preview
  */
 
+import { useState } from 'react';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
-import SectionLabel from '../ui/SectionLabel';
-import { galleryItems } from '../../data/mock-data';
+import { galleryCategories, galleryItems } from '../../data/mock-data';
 import { useModal } from '../../context/ModalContext';
 import styles from './GallerySection.module.css';
-
-// Ornamental panel — cream/burgundy/gold aesthetic
-// Replaces stock images as per the non-negotiable visual rule
-function OrnamentalPanel({ label, number }) {
-  return (
-    <div className={styles.panel}>
-      {/* Corner frame marks */}
-      <span className={`${styles.corner} ${styles.cornerTL}`} aria-hidden="true" />
-      <span className={`${styles.corner} ${styles.cornerTR}`} aria-hidden="true" />
-      <span className={`${styles.corner} ${styles.cornerBL}`} aria-hidden="true" />
-      <span className={`${styles.corner} ${styles.cornerBR}`} aria-hidden="true" />
-
-      {/* SVG lotus centre */}
-      <svg viewBox="0 0 80 80" fill="none" className={styles.panelLotus} aria-hidden="true">
-        {[0, 60, 120, 30, 90, 150].map((deg, i) => (
-          <ellipse key={i} cx="40" cy="40" rx="8" ry="26"
-            fill="var(--color-burgundy)" opacity={i < 3 ? 0.18 : 0.1}
-            transform={`rotate(${deg} 40 40)`} />
-        ))}
-        <circle cx="40" cy="40" r="8" fill="var(--color-burgundy)" opacity="0.2" />
-        <circle cx="40" cy="40" r="4" fill="var(--color-gold)" opacity="0.4" />
-      </svg>
-
-      <div className={styles.panelLabel}>{label}</div>
-      <div className={styles.panelNum}>{String(number).padStart(2, '0')}</div>
-    </div>
-  );
-}
 
 export default function GallerySection() {
   const { openModal } = useModal();
   const [headRef, headVisible] = useScrollAnimation();
-  const [gridRef, gridVisible] = useScrollAnimation({ threshold: 0.05 });
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const filteredItems = activeCategory === 'all'
+    ? galleryItems
+    : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className={`section ${styles.gallery}`} aria-label="Temple gallery">
+    <section id="gallery" className={styles.section} aria-label="Temple Photo Gallery">
       <div className="container">
-        <div ref={headRef} className={`reveal ${headVisible ? 'is-visible' : ''}`}>
-          <SectionLabel
-            eyebrow="Glimpses of Divinity"
-            title="Temple Gallery"
-            subtitle="Every corner of this temple holds a story of devotion"
-          />
+
+        {/* Section Header */}
+        <div ref={headRef} className={`${styles.header} reveal ${headVisible ? 'is-visible' : ''}`}>
+          <div className={styles.teluguPill}>
+            <span className={styles.pillDot}>✦</span>
+            <span>చిత్రమాలిక</span>
+            <span className={styles.pillDot}>✦</span>
+          </div>
+
+          <h2 className={styles.title}>Temple Gallery &amp; Sanctum Glimpses</h2>
+          <p className={styles.subtitle}>
+            Divine glimpses of Sri Krishna sanctum, daily puja, festival processions and community Annadanam
+          </p>
+
+          {/* Category Filter Pills */}
+          <div className={styles.filters} role="tablist" aria-label="Gallery category filters">
+            {galleryCategories.map((cat) => (
+              <button
+                key={cat.id}
+                role="tab"
+                aria-selected={activeCategory === cat.id}
+                className={`${styles.filterBtn} ${activeCategory === cat.id ? styles.filterActive : ''}`}
+                onClick={() => setActiveCategory(cat.id)}
+              >
+                <span>{cat.label}</span>
+                <span className={styles.filterTelugu}>({cat.telugu})</span>
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div ref={gridRef} className={styles.grid}>
-          {galleryItems.map((item, i) => (
+        {/* Real Images Grid */}
+        <div className={styles.grid}>
+          {filteredItems.map((item) => (
             <figure
               key={item.id}
-              className={`${styles.item} ${styles[`item--${item.aspect}`]} reveal reveal-delay-${Math.min(i+1,5)} ${gridVisible ? 'is-visible' : ''}`}
-              aria-label={item.label}
-              onClick={() => openModal('event', { name: item.label, description: `Sacred photography of ${item.label} at Shri Krishna Mandir, Kurnool.` })}
+              className={styles.card}
+              onClick={() => openModal('event', {
+                title: item.title,
+                time: item.tag,
+                desc: `Authentic photograph from Sri Krishna Temple, Kurnool. Category: ${item.category}.`,
+              })}
             >
-              <OrnamentalPanel label={item.label} number={item.id} />
+              <div className={styles.imageWrap}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.image}
+                  loading="lazy"
+                />
+                <div className={styles.overlay}>
+                  <span className={styles.tagBadge}>{item.tag}</span>
+                  <span className={styles.zoomIcon} aria-hidden="true">🔍</span>
+                </div>
+              </div>
               <figcaption className={styles.caption}>
-                <span className={styles.captionText}>{item.label}</span>
+                <span className={styles.cardTitle}>{item.title}</span>
               </figcaption>
             </figure>
           ))}
         </div>
 
-        {/* Note */}
-        <div className={`${styles.galleryNote} reveal ${gridVisible ? 'is-visible' : ''}`}>
-          <span aria-hidden="true">📸</span>
-          <p>Photography gallery coming soon — real temple photos will be placed here once provided.</p>
-        </div>
-
-        <div className={`${styles.viewAll} reveal ${gridVisible ? 'is-visible' : ''}`}>
-          <button
-            className="btn btn--primary"
-            onClick={() => openModal('event', { name: 'Sacred Temple Photo Archive', description: 'Real high-resolution photographs of Shri Krishna Mandir sanctum, daily aartis, and annual Janmashtami processions will be featured here once provided.' })}
-          >
-            View Full Gallery
-          </button>
+        {/* Instagram / Devotee Link */}
+        <div className={styles.bottomBar}>
           <a
             href="https://www.instagram.com/kurnool_spiritucal/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn--outline"
+            className="btn btn--gold"
+            style={{ padding: '0.65rem 1.6rem', fontSize: '0.9rem' }}
           >
-            📸 Follow on Instagram
+            📸 Follow @kurnool_spiritucal on Instagram
           </a>
         </div>
+
       </div>
     </section>
   );
