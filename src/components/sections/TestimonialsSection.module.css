@@ -29,7 +29,7 @@
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-gold);
+  border-color: var(--color-red-sacred);
   box-shadow: 0 8px 24px rgba(19, 40, 31, 0.1);
 }
 
@@ -64,14 +64,14 @@
   height: 42px;
   border-radius: 50%;
   background-color: var(--color-green-dark);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 700;
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--color-red-sacred);
 }
 
 .name {

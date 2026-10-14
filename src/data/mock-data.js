@@ -2,6 +2,7 @@
  * mock-data.js
  * Aligned with Client Reference Designs:
  * Sri Krishna Temple / శ్రీ కృష్ణ దేవాలయం (Kurnool)
+ * ZERO Yellow: Clean text and neutral symbols
  */
 
 // ── Temple Identity ────────────────────────────────────────────
@@ -127,7 +128,7 @@ export const daySchedule = [
     time: '06:00 PM',
     title: 'Sandhya Arati & Deeparadhana',
     telugu: 'సంధ్యా ఆరతి & దీపారాధన',
-    desc: 'Grand evening ghee lamp arati accompanied by traditional mridangam and bells.',
+    desc: 'Grand evening lamp arati accompanied by traditional mridangam and bells.',
     highlight: true,
   },
   {
@@ -209,7 +210,7 @@ export const upcomingFestivals = [
     title: 'Kartika Deepotsavam & Tulasi Kalyanam',
     telugu: 'కార్తీక దీపోత్సవం & తులసి కళ్యాణం',
     time: 'Evening Deeparadhana · 6:00 PM onwards',
-    desc: 'Lighting of 1,008 sacred ghee lamps in the temple courtyard with special laksha tulasi archana ceremony.',
+    desc: 'Lighting of 1,008 sacred lamps in the temple courtyard with special laksha tulasi archana ceremony.',
     highlight: false,
   },
   {
@@ -237,7 +238,7 @@ export const galleryCategories = [
 export const galleryItems = [
   {
     id: 1,
-    title: 'Lord Sri Krishna in Golden Alankaram',
+    title: 'Lord Sri Krishna in Divyabharan Alankaram',
     category: 'sanctum',
     image: '/assets/images/krishna-sanctum.jpg',
     tag: 'Moolavar Deity',
@@ -288,11 +289,11 @@ export const galleryItems = [
 
 // ── Announcements (Ticker) ─────────────────────────────────────
 export const announcements = [
-  '🪔 Daily Darshan: 5:30 AM – 1:00 PM & 4:30 PM – 9:00 PM',
-  '🌸 Sri Krishna Navaratri Brahmotsavam celebrations ongoing — all are cordially invited',
-  '🍲 Nitya Annadanam served daily at 12:30 PM — open to all pilgrims and devotees',
-  '📅 Book special Archana and Kalyana Seva online or at the temple counter',
-  '📍 Sri Krishna Temple, Kurnool, Andhra Pradesh · Serving with devotion since 1987',
+  '✦ Daily Darshan: 5:30 AM – 1:00 PM & 4:30 PM – 9:00 PM',
+  '✦ Sri Krishna Navaratri Brahmotsavam celebrations ongoing — all are cordially invited',
+  '✦ Nitya Annadanam served daily at 12:30 PM — open to all pilgrims and devotees',
+  '✦ Book special Archana and Kalyana Seva online or at the temple counter',
+  '✦ Sri Krishna Temple, Kurnool, Andhra Pradesh · Serving with devotion since 1987',
 ];
 
 // ── School & Cultural Heritage ─────────────────────────────────
@@ -301,7 +302,7 @@ export const schoolActivities = [
     id: 1,
     name: 'Veda Pathashala & Sanskrit',
     telugu: 'వేద పాఠశాల & సంస్కృత అధ్యయనం',
-    icon: '📖',
+    icon: '✦',
     description: 'Chanting of Vedic Suktams, Bhagavad Gita shlokas and foundational Sanskrit for children and youth.',
     schedule: 'Saturdays & Sundays · 8:00 AM – 11:00 AM',
     ageGroup: 'Ages 6–18',
@@ -310,7 +311,7 @@ export const schoolActivities = [
     id: 2,
     name: 'Vaishnava Kirtan & Bhajans',
     telugu: 'సంకీర్తన & భజన శిక్షణ',
-    icon: '🎵',
+    icon: '✦',
     description: 'Learning classical Annamacharya and Tyagaraja kirtans with mridangam and harmonium accompaniment.',
     schedule: 'Sundays · 4:00 PM – 6:00 PM',
     ageGroup: 'All age groups',
@@ -319,7 +320,7 @@ export const schoolActivities = [
     id: 3,
     name: 'Nitya Annadanam Trust',
     telugu: 'నిత్య అన్నదాన ట్రస్ట్',
-    icon: '🍲',
+    icon: '✦',
     description: 'Over 500 meals served daily with pure ghee, sambar, rice and sweet pongal prasadam.',
     schedule: 'Every day · 12:30 PM onwards',
     ageGroup: 'Open to everyone',
@@ -328,7 +329,7 @@ export const schoolActivities = [
     id: 4,
     name: 'Dharmic Values & Cultural Workshops',
     telugu: 'ధార్మిక విలువల శిక్షణ',
-    icon: '🪔',
+    icon: '✦',
     description: 'Interactive moral education, Ramayana & Mahabharata story circles, and Indian heritage seminars.',
     schedule: 'First Sunday of each month',
     ageGroup: 'Families & Children',

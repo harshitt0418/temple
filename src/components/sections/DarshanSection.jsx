@@ -1,11 +1,7 @@
 /**
  * DarshanSection.jsx
- * Aligned with Client Reference Screenshots (02.20.49 & 02.20.49 1):
- * - Cream background (zero yellow cast)
- * - Dark green headings & timestamps
- * - Day Schedule with date navigator
- * - Deep dark green "Visiting Hours" card with live pulse indicator
- * - Sacred Seva booking cards
+ * Aligned with Client Reference:
+ * ZERO Yellow: All icons, buttons, badges, borders are red, green, white or stone.
  */
 
 import { useState } from 'react';
@@ -93,11 +89,11 @@ export default function DarshanSection() {
 
         </div>
 
-        {/* 3. Visiting Hours Card (Reference: 02.20.49 1) */}
+        {/* 3. Visiting Hours Card */}
         <div id="visiting-hours" className={styles.visitingCard}>
           <div className={styles.visitingLeft}>
             <div className={styles.visitingIconWrap} aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#C8963C" strokeWidth="2">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FFFFFF" strokeWidth="2">
                 <circle cx="12" cy="12" r="9" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
@@ -118,7 +114,7 @@ export default function DarshanSection() {
           <div className={styles.visitingRight}>
             <a
               href="#visit"
-              className="btn btn--gold"
+              className="btn btn--primary"
               style={{ padding: '0.65rem 1.4rem', fontSize: '0.9rem' }}
             >
               Plan Your Visit
@@ -140,7 +136,13 @@ export default function DarshanSection() {
             {sevaServices.map((seva) => (
               <div key={seva.id} className={styles.sevaCard}>
                 <div className={styles.sevaCardTop}>
-                  <div className={styles.sevaIconCircle}>🪔</div>
+                  <div className={styles.sevaIconCircle}>
+                    {/* Clean Sacred Red Diya SVG — ZERO yellow */}
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                      <path d="M12 2 C11 5 9 7 9 10 C9 12 10.3 13 12 13 C13.7 13 15 12 15 10 C15 7 13 5 12 2 Z" fill="#8B2626" />
+                      <path d="M4 14 C4 18 7.5 21 12 21 C16.5 21 20 18 20 14 C19 16 16 17 12 17 C8 17 5 16 4 14 Z" fill="#13281F" />
+                    </svg>
+                  </div>
                   <span className={styles.sevaDonationBadge}>{seva.suggestedDonation}</span>
                 </div>
 
@@ -150,7 +152,7 @@ export default function DarshanSection() {
 
                 <div className={styles.sevaMeta}>
                   <span className={styles.sevaMetaItem}>
-                    <span>📅</span> {seva.timings}
+                    <span>✦</span> {seva.timings}
                   </span>
                   <span className={styles.sevaMetaItem}>
                     <span>⏱</span> {seva.duration}

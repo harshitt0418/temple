@@ -37,7 +37,7 @@ export default function SectionLabel({
 
       {showDivider && (
         <div style={{ marginBlock: '0.75rem', display: 'flex', justifyContent: align === 'center' ? 'center' : 'flex-start' }}>
-          <OrnamentalDivider color={light ? 'var(--color-gold-pale)' : 'var(--color-gold)'} />
+          <OrnamentalDivider color={light ? 'var(--color-cream-border)' : 'var(--color-red-sacred)'} />
         </div>
       )}
 

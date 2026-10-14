@@ -39,14 +39,14 @@
   max-width: var(--container-max);
 }
 
-.goldAccent {
+.bottomAccent {
   height: 1.5px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold-pale) 20%,
-    var(--color-gold) 50%,
-    var(--color-gold-pale) 80%,
+    var(--color-cream-border) 20%,
+    var(--color-red-sacred) 50%,
+    var(--color-cream-border) 80%,
     transparent
   );
 }
@@ -168,7 +168,7 @@
   height: 38px;
   border-radius: 50%;
   background-color: var(--color-red-sacred);
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,7 +232,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  border-left: 1px solid var(--color-gold);
+  border-left: 1px solid var(--color-cream-border);
   box-shadow: -8px 0 32px rgba(19, 40, 31, 0.2);
 }
 
@@ -246,7 +246,7 @@
   justify-content: space-between;
   padding: 1.25rem 1.5rem;
   background-color: var(--color-green-dark);
-  border-bottom: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-red-sacred);
 }
 
 .drawerLogoWrap {
@@ -258,26 +258,26 @@
 .drawerOm {
   font-family: var(--font-sanskrit);
   font-size: 1.85rem;
-  color: var(--color-gold);
+  color: #FFFFFF;
   line-height: 1;
 }
 
 .drawerTitle {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   display: block;
 }
 
 .drawerTelugu {
   font-family: var(--font-telugu);
   font-size: 0.8rem;
-  color: var(--color-gold-light);
+  color: rgba(255, 255, 255, 0.85);
   display: block;
 }
 
 .drawerClose {
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   font-size: 1.25rem;
   cursor: pointer;
   padding: 0.25rem;
@@ -312,7 +312,7 @@
 
 .drawerCta {
   padding: 1.5rem;
-  border-top: 1px solid var(--color-gold-pale);
+  border-top: 1px solid var(--color-cream-border);
 }
 
 /* ── Overlay ──────────────────────────────────────────────── */

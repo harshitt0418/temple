@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div>
                   <cite className={styles.name}>{devotee.name}</cite>
-                  <span className={styles.city}>📍 {devotee.city}</span>
+                  <span className={styles.city}>✦ {devotee.city}</span>
                 </div>
               </footer>
             </blockquote>

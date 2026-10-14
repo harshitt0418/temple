@@ -2,7 +2,7 @@
 
 .strip {
   background-color: var(--color-green-dark);
-  border-bottom: 1.5px solid var(--color-gold);
+  border-bottom: 1.5px solid var(--color-red-sacred);
   position: relative;
   z-index: var(--z-nav);
   overflow: hidden;
@@ -20,14 +20,14 @@
   align-items: center;
   gap: 0.5rem;
   padding-inline: 1rem 1.25rem;
-  border-right: 1px solid rgba(200, 150, 60, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   height: 100%;
 }
 
 .om {
   font-family: var(--font-sanskrit);
   font-size: 1rem;
-  color: var(--color-gold);
+  color: #FFFFFF;
   line-height: 1;
 }
 
@@ -35,7 +35,7 @@
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--color-gold);
+  color: #FFFFFF;
   font-family: var(--font-body);
   white-space: nowrap;
 }
@@ -71,7 +71,7 @@
 }
 
 .separator {
-  color: var(--color-gold);
+  color: var(--color-red-sacred);
   margin-inline: 0.5rem;
   font-size: 0.6rem;
 }
@@ -83,15 +83,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gold-pale);
+  color: #FFFFFF;
   font-size: 0.75rem;
-  border-left: 1px solid rgba(200, 150, 60, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .close:hover {
-  color: var(--color-cream-light);
-  background-color: rgba(200, 150, 60, 0.1);
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 @keyframes ticker-scroll {

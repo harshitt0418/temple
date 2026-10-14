@@ -9,7 +9,7 @@
   height: 44px;
   border-radius: 50%;
   background-color: var(--color-red-sacred);
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid #FFFFFF;
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
   right: 0;
   height: 64px;
   background: linear-gradient(180deg, #183D2F 0%, #0E291E 100%);
-  border-top: 1.5px solid var(--color-gold);
+  border-top: 1.5px solid var(--color-red-sacred);
   z-index: var(--z-sticky);
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@
 }
 
 .barItem:hover {
-  color: var(--color-gold-light);
+  color: #FFFFFF;
 }
 
 .iconWrap {
@@ -120,7 +120,7 @@
     transform: translateX(-50%);
     bottom: 16px;
     border-radius: var(--radius-pill);
-    border: 1.5px solid var(--color-gold);
+    border: 1.5px solid var(--color-red-sacred);
     height: 56px;
   }
 

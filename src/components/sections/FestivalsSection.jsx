@@ -1,10 +1,7 @@
 /**
  * FestivalsSection.jsx
- * Aligned with Client Reference Screenshots (02.20.49 1 & 02.20.49 2):
- * - Cream background (no yellow)
- * - Date badges (OCT 11, OCT 20, NOV 01)
- * - Dark green titles with red Telugu labels
- * - Seva booking & event schedule actions
+ * Aligned with Client Reference:
+ * ZERO Yellow: All badges, borders, icons are red, green, white, or stone.
  */
 
 import useScrollAnimation from '../../hooks/useScrollAnimation';
@@ -29,7 +26,7 @@ export default function FestivalsSection() {
           />
         </div>
 
-        {/* Festival Cards List (Reference Layout) */}
+        {/* Festival Cards List */}
         <div ref={gridRef} className={styles.festivalsList}>
           {upcomingFestivals.map((event, index) => (
             <article
@@ -55,7 +52,10 @@ export default function FestivalsSection() {
                 </div>
 
                 <div className={styles.eventTimeWrap}>
-                  <span className={styles.timeIcon}>⏱</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
                   <span className={styles.timeText}>{event.time}</span>
                 </div>
 
@@ -85,7 +85,14 @@ export default function FestivalsSection() {
         {/* Full Festival Calendar CTA */}
         <div className={styles.calendarBanner}>
           <div className={styles.calendarTextWrap}>
-            <span className={styles.calendarIcon}>📅</span>
+            <div className={styles.calendarIcon}>
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--color-red-sacred)" strokeWidth="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
             <div>
               <h4 className={styles.calendarTitle}>Complete Annual Temple Almanac (Panchangam)</h4>
               <p className={styles.calendarSubtitle}>

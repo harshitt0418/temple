@@ -43,7 +43,7 @@ export default function DevotionalModal() {
             Jai Shri Krishna! Your details have been recorded for this <strong>official prototype demonstration</strong>.
           </p>
           <div className={styles.prototypeNotice}>
-            <span aria-hidden="true">ℹ️</span>
+            <span aria-hidden="true" style={{ color: 'var(--color-red-sacred)' }}>✦</span>
             <span>
               In the live release, this connects to the temple’s secure priest coordination or receipt desk. No live transaction was processed.
             </span>
@@ -60,7 +60,7 @@ export default function DevotionalModal() {
         return (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.modalHeader}>
-              <span className={styles.modalOm}>🪔</span>
+              <span className={styles.modalOm}>ॐ</span>
               <div>
                 <h3 className={styles.modalTitle}>Book Sacred Seva</h3>
                 <p className={styles.modalSubtitle}>
@@ -152,7 +152,7 @@ export default function DevotionalModal() {
         return (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.modalHeader}>
-              <span className={styles.modalOm}>🙏</span>
+              <span className={styles.modalOm}>ॐ</span>
               <div>
                 <h3 className={styles.modalTitle}>Temple Seva & Annadanam Contribution</h3>
                 <p className={styles.modalSubtitle}>Support sacred rituals, free meals & heritage</p>
@@ -201,7 +201,7 @@ export default function DevotionalModal() {
               <button type="button" className="btn btn--outline" onClick={closeModal}>
                 Close
               </button>
-              <button type="submit" className="btn btn--gold">
+              <button type="submit" className="btn btn--primary">
                 Proceed with Offering (Sample) →
               </button>
             </div>
@@ -212,7 +212,7 @@ export default function DevotionalModal() {
         return (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.modalHeader}>
-              <span className={styles.modalOm}>🎓</span>
+              <span className={styles.modalOm}>ॐ</span>
               <div>
                 <h3 className={styles.modalTitle}>Vedic Cultural School Admissions</h3>
                 <p className={styles.modalSubtitle}>Nurturing youth in Sanskrit, values & classical arts</p>
@@ -266,7 +266,7 @@ export default function DevotionalModal() {
         return (
           <div className={styles.eventView}>
             <div className={styles.modalHeader}>
-              <span className={styles.modalOm}>🦚</span>
+              <span className={styles.modalOm}>ॐ</span>
               <div>
                 <h3 className={styles.modalTitle}>{formData?.name || 'Festival Information'}</h3>
                 <p className={styles.modalSubtitle}>{formData?.date || 'Sacred Temple Calendar'}</p>
@@ -308,7 +308,7 @@ export default function DevotionalModal() {
         return (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.modalHeader}>
-              <span className={styles.modalOm}>🙏</span>
+              <span className={styles.modalOm}>ॐ</span>
               <div>
                 <h3 className={styles.modalTitle}>Temple Enquiry Desk</h3>
                 <p className={styles.modalSubtitle}>How may we serve your devotional visit?</p>

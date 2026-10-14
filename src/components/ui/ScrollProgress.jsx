@@ -1,6 +1,6 @@
 /**
  * ScrollProgress.jsx
- * Thin gold progress bar at the very top of the viewport,
+ * Thin sacred red progress bar at the very top of the viewport,
  * showing how far down the page the user has scrolled.
  */
 

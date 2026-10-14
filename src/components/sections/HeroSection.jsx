@@ -1,10 +1,7 @@
 /**
  * HeroSection.jsx
- * Aligned with Client Reference Screenshots (02.20.48 / 02.20.48 1):
- * 1. Vaishnava Sacred Emblems Plaque (Hanuman, Shankha, Namam, Chakra, Garuda)
- * 2. Sacred Quote: "నా భక్తుడు నశింపడు" / "MY DEVOTEE NEVER PERISHES"
- * 3. Sacred Arched Portal framing Lord Sri Krishna in Golden Alankaram
- * 4. 4 Quick Action Cards (Daily Puja Schedule, Book a Seva, Festival Calendar, Temple Store)
+ * Aligned with Client Reference:
+ * ZERO Yellow: All emblems, badges, borders and accents are rendered in sacred red, forest green, pearl white, or stone.
  */
 
 import { useState } from 'react';
@@ -12,7 +9,7 @@ import styles from './HeroSection.module.css';
 import { templeInfo, quickActions } from '../../data/mock-data';
 import { useModal } from '../../context/ModalContext';
 
-// Sacred Vaishnava Emblems Strip (Gold Plaque)
+// Sacred Vaishnava Emblems Strip (Sacred Red & Pearl White — ZERO Yellow)
 function VaishnavaEmblems() {
   return (
     <div className={styles.emblemsContainer} aria-label="Vaishnava Sacred Emblems">
@@ -22,10 +19,10 @@ function VaishnavaEmblems() {
           <svg viewBox="0 0 36 36" width="30" height="30" fill="none">
             <path
               d="M18 5 C16 5 14 7 14 10 C14 12 16 13 17 14 C15 15 13 18 13 22 L13 28 C13 29 14 30 15 30 L21 30 C22 30 23 29 23 28 L23 22 C23 18 21 15 19 14 C20 13 22 12 22 10 C22 7 20 5 18 5 Z"
-              fill="#C8963C"
+              fill="#8B2626"
             />
-            <path d="M14 26 C11 26 9 23 9 19 C9 15 11 12 13 11" stroke="#C8963C" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-            <circle cx="18" cy="10" r="1.5" fill="#FAF6EE" />
+            <path d="M14 26 C11 26 9 23 9 19 C9 15 11 12 13 11" stroke="#8B2626" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+            <circle cx="18" cy="10" r="1.5" fill="#FFFFFF" />
           </svg>
         </div>
 
@@ -36,11 +33,11 @@ function VaishnavaEmblems() {
           <svg viewBox="0 0 36 36" width="30" height="30" fill="none">
             <path
               d="M18 6 C13 6 10 10 10 16 C10 22 14 28 18 30 C22 28 26 22 26 16 C26 10 23 6 18 6 Z"
-              fill="#C8963C"
+              fill="#8B2626"
             />
-            <path d="M18 10 C16 13 16 19 18 26" stroke="#FAF6EE" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M14 14 C16 15 20 15 22 14" stroke="#FAF6EE" strokeWidth="1" strokeLinecap="round" />
-            <path d="M13 19 C15 20 21 20 23 19" stroke="#FAF6EE" strokeWidth="1" strokeLinecap="round" />
+            <path d="M18 10 C16 13 16 19 18 26" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M14 14 C16 15 20 15 22 14" stroke="#FFFFFF" strokeWidth="1" strokeLinecap="round" />
+            <path d="M13 19 C15 20 21 20 23 19" stroke="#FFFFFF" strokeWidth="1" strokeLinecap="round" />
           </svg>
         </div>
 
@@ -53,6 +50,8 @@ function VaishnavaEmblems() {
             <path
               d="M13 8 L13 23 C13 27 16 30 20 30 C24 30 27 27 27 23 L27 8 L23 8 L23 22 C23 24 22 25 20 25 C18 25 17 24 17 22 L17 8 Z"
               fill="#FFFFFF"
+              stroke="#DDD5C7"
+              strokeWidth="0.5"
             />
             {/* Sacred Red Center Line (Tilakam) */}
             <path
@@ -60,8 +59,8 @@ function VaishnavaEmblems() {
               fill="#A3241E"
             />
             <circle cx="20" cy="5" r="1.5" fill="#A3241E" />
-            {/* Base floral petal */}
-            <path d="M16 30 C18 33 22 33 24 30 Z" fill="#C8963C" />
+            {/* Base petal */}
+            <path d="M16 30 C18 33 22 33 24 30 Z" fill="#8B2626" />
           </svg>
         </div>
 
@@ -70,9 +69,9 @@ function VaishnavaEmblems() {
         {/* Sudarshana Chakra (Discus) */}
         <div className={styles.emblemItem} title="Sudarshana Chakra">
           <svg viewBox="0 0 36 36" width="30" height="30" fill="none">
-            <circle cx="18" cy="18" r="12" stroke="#C8963C" strokeWidth="2" />
-            <circle cx="18" cy="18" r="4" fill="#C8963C" />
-            {/* Flames / Teeth */}
+            <circle cx="18" cy="18" r="12" stroke="#8B2626" strokeWidth="2" />
+            <circle cx="18" cy="18" r="4" fill="#8B2626" />
+            {/* Flames */}
             {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
               <line
                 key={i}
@@ -80,7 +79,7 @@ function VaishnavaEmblems() {
                 y1="6"
                 x2="18"
                 y2="4"
-                stroke="#C8963C"
+                stroke="#8B2626"
                 strokeWidth="2"
                 strokeLinecap="round"
                 transform={`rotate(${deg} 18 18)`}
@@ -93,7 +92,7 @@ function VaishnavaEmblems() {
                 y1="18"
                 x2="18"
                 y2="7"
-                stroke="#FAF6EE"
+                stroke="#FFFFFF"
                 strokeWidth="1"
                 transform={`rotate(${deg} 18 18)`}
               />
@@ -108,10 +107,10 @@ function VaishnavaEmblems() {
           <svg viewBox="0 0 36 36" width="30" height="30" fill="none">
             <path
               d="M18 5 C15 5 14 7 14 10 C14 12 16 13 17 14 C15 15 13 18 13 22 L13 28 C13 29 14 30 15 30 L21 30 C22 30 23 29 23 28 L23 22 C23 18 21 15 19 14 C20 13 22 12 22 10 C22 7 21 5 18 5 Z"
-              fill="#C8963C"
+              fill="#8B2626"
             />
-            <path d="M22 26 C25 26 27 23 27 19 C27 15 25 12 23 11" stroke="#C8963C" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-            <circle cx="18" cy="10" r="1.5" fill="#FAF6EE" />
+            <path d="M22 26 C25 26 27 23 27 19 C27 15 25 12 23 11" stroke="#8B2626" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+            <circle cx="18" cy="10" r="1.5" fill="#FFFFFF" />
           </svg>
         </div>
       </div>
@@ -204,16 +203,16 @@ export default function HeroSection() {
             <div className={styles.archBorderOuter}>
               <div className={styles.archBorderInner}>
 
-                {/* Subtle Radial Sunburst Rays behind Deity */}
+                {/* Subtle Radial Pearl Rays behind Deity — ZERO Yellow */}
                 <div className={styles.raysContainer} aria-hidden="true">
                   <div className={styles.sunburstRays} />
                 </div>
 
-                {/* Real Deity Image extracted from reference */}
+                {/* Real Deity Image */}
                 <div className={styles.deityImageWrapper}>
                   <img
                     src="/assets/images/krishna-hero.jpg"
-                    alt="Lord Sri Krishna in Golden Alankaram at Kurnool Temple"
+                    alt="Lord Sri Krishna at Kurnool Temple"
                     className={`${styles.deityImage} ${imageLoaded ? styles.loaded : ''}`}
                     onLoad={() => setImageLoaded(true)}
                   />
@@ -232,7 +231,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 4. Four Quick Action Cards Grid (Reference: 02.20.48) */}
+        {/* 4. Four Quick Action Cards Grid */}
         <div className={styles.quickGrid} role="region" aria-label="Quick Actions">
           {quickActions.map((action) => (
             <button

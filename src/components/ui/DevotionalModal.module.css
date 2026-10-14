@@ -15,7 +15,7 @@
 
 .modalContainer {
   background-color: var(--color-cream-light);
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-red-sacred);
   border-radius: var(--radius-lg);
   padding: clamp(1.75rem, 4vw, 2.5rem);
   width: 100%;
@@ -23,7 +23,7 @@
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  box-shadow: var(--shadow-lg), 0 8px 30px rgba(139, 38, 38, 0.2);
   animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -32,7 +32,7 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  border-color: var(--color-gold);
+  border-color: var(--color-red-sacred);
   border-style: solid;
   pointer-events: none;
 }
@@ -68,13 +68,13 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-gold-pale);
+  border-bottom: 1px solid var(--color-cream-border);
 }
 
 .modalOm {
   font-size: 2rem;
   flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(200, 150, 60, 0.4));
+  filter: drop-shadow(0 0 6px rgba(139, 38, 38, 0.3));
 }
 
 .modalTitle {
@@ -136,8 +136,8 @@
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(200, 150, 60, 0.2);
+  border-color: var(--color-red-sacred);
+  box-shadow: 0 0 0 3px rgba(139, 38, 38, 0.15);
 }
 
 .textarea {
@@ -155,7 +155,7 @@
   flex: 1;
   min-width: 70px;
   background-color: var(--color-cream);
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--color-red-sacred);
   border-radius: var(--radius-pill);
   padding: 0.45rem 0.75rem;
   font-size: 0.85rem;
@@ -167,8 +167,8 @@
 .amountBtn:hover,
 .amountBtn:focus {
   background-color: var(--color-red-sacred);
-  border-color: var(--color-gold);
-  color: var(--color-cream-light);
+  border-color: var(--color-red-sacred);
+  color: #FFFFFF;
 }
 
 /* Event View */
@@ -187,7 +187,7 @@
 .eventScheduleBox {
   background-color: var(--color-cream);
   border: 1px solid var(--color-cream-border);
-  border-left: 3px solid var(--color-gold);
+  border-left: 3px solid var(--color-red-sacred);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 1rem 1.25rem;
 }
@@ -239,7 +239,7 @@
 .successOm {
   font-family: var(--font-sanskrit);
   font-size: 3.5rem;
-  color: var(--color-gold);
+  color: var(--color-red-sacred);
   line-height: 1;
 }
 
@@ -257,7 +257,7 @@
 }
 
 .successDivider {
-  color: var(--color-gold);
+  color: var(--color-red-sacred);
   font-size: 0.65rem;
   letter-spacing: 0.4em;
   opacity: 0.6;
@@ -275,7 +275,7 @@
   align-items: flex-start;
   gap: 0.5rem;
   background-color: var(--color-cream-dark);
-  border: 1px dashed var(--color-gold);
+  border: 1px dashed var(--color-red-sacred);
   border-radius: var(--radius-sm);
   padding: 0.75rem 1rem;
   font-size: 0.8rem;

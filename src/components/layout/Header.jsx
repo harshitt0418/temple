@@ -2,7 +2,7 @@
  * Header.jsx
  * Authentic Hindu Temple Header with Traditional Toran Banner,
  * Peacock Feather Sacred Crest, and Bilingual Title (English + Telugu).
- * Aligned with Client Reference Screenshots.
+ * ZERO Yellow: All beads, accents, and borders are pearl white, sacred red, or stone.
  */
 
 import { useState, useEffect, useCallback } from 'react';
@@ -10,21 +10,21 @@ import { navLinks, templeInfo } from '../../data/mock-data';
 import { useModal } from '../../context/ModalContext';
 import styles from './Header.module.css';
 
-// Traditional Toran Banner SVG (repeating scalloped temple garland)
+// Traditional Toran Banner SVG (repeating scalloped temple garland with pearl white beads)
 function ToranBanner() {
   return (
     <div className={styles.toranContainer} aria-hidden="true">
       <svg className={styles.toranSvg} viewBox="0 0 1200 24" preserveAspectRatio="repeat-x" fill="none">
         <pattern id="toranPattern" width="60" height="24" patternUnits="userSpaceOnUse">
-          {/* Main scalloped triangle / pennant */}
-          <path d="M0 0 L60 0 L30 18 Z" fill="#7B1C28" />
+          {/* Main scalloped triangle / pennant in sacred temple red */}
+          <path d="M0 0 L60 0 L30 18 Z" fill="#6B1822" />
           <path d="M4 0 L56 0 L30 15 Z" fill="#8B2626" />
-          {/* Gold bead border */}
-          <circle cx="30" cy="18" r="2.5" fill="#E2B860" />
-          <circle cx="15" cy="9" r="1.5" fill="#E2B860" />
-          <circle cx="45" cy="9" r="1.5" fill="#E2B860" />
-          <circle cx="0" cy="2" r="2" fill="#C8963C" />
-          <circle cx="60" cy="2" r="2" fill="#C8963C" />
+          {/* Pearl white bead border — ZERO yellow */}
+          <circle cx="30" cy="18" r="2.5" fill="#FFFFFF" />
+          <circle cx="15" cy="9" r="1.5" fill="#FFFFFF" />
+          <circle cx="45" cy="9" r="1.5" fill="#FFFFFF" />
+          <circle cx="0" cy="2" r="2" fill="#FFFFFF" />
+          <circle cx="60" cy="2" r="2" fill="#FFFFFF" />
         </pattern>
         <rect width="100%" height="24" fill="url(#toranPattern)" />
       </svg>
@@ -32,29 +32,29 @@ function ToranBanner() {
   );
 }
 
-// Sacred Peacock Feather Crest Logo
+// Sacred Peacock Feather Crest Logo — Pearl White & Sacred Red (ZERO Yellow)
 function PeacockLogo() {
   return (
     <div className={styles.logo} aria-label={`${templeInfo.name} Logo`}>
       <div className={styles.logoBadge} aria-hidden="true">
         <svg viewBox="0 0 48 48" width="46" height="46" fill="none">
-          {/* Dark Green Circular Base */}
-          <circle cx="24" cy="24" r="22" fill="#13281F" stroke="#C8963C" strokeWidth="1.5" />
-          <circle cx="24" cy="24" r="19" stroke="#E2B860" strokeWidth="0.75" strokeDasharray="2 2" />
+          {/* Dark Green Circular Base with White Rim */}
+          <circle cx="24" cy="24" r="22" fill="#13281F" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="24" cy="24" r="19" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="0.75" strokeDasharray="2 2" />
           {/* Peacock Feather Crest */}
           <path
             d="M24 8 C18 14 16 22 24 38 C32 22 30 14 24 8 Z"
             fill="#1E4D38"
-            stroke="#C8963C"
+            stroke="#FFFFFF"
             strokeWidth="0.8"
           />
           {/* Feather eye */}
           <ellipse cx="24" cy="18" rx="4.5" ry="6" fill="#0E291E" />
-          <ellipse cx="24" cy="18" rx="3" ry="4" fill="#C8963C" />
+          <ellipse cx="24" cy="18" rx="3" ry="4" fill="#FFFFFF" />
           <circle cx="24" cy="18" r="2" fill="#8B2626" />
           <circle cx="24" cy="17" r="0.8" fill="#FFFFFF" />
-          {/* Stem & flutes */}
-          <path d="M24 24 L24 40" stroke="#C8963C" strokeWidth="1.2" strokeLinecap="round" />
+          {/* Stem */}
+          <path d="M24 24 L24 40" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" />
         </svg>
       </div>
       <div className={styles.logoText}>
@@ -158,7 +158,7 @@ export default function Header() {
               style={{ fontSize: '0.875rem', padding: '0.55rem 1.25rem' }}
               onClick={() => openModal('seva')}
             >
-              🪔 Book Seva
+              Book Seva
             </button>
           </div>
 
@@ -176,8 +176,8 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Subtle Bottom Gold/Parchment Edge */}
-        <div className={styles.goldAccent} aria-hidden="true" />
+        {/* Subtle Bottom Stone/Red Edge */}
+        <div className={styles.bottomAccent} aria-hidden="true" />
       </header>
 
       {/* Mobile Drawer */}
@@ -225,7 +225,7 @@ export default function Header() {
             style={{ width: '100%', justifyContent: 'center' }}
             onClick={() => { setMobileOpen(false); openModal('seva'); }}
           >
-            🪔 Book Seva Online
+            Book Seva Online
           </button>
         </div>
       </div>

@@ -4,7 +4,7 @@
  * Used to separate sections with cultural authenticity
  */
 
-export default function OrnamentalDivider({ color = 'var(--color-gold)', className = '' }) {
+export default function OrnamentalDivider({ color = 'var(--color-red-sacred)', className = '' }) {
   return (
     <div
       className={`ornamental-divider ${className}`}

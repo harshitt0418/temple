@@ -30,7 +30,7 @@ export default function FloatingSeva() {
         aria-label="Book a seva appointment"
         tabIndex={visible ? 0 : -1}
       >
-        <span className={styles.icon} aria-hidden="true">🪔</span>
+        <span className={styles.icon} aria-hidden="true">ॐ</span>
         <span className={styles.text}>Book Seva</span>
       </button>
     </div>

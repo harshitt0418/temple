@@ -1,9 +1,7 @@
 /**
  * Footer.jsx
  * Aligned with Client Reference:
- * - Deep dark green background
- * - Sri Krishna Temple / శ్రీ కృష్ణ దేవాలయం
- * - Quick links, timings, Kurnool address, social links
+ * ZERO Yellow: All borders, icons and accents are pearl white, sacred red or deep green.
  */
 
 import { templeInfo, daySchedule, navLinks } from '../../data/mock-data';
@@ -36,7 +34,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className={styles.footer} role="contentinfo">
-      {/* Top gold ornamental border */}
+      {/* Top red ornamental border — ZERO Yellow */}
       <div className={styles.topBorder} aria-hidden="true" />
 
       <div className={`container ${styles.inner}`}>
@@ -45,8 +43,8 @@ export default function Footer() {
           <div className={styles.footerBrand}>
             <div className={styles.footerLogoBadge} aria-hidden="true">
               <svg viewBox="0 0 36 36" width="36" height="36" fill="none">
-                <circle cx="18" cy="18" r="17" fill="#13281F" stroke="#C8963C" strokeWidth="1.5" />
-                <path d="M18 6 C13 11 11 17 18 30 C25 17 23 11 18 6 Z" fill="#1E4D38" stroke="#C8963C" strokeWidth="0.8" />
+                <circle cx="18" cy="18" r="17" fill="#13281F" stroke="#FFFFFF" strokeWidth="1.5" />
+                <path d="M18 6 C13 11 11 17 18 30 C25 17 23 11 18 6 Z" fill="#1E4D38" stroke="#FFFFFF" strokeWidth="0.8" />
                 <circle cx="18" cy="14" r="3" fill="#8B2626" />
                 <circle cx="18" cy="13.5" r="1" fill="#FFFFFF" />
               </svg>
@@ -61,7 +59,7 @@ export default function Footer() {
             "నా భక్తుడు నశింపడు" — A sacred haven of spiritual enlightenment, Vedic rituals and community service in Kurnool since 1987.
           </p>
 
-          <OrnamentalDivider color="var(--color-gold-pale)" />
+          <OrnamentalDivider color="var(--color-red-sacred)" />
 
           {/* Social Links */}
           <div className={styles.social}>
@@ -119,7 +117,7 @@ export default function Footer() {
           <ul className={styles.timingsList}>
             {daySchedule.slice(0, 4).map((t, idx) => (
               <li key={idx} className={styles.timingItem}>
-                <span className={styles.timingIcon} aria-hidden="true">🪔</span>
+                <span className={styles.timingDot} aria-hidden="true">✦</span>
                 <div>
                   <span className={styles.timingSession}>{t.title}</span>
                   <span className={styles.timingTime}>{t.time}</span>
@@ -135,7 +133,7 @@ export default function Footer() {
 
           <address className={styles.address}>
             <div className={styles.addressItem}>
-              <span className={styles.addressIcon} aria-hidden="true">📍</span>
+              <span className={styles.addressBullet}>✦</span>
               <span>
                 {templeInfo.name},<br />
                 {templeInfo.address.line1},<br />
@@ -144,7 +142,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.addressItem}>
-              <span className={styles.addressIcon} aria-hidden="true">📞</span>
+              <span className={styles.addressBullet}>✦</span>
               <div>
                 <a href={`tel:${templeInfo.contact.phone1}`} className={styles.contactLink}>
                   {templeInfo.contact.phone1}
@@ -153,7 +151,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.addressItem}>
-              <span className={styles.addressIcon} aria-hidden="true">✉️</span>
+              <span className={styles.addressBullet}>✦</span>
               <a href={`mailto:${templeInfo.contact.email}`} className={styles.contactLink}>
                 {templeInfo.contact.email}
               </a>
@@ -162,7 +160,7 @@ export default function Footer() {
 
           <button
             type="button"
-            className="btn btn--gold"
+            className="btn btn--primary"
             style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', marginTop: '0.5rem' }}
             onClick={() => openModal('contact')}
           >
@@ -178,7 +176,6 @@ export default function Footer() {
             © {currentYear} {templeInfo.name} (శ్రీ కృష్ణ దేవాలయం). All rights reserved.
           </p>
           <p className={styles.devotion}>
-            <span aria-hidden="true">🙏</span>&nbsp;
             Designed with devotion · కర్నూలు, ఆంధ్రప్రదేశ్
           </p>
         </div>

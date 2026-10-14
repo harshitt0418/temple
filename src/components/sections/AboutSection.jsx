@@ -4,7 +4,7 @@
  * - Pure cream background (no yellow)
  * - Dark green headings and lead text
  * - Telugu temple name: శ్రీ కృష్ణ దేవాలయం
- * - Real photograph of Sanctum Deity in golden alankaram (/assets/images/krishna-sanctum.jpg)
+ * - Real photograph of Sanctum Deity in sacred alankaram (/assets/images/krishna-sanctum.jpg)
  */
 
 import useScrollAnimation from '../../hooks/useScrollAnimation';
@@ -39,7 +39,7 @@ export default function AboutSection() {
             </p>
 
             <p className={styles.body}>
-              Enshrining the supreme Lord in his most enchanting Moolavar form adorned in radiant golden alankaram, fresh tulasi malas, and sacred silken vastrams, the temple attracts thousands of devout pilgrims every week seeking peace, wisdom, and divine protection.
+              Enshrining the supreme Lord in his most enchanting Moolavar form adorned in radiant sacred alankaram, fresh tulasi malas, and sacred silken vastrams, the temple attracts thousands of devout pilgrims every week seeking peace, wisdom, and divine protection.
             </p>
 
             <p className={styles.body}>
@@ -92,7 +92,7 @@ export default function AboutSection() {
               <div className={styles.photoArch}>
                 <img
                   src="/assets/images/krishna-sanctum.jpg"
-                  alt="Lord Sri Krishna sanctum deity in golden alankaram"
+                  alt="Lord Sri Krishna sanctum deity in sacred alankaram"
                   className={styles.photoImage}
                   loading="lazy"
                 />
@@ -109,14 +109,14 @@ export default function AboutSection() {
             {/* Info tiles */}
             <div className={styles.infoTiles}>
               <div className={styles.infoTile}>
-                <span className={styles.infoTileIcon}>🛕</span>
+                <span className={styles.infoTileBullet}>✦</span>
                 <div>
                   <span className={styles.infoTileTitle}>Dravidian Gopuram Architecture</span>
                   <span className={styles.infoTileText}>Traditional South Indian sculpted vimana</span>
                 </div>
               </div>
               <div className={styles.infoTile}>
-                <span className={styles.infoTileIcon}>🪔</span>
+                <span className={styles.infoTileBullet}>✦</span>
                 <div>
                   <span className={styles.infoTileTitle}>Vedic Puja Paddhati</span>
                   <span className={styles.infoTileText}>Conducted by trained traditional archakas</span>

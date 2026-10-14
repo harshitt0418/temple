@@ -4,7 +4,7 @@
   background-color: var(--color-green-deep);
   color: var(--color-cream-light);
   position: relative;
-  padding-bottom: 70px; /* Space for bottom fixed bar on mobile */
+  padding-bottom: 70px;
 }
 
 @media (min-width: 769px) {
@@ -18,9 +18,9 @@
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold-pale) 20%,
-    var(--color-gold) 50%,
-    var(--color-gold-pale) 80%,
+    var(--color-cream-border) 20%,
+    var(--color-red-sacred) 50%,
+    var(--color-cream-border) 80%,
     transparent
   );
 }
@@ -54,7 +54,7 @@
 .footerName {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   line-height: 1.2;
 }
 
@@ -62,7 +62,7 @@
   font-family: var(--font-telugu);
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--color-gold-light);
+  color: rgba(255, 255, 255, 0.85);
   margin-top: 0.15rem;
 }
 
@@ -84,28 +84,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(200, 150, 60, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-sm);
-  color: var(--color-gold-light);
+  color: #FFFFFF;
   transition: all var(--transition-base);
 }
 
 .socialLink:hover {
   background-color: var(--color-red-sacred);
   color: #FFFFFF;
-  border-color: var(--color-gold);
+  border-color: #FFFFFF;
 }
 
 /* ── Column Headings ──────────────────────────────────────── */
 .colHeading {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--color-gold-light);
+  color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(200, 150, 60, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ── Quick Links ──────────────────────────────────────────── */
@@ -126,13 +126,13 @@
 }
 
 .footerLink:hover {
-  color: var(--color-gold-light);
+  color: #FFFFFF;
   transform: translateX(4px);
 }
 
 .linkDot {
   font-size: 0.5rem;
-  color: var(--color-gold);
+  color: var(--color-red-sacred);
   flex-shrink: 0;
 }
 
@@ -149,23 +149,24 @@
   gap: 0.625rem;
 }
 
-.timingIcon {
-  font-size: 1rem;
+.timingDot {
+  color: var(--color-red-sacred);
+  font-size: 0.75rem;
   flex-shrink: 0;
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
 }
 
 .timingSession {
   display: block;
   font-size: 0.825rem;
   font-weight: 600;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
 }
 
 .timingTime {
   display: block;
   font-size: 0.8rem;
-  color: var(--color-gold-light);
+  color: rgba(255, 255, 255, 0.85);
   font-family: var(--font-body);
 }
 
@@ -183,10 +184,11 @@
   gap: 0.625rem;
 }
 
-.addressIcon {
+.addressBullet {
+  color: var(--color-red-sacred);
+  font-size: 0.75rem;
   flex-shrink: 0;
-  font-size: 0.875rem;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
 
 .addressItem > span:last-child,
@@ -198,18 +200,18 @@
 
 .contactLink {
   display: block;
-  color: var(--color-gold-light);
+  color: #FFFFFF;
   font-size: 0.825rem;
   transition: color var(--transition-fast);
 }
 
 .contactLink:hover {
-  color: var(--color-cream-light);
+  color: var(--color-red-sacred);
 }
 
 /* ── Bottom Bar ───────────────────────────────────────────── */
 .bottom {
-  border-top: 1px solid rgba(200, 150, 60, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   background-color: rgba(0, 0, 0, 0.3);
 }
 

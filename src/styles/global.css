@@ -1,6 +1,7 @@
 /* ================================================================
    GLOBAL BASE STYLES — Sri Krishna Temple (శ్రీ కృష్ణ దేవాలయం)
    Client-approved design system:
+   ZERO yellow across the entire website.
    Cream background, Dark Forest Green headings/text, Sacred Red accents
    ================================================================ */
 
@@ -76,7 +77,7 @@ button {
 /* ── Focus Visible (Accessibility) ──────────────────────────── */
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-red-sacred);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
@@ -155,30 +156,32 @@ p {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--color-gold-pale), transparent);
+  background: linear-gradient(to right, transparent, var(--color-cream-border), transparent);
 }
 
 .divider__ornament {
   font-size: var(--text-xl);
-  color: var(--color-gold);
+  color: var(--color-red-sacred);
   line-height: 1;
 }
 
-/* ── Gold Line (thin decorative accent) ──────────────────────── */
+/* ── Accent Line ─────────────────────────────────────────────── */
 
-.gold-line {
+.gold-line,
+.accent-line {
   width: 64px;
   height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold),
+    var(--color-red-sacred),
     transparent
   );
   margin-inline: auto;
 }
 
-.gold-line--left {
+.gold-line--left,
+.accent-line--left {
   margin-inline: 0;
 }
 
@@ -266,7 +269,7 @@ p {
 /* Primary Button — Temple Sacred Red */
 .btn--primary {
   background-color: var(--color-red-sacred);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   border: 2px solid var(--color-red-sacred);
   box-shadow: 0 4px 12px rgba(139, 38, 38, 0.25);
 }
@@ -274,7 +277,7 @@ p {
 .btn--primary:hover {
   background-color: var(--color-red-deep);
   border-color: var(--color-red-deep);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(139, 38, 38, 0.35);
 }
@@ -282,7 +285,7 @@ p {
 /* Forest Green Button */
 .btn--green {
   background-color: var(--color-green-dark);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   border: 2px solid var(--color-green-dark);
   box-shadow: 0 4px 12px rgba(19, 40, 31, 0.25);
 }
@@ -290,7 +293,7 @@ p {
 .btn--green:hover {
   background-color: var(--color-green-forest);
   border-color: var(--color-green-forest);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -303,7 +306,7 @@ p {
 
 .btn--outline:hover {
   background-color: var(--color-green-dark);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -316,22 +319,24 @@ p {
 
 .btn--outline-red:hover {
   background-color: var(--color-red-sacred);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
 }
 
-/* Gold Button */
+/* btn--gold remapped to sacred red button (ZERO Yellow) */
 .btn--gold {
-  background-color: var(--color-gold);
-  color: var(--color-green-dark);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-red-sacred);
+  color: #FFFFFF;
+  border: 2px solid var(--color-red-sacred);
   font-weight: 700;
+  box-shadow: 0 4px 12px rgba(139, 38, 38, 0.25);
 }
 
 .btn--gold:hover {
-  background-color: var(--color-gold-light);
-  border-color: var(--color-gold-light);
+  background-color: var(--color-red-deep);
+  border-color: var(--color-red-deep);
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 6px 16px rgba(139, 38, 38, 0.35);
 }
 
 /* Cream Outline Button */
@@ -401,7 +406,7 @@ p {
 
 ::selection {
   background: var(--color-green-dark);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
 }
 
 /* ── Responsive Utilities ────────────────────────────────────── */

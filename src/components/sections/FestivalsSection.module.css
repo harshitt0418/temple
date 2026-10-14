@@ -29,18 +29,18 @@
 .festivalCard:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(19, 40, 31, 0.1);
-  border-color: var(--color-gold);
+  border-color: var(--color-red-sacred);
 }
 
 .cardHighlight {
   border-left: 5px solid var(--color-red-sacred);
-  background: linear-gradient(180deg, #FCFAF4 0%, #F8F2E4 100%);
+  background: #FFFFFF;
 }
 
 /* Date Badge (OCT 11) */
 .dateBadge {
   background-color: var(--color-green-dark);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   border-radius: var(--radius-sm);
   width: 72px;
   height: 72px;
@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
 .cardHighlight .dateBadge {
@@ -62,7 +62,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold-light);
+  color: #FFFFFF;
 }
 
 .dateDay {
@@ -141,7 +141,7 @@
   max-width: 900px;
   margin: 2.5rem auto 0;
   background-color: var(--color-cream-light);
-  border: 1.5px dashed var(--color-gold);
+  border: 1.5px dashed var(--color-red-sacred);
   border-radius: var(--radius-md);
   padding: 1.5rem 2rem;
   display: flex;
@@ -157,7 +157,9 @@
 }
 
 .calendarIcon {
-  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendarTitle {

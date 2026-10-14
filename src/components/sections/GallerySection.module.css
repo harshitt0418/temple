@@ -4,8 +4,8 @@
   background-color: var(--color-green-deep);
   color: var(--color-cream);
   padding: 4rem 0;
-  border-top: 2px solid var(--color-gold);
-  border-bottom: 2px solid var(--color-gold);
+  border-top: 2px solid var(--color-red-sacred);
+  border-bottom: 2px solid var(--color-red-sacred);
 }
 
 .header {
@@ -19,18 +19,18 @@
   align-items: center;
   gap: 0.5rem;
   background-color: var(--color-red-sacred);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   font-family: var(--font-telugu);
   font-size: 0.95rem;
   font-weight: 700;
   padding: 0.35rem 1.25rem;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--color-gold);
+  border: 1px solid #FFFFFF;
   margin-bottom: 0.85rem;
 }
 
 .pillDot {
-  color: var(--color-gold-light);
+  color: #FFFFFF;
   font-size: 0.75rem;
 }
 
@@ -61,7 +61,7 @@
 .filterBtn {
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--color-cream);
-  border: 1px solid rgba(200, 150, 60, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-pill);
   padding: 0.45rem 1rem;
   font-family: var(--font-body);
@@ -75,14 +75,14 @@
 }
 
 .filterBtn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: var(--color-gold);
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: #FFFFFF;
 }
 
 .filterActive {
   background-color: var(--color-red-sacred);
-  border-color: var(--color-gold);
-  color: var(--color-cream-light);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
   box-shadow: 0 2px 10px rgba(139, 38, 38, 0.4);
 }
 
@@ -102,7 +102,7 @@
 
 .card {
   background-color: #152B21;
-  border: 1px solid rgba(200, 150, 60, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
@@ -114,7 +114,7 @@
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  border-color: var(--color-gold);
+  border-color: var(--color-red-sacred);
 }
 
 .imageWrap {
@@ -148,7 +148,7 @@
 
 .tagBadge {
   background-color: var(--color-red-sacred);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 700;

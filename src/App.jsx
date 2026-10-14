@@ -20,7 +20,7 @@ export default function App() {
         Skip to main content
       </a>
 
-      {/* Gold scroll progress indicator (top of viewport) */}
+      {/* Sacred red scroll progress indicator (top of viewport) */}
       <ScrollProgress />
 
       {/* Global announcement ticker */}

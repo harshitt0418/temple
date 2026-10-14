@@ -1,33 +1,46 @@
 /* ================================================================
    DESIGN TOKENS — Sri Krishna Temple (శ్రీ కృష్ణ దేవాలయం)
    Client-approved design system:
-   - Background: Pure warm cream / parchment (zero yellow cast)
-   - Primary Headings & Text: Dark forest green (#13281F / #183D2F)
-   - Sacred Accents: Deep temple red / sindoor (#8B2626 / #A3241E)
-   - Ornamental accents: Traditional temple gold (#C8963C)
+   - ZERO yellow across the entire website
+   - Background: Pure Stone Cream / Parchment & Crisp White
+   - Primary Headings & Text: Dark Forest Green (#13281F / #183D2F)
+   - Sacred Accents & Emblems: Deep Temple Red / Sindoor (#8B2626 / #A3241E)
+   - Borders & Dividers: Neutral Stone (#DDD5C7) and Sacred Red
    ================================================================ */
 
 :root {
   /* ── Colour Palette ─────────────────────────────────────────── */
 
-  /* Backgrounds — Pure Cream / Parchment (no yellow tint) */
-  --color-cream:          #FAF6EE;   /* primary page bg — soothing cream parchment */
-  --color-cream-light:    #FCFAF4;   /* pure light cream for cards & modals */
-  --color-cream-dark:     #F1ECE0;   /* soft muted cream for card borders & bands */
-  --color-cream-border:   #E4DCcb;   /* subtle borders */
+  /* Backgrounds — Pure Cream / Parchment / White (Zero Yellow Cast) */
+  --color-cream:          #F8F5EE;   /* primary page bg — soft stone parchment */
+  --color-cream-light:    #FFFFFF;   /* clean pure white/light cream for cards */
+  --color-cream-dark:     #EFEAE0;   /* muted stone cream for borders & bands */
+  --color-cream-border:   #DDD5C7;   /* subtle stone borders */
 
-  /* Primary Brand — Dark Forest Green (text, headings & deep surfaces) */
+  /* Primary Brand — Dark Forest Green */
   --color-green-dark:     #13281F;   /* primary text, brand logo, deep green */
   --color-green-deep:     #0D1D16;   /* ultra deep green for gallery & dark cards */
   --color-green-forest:   #183D2F;   /* rich forest green for badges, icons */
-  --color-green-light:    #2A5944;   /* hover states & lighter accents */
-  --color-green-card:     #173427;   /* visiting hours & store card background */
+  --color-green-light:    #24533E;   /* hover states & lighter accents */
+  --color-green-card:     #143325;   /* visiting hours & store card background */
 
   /* Sacred Accents — Deep Temple Red / Sindoor */
-  --color-red-sacred:     #8B2626;   /* sacred red — buttons, toran, quick actions */
-  --color-red-deep:       #6C1A1A;   /* deep brick red */
-  --color-red-light:      #A53232;   /* hover states & highlights */
-  --color-red-toran:      #7B1C28;   /* traditional toran banner red */
+  --color-red-sacred:     #8B2626;   /* sacred red — buttons, toran, accents */
+  --color-red-deep:       #6C1818;   /* deep brick red */
+  --color-red-light:      #A83232;   /* hover states & highlights */
+  --color-red-toran:      #7B1822;   /* traditional toran banner red */
+  --color-red-pale:       #F7EBEB;   /* soft red tint */
+
+  /* Replaced Gold with Sacred Red & Pearl Accents (ZERO Yellow) */
+  --color-accent:         #8B2626;   /* primary accent */
+  --color-accent-light:   #A83232;
+  --color-pearl:          #FFFFFF;   /* crisp pearl accents */
+  --color-silver-pale:    #DDD5C7;   /* ornamental line dividers */
+
+  /* Backward-compatible variables remapped to Red / Stone / White */
+  --color-gold:           #8B2626;   /* mapped to sacred red (no yellow) */
+  --color-gold-light:     #A83232;   /* mapped to light sacred red */
+  --color-gold-pale:      #DDD5C7;   /* mapped to neutral stone divider */
 
   /* Typography Colors */
   --color-text-primary:   #13281F;   /* Dark green heading and strong text */
@@ -37,15 +50,10 @@
   --color-heading:        #13281F;   /* Dark green for all h1-h6 */
   --color-telugu:         #8B2626;   /* Deep red for Telugu subtitles */
 
-  /* Temple Gold — Sacred Ornamental Accent ONLY */
-  --color-gold:           #C8963C;   /* sacred emblems, thin ornamental lines */
-  --color-gold-light:     #DFB056;   /* hover glint */
-  --color-gold-pale:      #E8DCBE;   /* subtle dividers */
-
   /* Utility */
   --color-white:          #FFFFFF;
-  --color-overlay:        rgba(19, 40, 31, 0.65);
-  --color-overlay-light:  rgba(250, 246, 238, 0.94);
+  --color-overlay:        rgba(19, 40, 31, 0.7);
+  --color-overlay-light:  rgba(248, 245, 238, 0.95);
   --color-live-green:     #10B981;   /* live status indicator dot */
 
   /* ── Typography ─────────────────────────────────────────────── */
@@ -99,7 +107,8 @@
   --shadow-sm:  0 2px 6px rgba(19, 40, 31, 0.08);
   --shadow-md:  0 6px 20px rgba(19, 40, 31, 0.12);
   --shadow-lg:  0 12px 36px rgba(19, 40, 31, 0.16);
-  --shadow-gold: 0 4px 16px rgba(200, 150, 60, 0.28);
+  --shadow-red: 0 4px 16px rgba(139, 38, 38, 0.25);
+  --shadow-gold: 0 4px 16px rgba(139, 38, 38, 0.25); /* remapped */
 
   /* ── Transitions ─────────────────────────────────────────────── */
   --transition-fast:   150ms ease;

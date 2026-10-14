@@ -51,11 +51,11 @@
 
 .activityCard:hover {
   transform: translateX(4px);
-  border-color: var(--color-gold);
+  border-color: var(--color-red-sacred);
 }
 
 .activityIcon {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   background-color: var(--color-cream-dark);
   width: 44px;
   height: 44px;
@@ -64,6 +64,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: var(--color-red-sacred);
 }
 
 .activityContent {
@@ -103,6 +104,12 @@
   color: var(--color-text-muted);
 }
 
+.metaTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -119,7 +126,7 @@
 
 .annadanamCard {
   background-color: var(--color-cream-light);
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--color-red-sacred);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(19, 40, 31, 0.08);
@@ -150,7 +157,7 @@
   top: 1rem;
   left: 1rem;
   background-color: var(--color-red-sacred);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;

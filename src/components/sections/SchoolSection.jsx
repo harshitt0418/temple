@@ -49,8 +49,8 @@ export default function SchoolSection() {
                     <p className={styles.activityTelugu}>{activity.telugu}</p>
                     <p className={styles.activityDesc}>{activity.description}</p>
                     <div className={styles.activityMeta}>
-                      <span className={styles.metaTag}>📅 {activity.schedule}</span>
-                      <span className={styles.metaTag}>👤 {activity.ageGroup}</span>
+                      <span className={styles.metaTag}>✦ {activity.schedule}</span>
+                      <span className={styles.metaTag}>✦ {activity.ageGroup}</span>
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ export default function SchoolSection() {
                   loading="lazy"
                 />
                 <div className={styles.annadanamBadge}>
-                  <span>🍲 నిత్య అన్నదానం · Nitya Annadanam</span>
+                  <span>✦ నిత్య అన్నదానం · Nitya Annadanam</span>
                 </div>
               </div>
 

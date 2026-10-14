@@ -20,7 +20,7 @@
 /* Date Selector Bar */
 .dateBar {
   background-color: var(--color-red-sacred);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,7 +30,7 @@
 .dateNavBtn {
   background: none;
   border: none;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
@@ -80,7 +80,7 @@
 
 .timeBadge {
   background-color: var(--color-green-dark);
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
@@ -128,19 +128,19 @@
   line-height: 1.5;
 }
 
-/* ── 2. Visiting Hours Card (Reference: 02.20.49 1) ─────────── */
+/* ── 2. Visiting Hours Card ─────────────────────────────────── */
 .visitingCard {
   max-width: 840px;
   margin: 0 auto 3.5rem;
   background: linear-gradient(135deg, #183D2F 0%, #13281F 100%);
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--color-red-sacred);
   border-radius: var(--radius-md);
   padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   box-shadow: 0 8px 24px rgba(19, 40, 31, 0.2);
 }
 
@@ -154,8 +154,8 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background-color: rgba(200, 150, 60, 0.15);
-  border: 1px solid var(--color-gold);
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,18 +165,18 @@
 .visitingTitle {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   margin-bottom: 0.25rem;
 }
 
 .visitingHoursText {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: rgba(250, 246, 238, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .visitingHoursText strong {
-  color: var(--color-gold-light);
+  color: #FFFFFF;
 }
 
 .liveStatus {
@@ -268,7 +268,7 @@
 .sevaCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(19, 40, 31, 0.1);
-  border-color: var(--color-gold);
+  border-color: var(--color-red-sacred);
 }
 
 .sevaCardTop {
@@ -286,7 +286,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
 }
 
 .sevaDonationBadge {
@@ -333,6 +332,17 @@
   font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+.sevaMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sevaMetaItem span:first-child {
+  color: var(--color-red-sacred);
+  font-size: 0.75rem;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

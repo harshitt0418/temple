@@ -1,7 +1,7 @@
 /**
  * AnnouncementStrip.jsx
  * Marquee-style announcement ticker at the very top of the page.
- * Deep burgundy background, cream text, gold dots between items.
+ * Dark green background, cream text, sacred red separators between items.
  */
 
 import { useState } from 'react';

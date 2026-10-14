@@ -1,11 +1,7 @@
 /**
  * GallerySection.jsx (Chitramalika / చిత్రమాలిక)
- * Aligned with Client Reference Screenshots (02.20.50 3 & 02.20.52 2):
- * - Deep dark green backdrop (#0D1D16)
- * - Red Telugu pill: "చిత్రమాలిక"
- * - Filter pills for Sanctum, Campus, Festivals, Annadanam
- * - Real temple images extracted from client reference photos
- * - Interactive Lightbox / Modal preview
+ * Aligned with Client Reference:
+ * ZERO Yellow: All borders, filter badges, and buttons are red, white or deep green.
  */
 
 import { useState } from 'react';
@@ -78,7 +74,12 @@ export default function GallerySection() {
                 />
                 <div className={styles.overlay}>
                   <span className={styles.tagBadge}>{item.tag}</span>
-                  <span className={styles.zoomIcon} aria-hidden="true">🔍</span>
+                  <span className={styles.zoomIcon} aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="8" />
+                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                  </span>
                 </div>
               </div>
               <figcaption className={styles.caption}>
@@ -94,10 +95,10 @@ export default function GallerySection() {
             href="https://www.instagram.com/kurnool_spiritucal/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn--gold"
+            className="btn btn--primary"
             style={{ padding: '0.65rem 1.6rem', fontSize: '0.9rem' }}
           >
-            📸 Follow @kurnool_spiritucal on Instagram
+            Follow @kurnool_spiritucal on Instagram
           </a>
         </div>
 

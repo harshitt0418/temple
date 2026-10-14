@@ -76,7 +76,7 @@
 }
 
 .statDivider {
-  color: var(--color-gold);
+  color: var(--color-red-sacred);
   font-size: 0.8rem;
   opacity: 0.6;
 }
@@ -100,7 +100,7 @@
   padding: 6px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(19, 40, 31, 0.18);
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--color-red-sacred);
 }
 
 .photoArch {
@@ -138,7 +138,7 @@
 
 .photoOm {
   font-size: 1.75rem;
-  color: var(--color-gold);
+  color: #FFFFFF;
 }
 
 .photoTitle {
@@ -152,7 +152,7 @@
 .photoSubtitle {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--color-gold-light);
+  color: rgba(255, 255, 255, 0.85);
   display: block;
 }
 
@@ -170,6 +170,12 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
+}
+
+.infoTileBullet {
+  color: var(--color-red-sacred);
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 .infoTileIcon {
