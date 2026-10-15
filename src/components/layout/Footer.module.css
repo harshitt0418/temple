@@ -210,6 +210,7 @@
 }
 
 .addressIcon {
+  color: #FFFFFF;
   flex-shrink: 0;
   font-size: 0.875rem;
   margin-top: 0.15rem;
@@ -217,20 +218,22 @@
 
 .addressItem > span:last-child,
 .addressItem > div {
-  font-size: 0.8125rem;
-  color: rgba(251, 246, 238, 0.75);
+  font-size: 0.85rem;
+  color: #FFFFFF;
   line-height: 1.6;
 }
 
 .contactLink {
   display: block;
-  color: var(--color-gold-light);
-  font-size: 0.8125rem;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 500;
   transition: color var(--transition-fast);
 }
 
 .contactLink:hover {
   color: var(--color-cream-light);
+  text-decoration: underline;
 }
 
 .enquiryBtn {
