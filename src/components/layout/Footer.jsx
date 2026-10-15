@@ -44,7 +44,7 @@ export default function Footer() {
             <img src="/assets/logos/logo-reverse.png" alt="Shri Krishna Mandir Logo" className={styles.footerLogoImg} />
             <div>
               <h3 className={styles.footerName}>{templeInfo.name}</h3>
-              <p className={styles.footerDeity}>{templeInfo.deityDevanagari}</p>
+              <p className={styles.footerDeity}>{templeInfo.locationTagline}</p>
             </div>
           </div>
 
@@ -172,7 +172,7 @@ export default function Footer() {
           </p>
           <p className={styles.devotion}>
             <span aria-hidden="true">ॐ</span>&nbsp;
-            Designed with devotion · सर्वे भवन्तु सुखिनः
+            Designed with devotion for devotees of Lord Sri Krishna
           </p>
         </div>
       </div>

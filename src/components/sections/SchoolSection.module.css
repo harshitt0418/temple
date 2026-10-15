@@ -124,9 +124,9 @@
 .panelOm {
   font-family: var(--font-sanskrit);
   font-size: 3rem;
-  color: var(--color-gold);
+  color: var(--color-cream-light);
   line-height: 1;
-  text-shadow: 0 0 20px rgba(139, 38, 38, 0.4);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .panelTitle {
@@ -138,16 +138,16 @@
 
 .panelSubtitle {
   font-size: 0.8rem;
-  color: var(--color-gold-pale);
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.06em;
   font-family: var(--font-body);
 }
 
 .panelDivider {
-  color: var(--color-gold);
+  color: var(--color-cream-light);
   font-size: 0.5rem;
   letter-spacing: 0.4em;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .panelList {

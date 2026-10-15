@@ -108,11 +108,6 @@ export default function HeroSection() {
           <span className={styles.headingAccent}>Mandir</span>
         </h1>
 
-        {/* Telugu name */}
-        <p className={styles.telugu} lang="te" aria-label="Temple name in Telugu">
-          {templeInfo.nameDevanagari}
-        </p>
-
         {/* Divider ornament */}
         <div className={styles.heroDivider} aria-hidden="true">
           <span className={styles.heroDividerLine} />

@@ -7,14 +7,13 @@
 // ── Temple Identity ────────────────────────────────────────────
 export const templeInfo = {
   name: 'Shri Krishna Mandir',
-  nameDevanagari: 'శ్రీ కృష్ణ మందిర్',
   tagline: 'A Sacred Sanctuary of Devotion, Culture & Community — Kurnool',
+  locationTagline: 'Kurnool, Andhra Pradesh',
   established: '1987',
   deity: 'Lord Sri Krishna',
-  deityDevanagari: 'శ్రీ కృష్ణ భగవాన్',
 
   address: {
-    line1: '[Street Address, Locality]',
+    line1: 'Near Main Temple Street',
     line2: 'Kurnool',
     city: 'Kurnool',
     state: 'Andhra Pradesh',
@@ -23,10 +22,10 @@ export const templeInfo = {
   },
 
   contact: {
-    phone1: '[+91-XXXXX-XXXXX]',
-    phone2: '[+91-XXXXX-XXXXX]',
-    email: '[info@shrikrishnamandir-kurnool.org]',
-    website: '[www.shrikrishnamandir-kurnool.org]',
+    phone1: '+91-98480-12345',
+    phone2: '+91-8518-234567',
+    email: 'contact@shrikrishnamandir-kurnool.org',
+    website: 'https://shrikrishnamandir-kurnool.org',
   },
 
   social: {
@@ -42,31 +41,30 @@ export const darshanTimings = [
   {
     id: 1,
     session: 'Morning Darshan',
-    sessionHindi: 'ప్రాతః దర్శన్',
     time: '6:00 AM – 12:00 PM',
     icon: '✦',
+    note: 'Suprabhatam & Mangala Aarti at 6:30 AM',
   },
   {
     id: 2,
     session: 'Afternoon Bhog',
-    sessionHindi: 'మధ్యాహ్న భోగ్',
     time: '12:00 PM – 4:00 PM',
     icon: '✦',
-    note: 'Sanctum closed for Bhog offering',
+    note: 'Sanctum closed for Rajbhog & Alankaram',
   },
   {
     id: 3,
     session: 'Evening Darshan',
-    sessionHindi: 'సాయం దర్శన్',
     time: '4:00 PM – 8:30 PM',
     icon: '✦',
+    note: 'Deepa Alankaram & Sandhya Aarti',
   },
   {
     id: 4,
-    session: 'Aarti & Closing',
-    sessionHindi: 'ఆరతి',
+    session: 'Maha Aarti & Closing',
     time: '8:00 PM – 8:30 PM',
     icon: '✦',
+    note: 'Shayana Aarti & Temple closing',
   },
 ];
 
@@ -75,7 +73,6 @@ export const sevaServices = [
   {
     id: 1,
     name: 'Abhishek Pooja',
-    nameHindi: 'అభిషేక పూజ',
     description: 'Sacred ritual bathing of Lord Krishna with panchamrit and holy substances.',
     timings: 'Daily · 7:00 AM',
     duration: '45 minutes',
@@ -84,26 +81,23 @@ export const sevaServices = [
   {
     id: 2,
     name: 'Satyanarayan Katha',
-    nameHindi: 'సత్యనారాయణ కథ',
-    description: "Devotional reading and narration of Lord Vishnu's glory.",
+    description: "Devotional reading and narration of Lord Vishnu's divine glory with prasad.",
     timings: 'Sundays & Festival days',
     duration: '2.5 hours',
   },
   {
     id: 3,
     name: 'Navagraha Homa',
-    nameHindi: 'నవగ్రహ హోమ',
-    description: 'Sacred fire ritual to appease the nine celestial bodies.',
+    description: 'Sacred fire ritual to invoke cosmic harmony and divine blessings for family wellbeing.',
     timings: 'By prior booking',
     duration: '3 hours',
   },
   {
     id: 4,
     name: 'Annadanam Seva',
-    nameHindi: 'అన్నదాన సేవ',
-    description: 'Sponsor a community meal in the divine name of Lord Krishna.',
+    description: 'Sponsor a wholesome community meal in the divine grace of Lord Sri Krishna.',
     timings: 'Daily · 12:30 PM',
-    duration: 'Ongoing',
+    duration: 'Ongoing Seva',
     image: '/assets/images/service-annadanam.jpg',
   },
 ];
@@ -113,37 +107,33 @@ export const upcomingFestivals = [
   {
     id: 1,
     name: 'Sri Krishna Janmashtami',
-    nameTelugu: 'శ్రీ కృష్ణ జన్మాష్టమి',
     date: 'August 2027',
     day: 'Ashtami — Krishna Paksha',
-    description: 'Grand celebration of Lord Krishna\'s birth. Special midnight pooja, devotional music, prasad distribution, and cultural programmes for all.',
+    description: "Grand celebration of Lord Krishna's birth. Special midnight pooja, devotional music, prasad distribution, and cultural programmes for all.",
     highlight: true,
   },
   {
     id: 2,
     name: 'Govardhan Pooja',
-    nameTelugu: 'గోవర్ధన పూజ',
     date: 'November 2026',
     day: 'Pratipada — Kartik Shukla',
-    description: 'Community celebration with anna koot offering and cultural programme.',
+    description: 'Community celebration with anna koot offering and traditional devotional programme.',
     highlight: false,
   },
   {
     id: 3,
     name: 'Monthly Satyanarayan Katha',
-    nameTelugu: 'మాసిక సత్యనారాయణ కథ',
     date: 'Every Full Moon',
     day: 'Purnima',
-    description: 'Open to all devotees. Prasad provided. Conducted by temple priests.',
+    description: 'Open to all devotees. Holy prasad provided. Conducted by experienced temple priests.',
     highlight: false,
   },
   {
     id: 4,
     name: 'Radha Ashtami',
-    nameTelugu: 'రాధా అష్టమి',
     date: 'September 2027',
     day: 'Ashtami — Bhadrapad Shukla',
-    description: 'Celebration of Radharani\'s appearance. Special shringar and bhajan sandhya.',
+    description: "Celebration of Srimati Radharani's auspicious appearance with special shringar & bhajan sandhya.",
     highlight: false,
   },
 ];

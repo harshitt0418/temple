@@ -23,7 +23,7 @@ function TempleLogo() {
       </div>
       <div className={styles.logoText}>
         <span className={styles.logoName}>{templeInfo.name}</span>
-        <span className={styles.logoTagline}>{templeInfo.deityDevanagari}</span>
+        <span className={styles.logoTagline}>{templeInfo.locationTagline}</span>
       </div>
     </div>
   );

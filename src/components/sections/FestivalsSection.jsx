@@ -51,7 +51,6 @@ export default function FestivalsSection() {
             <div className={styles.featuredContent}>
               <div className={styles.featuredBadge}>✦ Grand Festival</div>
               <h3 className={styles.featuredName}>{festival.name}</h3>
-              <p className={styles.featuredTelugu} lang="te">{festival.nameTelugu}</p>
               <p className={styles.featuredDesc}>{festival.description}</p>
               <div className={styles.featuredActions}>
                 <button
@@ -101,7 +100,6 @@ export default function FestivalsSection() {
 
               <div className={styles.cardBody}>
                 <h4 className={styles.cardName}>{festival.name}</h4>
-                <p className={styles.cardTelugu} lang="te">{festival.nameTelugu}</p>
                 <p className={styles.cardDesc}>{festival.description}</p>
               </div>
 

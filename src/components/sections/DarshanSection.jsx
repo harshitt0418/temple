@@ -20,24 +20,14 @@ export default function DarshanSection() {
   return (
     <section id="darshan" className={`section ${styles.darshan}`} aria-label="Darshan timings and seva services">
 
-      {/* Top arch */}
-      <div className={styles.topWave} aria-hidden="true">
-        <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none">
-          <path d="M0,0 C480,60 960,-20 1440,0 L1440,0 L0,0 Z" fill="var(--color-cream)" />
-        </svg>
-      </div>
-
-      {/* Background pattern */}
-      <div className={styles.bgPattern} aria-hidden="true" />
-
       <div className="container">
 
         <div ref={headRef} className={`reveal ${headVisible ? 'is-visible' : ''}`}>
           <SectionLabel
             eyebrow="Temple Schedule"
             title="Darshan, Pooja & Seva"
-            subtitle="आओ, दर्शन करो — Come, seek the blessings of Lord Krishna"
-            light={true}
+            subtitle="Come, seek the divine blessings of Lord Sri Krishna"
+            light={false}
           />
         </div>
 
@@ -48,7 +38,6 @@ export default function DarshanSection() {
               key={t.id}
               className={`${styles.timingCard} reveal reveal-delay-${i + 1} ${cardVisible ? 'is-visible' : ''}`}
             >
-              {/* Glow effect on hover */}
               <div className={styles.cardGlow} aria-hidden="true" />
 
               <div className={styles.timingTop}>
@@ -57,23 +46,22 @@ export default function DarshanSection() {
                 </div>
                 <div>
                   <h3 className={styles.timingSession}>{t.session}</h3>
-                  <p className={styles.timingTelugu} lang="te">{t.sessionHindi}</p>
                 </div>
               </div>
 
               <div className={styles.timingTimeLine} aria-hidden="true" />
               <div className={styles.timingTime}>{t.time}</div>
-              {t.note && <p className={styles.timingNote}>⚠ {t.note}</p>}
+              {t.note && <p className={styles.timingNote}>{t.note}</p>}
             </div>
           ))}
         </div>
 
         {/* ── Seva section header ── */}
         <div className={styles.sevaIntro}>
-          <OrnamentalDivider color="var(--color-gold-pale)" />
+          <OrnamentalDivider />
           <div className={styles.sevaHeaderText}>
-            <h3 className={styles.sevaTitle}>Pooja & Seva Bookings</h3>
-            <p className={styles.sevaSubtitle}>Offer seva in the divine name of Lord Sri Krishna — open to all devotees</p>
+            <h3 className={styles.sevaTitle}>Pooja &amp; Seva Bookings</h3>
+            <p className={styles.sevaSubtitle}>Offer sacred seva in the divine name of Lord Sri Krishna — open to all devotees</p>
           </div>
         </div>
 
@@ -92,7 +80,6 @@ export default function DarshanSection() {
               <div className={styles.sevaTop}>
                 <div>
                   <h4 className={styles.sevaName}>{seva.name}</h4>
-                  <p className={styles.sevaTelugu} lang="te">{seva.nameHindi}</p>
                 </div>
               </div>
 
@@ -108,14 +95,11 @@ export default function DarshanSection() {
               </div>
 
               <button
-                className={`btn btn--outline-cream ${styles.sevaBtn}`}
+                className={`btn btn--primary ${styles.sevaBtn}`}
                 onClick={() => openModal('seva', seva)}
               >
                 Book Seva
               </button>
-
-              {/* Gold corner accent */}
-              <div className={styles.sevaCorner} aria-hidden="true" />
             </div>
           ))}
         </div>
@@ -127,7 +111,7 @@ export default function DarshanSection() {
             <div>
               <p className={styles.nudgeText}>
                 Support the temple through <strong>Annadanam</strong>, <strong>Nityaseva</strong>,
-                or <strong>Utsav Sponsorship</strong>. Every offering, big or small, is received by the Lord.
+                or <strong>Utsav Sponsorship</strong>. Every humble offering is received by the Lord.
               </p>
             </div>
           </div>
@@ -136,13 +120,6 @@ export default function DarshanSection() {
           </button>
         </div>
 
-      </div>
-
-      {/* Bottom wave */}
-      <div className={styles.bottomWave} aria-hidden="true">
-        <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none">
-          <path d="M0,50 C480,-10 960,60 1440,50 L1440,50 L0,50 Z" fill="var(--color-cream-light)" />
-        </svg>
       </div>
     </section>
   );

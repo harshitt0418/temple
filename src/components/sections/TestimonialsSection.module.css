@@ -1,14 +1,10 @@
-/* TestimonialsSection.module.css */
+/* TestimonialsSection.module.css — Soothing Cream & High Contrast Theme */
 
 .testimonials {
-  background: linear-gradient(
-    160deg,
-    var(--color-burgundy-deep) 0%,
-    var(--color-burgundy) 60%,
-    var(--color-burgundy-deep) 100%
-  );
+  background-color: var(--color-cream);
   position: relative;
   overflow: hidden;
+  padding-block: clamp(4rem, 8vw, 6rem);
 }
 
 .testimonials::before {
@@ -18,7 +14,7 @@
   left: 2rem;
   font-family: var(--font-display);
   font-size: 20rem;
-  color: rgba(255,255,255,0.03);
+  color: rgba(19, 40, 31, 0.03);
   line-height: 1;
   pointer-events: none;
 }
@@ -32,37 +28,40 @@
 /* ── Card ─────────────────────────────────────────────────── */
 
 .card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(221, 216, 206, 0.25);
+  background: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-top: 3px solid var(--color-burgundy);
   border-radius: var(--radius-md);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   position: relative;
-  transition: border-color var(--transition-base), transform var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .card:hover {
-  border-color: var(--color-gold);
+  border-top-color: var(--color-burgundy-light);
   transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .quoteMarkTop {
   font-family: var(--font-display);
-  font-size: 4rem;
-  color: var(--color-gold);
-  opacity: 0.4;
+  font-size: 3.5rem;
+  color: var(--color-burgundy);
+  opacity: 0.35;
   line-height: 1;
-  height: 2rem;
+  height: 1.75rem;
   overflow: visible;
 }
 
 .quoteText {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 0.975rem;
-  color: rgba(251,246,238,0.85);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
   line-height: 1.8;
   flex: 1;
 }
@@ -70,8 +69,8 @@
 .quoteMark {
   font-family: var(--font-display);
   font-size: 2rem;
-  color: var(--color-gold);
-  opacity: 0.25;
+  color: var(--color-burgundy);
+  opacity: 0.2;
   line-height: 1;
   text-align: right;
 }
@@ -80,7 +79,7 @@
   display: flex;
   align-items: center;
   gap: 0.875rem;
-  border-top: 1px solid rgba(221, 216, 206, 0.2);
+  border-top: 1px solid var(--color-cream-border);
   padding-top: 1rem;
   margin-top: 0.25rem;
 }
@@ -89,33 +88,39 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-burgundy-light));
+  background: var(--color-burgundy);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-cream-light);
+  color: #FFFFFF;
   flex-shrink: 0;
-  border: 2px solid rgba(139, 38, 38, 0.5);
+  border: 2px solid var(--color-cream-border);
 }
 
 .name {
   display: block;
   font-style: normal;
   font-weight: 600;
-  font-size: 0.875rem;
-  color: var(--color-cream-light);
+  font-size: 0.925rem;
+  color: var(--color-text-primary);
   font-family: var(--font-body);
 }
 
 .city {
   display: block;
   font-size: 0.75rem;
-  color: var(--color-gold-pale);
+  font-weight: 500;
+  color: var(--color-text-muted);
   margin-top: 0.1rem;
 }
 
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; } }
-@media (min-width: 640px) and (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); max-width: none; } }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+}
+
+@media (min-width: 640px) and (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); max-width: none; }
+}

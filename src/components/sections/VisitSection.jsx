@@ -30,17 +30,16 @@ export default function VisitSection() {
           {/* ── Left: Map placeholder ── */}
           <div className={`${styles.mapCol} reveal-left ${gridVisible ? 'is-visible' : ''}`}>
             <div className={styles.mapWrap}>
-              {/* Map placeholder — replace with Google Maps iframe */}
-              <div className={styles.mapPlaceholder}>
-                <div className={styles.mapPinIcon} aria-hidden="true">✦</div>
-                <p className={styles.mapPlaceholderTitle}>Shri Krishna Mandir</p>
-                <p className={styles.mapPlaceholderSub}>Kurnool, Andhra Pradesh</p>
-                <p className={styles.mapNote}>
-                  Replace this block with a Google Maps embed:
-                  <br />
-                  <code className={styles.mapCode}>{'<iframe src="https://maps.google.com/..." />'}</code>
-                </p>
-              </div>
+              <iframe
+                title="Shri Krishna Mandir Kurnool Location Map"
+                src="https://maps.google.com/maps?q=Shri+Krishna+Mandir+Kurnool+Andhra+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '380px', display: 'block' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
 
             <a

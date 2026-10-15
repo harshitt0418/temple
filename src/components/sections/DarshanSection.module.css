@@ -1,47 +1,23 @@
-/* DarshanSection.module.css — Part 2 */
+/* DarshanSection.module.css — Soothing Cream & High Contrast Theme */
 
 .darshan {
-  background-color: var(--color-burgundy-deep);
-  padding-block: 5rem;
+  background-color: var(--color-cream-dark);
+  padding-block: clamp(4rem, 8vw, 6rem);
   overflow: hidden;
   position: relative;
 }
 
-/* Background radial pattern */
-.bgPattern {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(123, 28, 43, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(92, 18, 32, 0.3) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.topWave, .bottomWave {
-  position: absolute;
-  left: 0; right: 0;
-  height: 50px;
-  pointer-events: none;
-  z-index: 1;
-}
-.topWave { top: 0; }
-.bottomWave { bottom: 0; }
-.topWave svg, .bottomWave svg { width: 100%; height: 100%; }
-
-.darshan .container { position: relative; z-index: 2; }
-
-/* ── Timings Grid ─────────────────────────────────────────── */
-
 .timingsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 3rem;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
 }
 
 .timingCard {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(221, 216, 206, 0.28);
+  background: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
+  border-top: 3px solid var(--color-burgundy);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   display: flex;
@@ -49,25 +25,29 @@
   gap: 0.75rem;
   position: relative;
   overflow: hidden;
-  transition: border-color var(--transition-base), transform var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
   cursor: default;
 }
 
 .timingCard:hover {
-  border-color: var(--color-gold);
+  border-top-color: var(--color-burgundy-light);
+  box-shadow: var(--shadow-md);
   transform: translateY(-3px);
 }
 
 .cardGlow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(139, 38, 38, 0.16) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(123, 28, 43, 0.04) 0%, transparent 70%);
   opacity: 0;
   transition: opacity var(--transition-base);
   pointer-events: none;
 }
 
-.timingCard:hover .cardGlow { opacity: 1; }
+.timingCard:hover .cardGlow {
+  opacity: 1;
+}
 
 .timingTop {
   display: flex;
@@ -76,11 +56,11 @@
 }
 
 .timingIconWrap {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(221, 216, 206, 0.25);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 1px solid var(--color-cream-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,41 +68,35 @@
 }
 
 .timingIcon {
-  font-size: 1.5rem;
-  filter: drop-shadow(0 0 6px rgba(139, 38, 38, 0.4));
+  font-size: 1.125rem;
+  color: var(--color-burgundy);
 }
 
 .timingSession {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  color: var(--color-cream-light);
-  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
   line-height: 1.2;
-}
-
-.timingTelugu {
-  font-family: var(--font-sanskrit);
-  font-size: 0.8rem;
-  color: var(--color-gold);
-  margin-top: 0.125rem;
 }
 
 .timingTimeLine {
   height: 1px;
-  background: linear-gradient(to right, rgba(221, 216, 206, 0.35), transparent);
+  background: var(--color-cream-border);
+  margin-block: 0.25rem;
 }
 
 .timingTime {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--color-gold-light);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
   letter-spacing: 0.02em;
 }
 
 .timingNote {
-  font-size: 0.725rem;
-  color: rgba(251, 246, 238, 0.5);
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
   font-style: italic;
   line-height: 1.4;
 }
@@ -134,7 +108,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .sevaHeaderText {
@@ -144,15 +118,15 @@
 .sevaTitle {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  color: var(--color-cream-light);
-  font-weight: 400;
+  color: var(--color-text-primary);
+  font-weight: 500;
 }
 
 .sevaSubtitle {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1rem;
-  color: var(--color-gold-pale);
+  color: var(--color-text-secondary);
   margin-top: 0.375rem;
 }
 
@@ -166,25 +140,32 @@
 }
 
 .sevaCard {
-  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  border: 1px solid rgba(221, 216, 206, 0.28);
+  background: var(--color-cream-light);
+  border: 1px solid var(--color-cream-border);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.sevaCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-burgundy);
 }
 
 .sevaImgWrapper {
   width: 100%;
-  height: 120px;
+  height: 130px;
   border-radius: var(--radius-sm);
   overflow: hidden;
   margin-bottom: 0.25rem;
-  border: 1px solid rgba(221, 216, 206, 0.2);
+  border: 1px solid var(--color-cream-border);
 }
 
 .sevaImg {
@@ -198,45 +179,24 @@
   transform: scale(1.05);
 }
 
-.sevaCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-  border-color: var(--color-gold);
+.sevaTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
-
-.sevaCorner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  border-top: 2px solid var(--color-gold);
-  border-right: 2px solid var(--color-gold);
-  border-radius: 0 var(--radius-md) 0 0;
-  opacity: 0.4;
-}
-
-.sevaTop { display: flex; align-items: flex-start; justify-content: space-between; }
 
 .sevaName {
   font-family: var(--font-heading);
-  font-size: 1.125rem;
-  color: var(--color-cream-light);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.sevaTelugu {
-  font-family: var(--font-sanskrit);
-  font-size: 0.8rem;
-  color: var(--color-gold);
-  margin-top: 0.2rem;
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .sevaDesc {
-  font-size: 0.875rem;
-  color: rgba(251, 246, 238, 0.68);
-  line-height: 1.65;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
   flex: 1;
 }
 
@@ -245,21 +205,24 @@
   flex-direction: column;
   gap: 0.25rem;
   font-size: 0.75rem;
-  color: var(--color-gold-pale);
+  color: var(--color-text-muted);
   padding-top: 0.625rem;
-  border-top: 1px solid rgba(221, 216, 206, 0.2);
+  border-top: 1px solid var(--color-cream-border);
 }
 
 .sevaMetaItem {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  font-style: italic;
+}
+
+.sevaMetaItem span {
+  color: var(--color-burgundy);
 }
 
 .sevaBtn {
   font-size: 0.8125rem;
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1.125rem;
   align-self: flex-start;
   margin-top: 0.25rem;
 }
@@ -271,11 +234,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(221, 216, 206, 0.35);
+  background: var(--color-cream);
+  border: 1px solid var(--color-cream-border);
+  border-left: 4px solid var(--color-burgundy);
   border-radius: var(--radius-md);
   padding: 1.5rem 2rem;
   flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
 }
 
 .nudgeContent {
@@ -287,19 +252,19 @@
 }
 
 .nudgeIcon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  color: var(--color-burgundy);
   flex-shrink: 0;
 }
 
 .nudgeText {
   font-size: 0.925rem;
-  color: rgba(251, 246, 238, 0.8);
+  color: var(--color-text-primary);
   line-height: 1.65;
 }
 
 .nudgeText strong {
-  color: var(--color-gold-light);
-  font-weight: 600;
+  color: var(--color-burgundy);
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
@@ -312,5 +277,6 @@
 @media (max-width: 640px) {
   .timingsGrid { grid-template-columns: 1fr; }
   .sevaGrid    { grid-template-columns: 1fr; }
-  .donateNudge { flex-direction: column; }
+  .donateNudge { flex-direction: column; align-items: stretch; }
+  .donateNudge .btn { text-align: center; justify-content: center; }
 }

@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
             eyebrow="Devotee Stories"
             title="Words of Faith"
             subtitle="What our devotees say about Shri Krishna Mandir"
-            light={true}
+            light={false}
           />
         </div>
 

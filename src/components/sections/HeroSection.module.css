@@ -141,10 +141,10 @@
 .om {
   font-family: var(--font-sanskrit);
   font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--color-gold);
+  color: var(--color-cream-light);
   line-height: 1;
   animation: om-pulse 3.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px rgba(139, 38, 38, 0.5));
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
 }
 
 .deityLabel {
@@ -153,7 +153,8 @@
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-gold-light);
+  color: var(--color-cream-light);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* ── Heading ──────────────────────────────────────────────── */
@@ -162,24 +163,15 @@
   font-family: var(--font-heading);
   font-size: clamp(3rem, 9vw, 5.5rem);
   color: var(--color-cream-light);
-  text-shadow: 0 2px 24px rgba(61, 26, 14, 0.6);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.75);
   letter-spacing: 0.02em;
   line-height: 1.1;
   max-width: 900px;
 }
 
 .headingAccent {
-  color: var(--color-gold-light);
-}
-
-/* ── Telugu / Regional Script ─────────────────────────────── */
-
-.telugu {
-  font-family: var(--font-sanskrit);
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: rgba(226, 184, 96, 0.85);
-  letter-spacing: 0.06em;
-  margin-top: -0.5rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 2px 20px rgba(0, 0, 0, 0.8);
 }
 
 /* ── Ornamental Divider ───────────────────────────────────── */
@@ -194,15 +186,15 @@
 .heroDividerLine {
   width: 80px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(221, 216, 206, 0.5));
+  background: linear-gradient(to right, transparent, rgba(221, 216, 206, 0.7));
 }
 
 .heroDividerLine:last-child {
-  background: linear-gradient(to left, transparent, rgba(221, 216, 206, 0.5));
+  background: linear-gradient(to left, transparent, rgba(221, 216, 206, 0.7));
 }
 
 .heroDividerGem {
-  color: var(--color-gold);
+  color: var(--color-cream-light);
   font-size: 0.5rem;
   letter-spacing: 0.2rem;
 }
@@ -213,7 +205,8 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: clamp(1rem, 2vw, 1.375rem);
-  color: rgba(251, 246, 238, 0.88);
+  color: var(--color-cream-light);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
   max-width: 580px;
   line-height: 1.7;
 }
@@ -222,11 +215,12 @@
   font-family: var(--font-body);
   font-style: normal;
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--color-gold-light);
+  color: #FFFFFF;
   display: inline-block;
   margin-top: 0.25rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* ── CTA Buttons ──────────────────────────────────────────── */
@@ -257,46 +251,48 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: rgba(19, 40, 31, 0.65);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(221, 216, 206, 0.35);
+  background-color: rgba(19, 40, 31, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(221, 216, 206, 0.4);
   border-radius: var(--radius-pill);
-  padding: 0.75rem 2rem;
-  margin-top: 0.5rem;
+  padding: 0.85rem 2rem;
+  margin-top: 0.75rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
 .quickTiming {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
 }
 
 .qtIcon {
-  font-size: 1.125rem;
-  filter: drop-shadow(0 0 4px rgba(139, 38, 38, 0.4));
+  font-size: 1rem;
+  color: #FFFFFF;
 }
 
 .qtLabel {
   display: block;
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-gold-light);
+  color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-body);
 }
 
 .qtTime {
   display: block;
-  font-size: 0.8rem;
-  color: var(--color-cream-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #FFFFFF;
   font-family: var(--font-display);
   font-style: italic;
   white-space: nowrap;
 }
 
 .qtDivider {
-  color: rgba(221, 216, 206, 0.5);
+  color: rgba(221, 216, 206, 0.4);
   font-size: 0.875rem;
 }
 
@@ -379,13 +375,17 @@
   .cornerTL, .cornerTR, .cornerBL, .cornerBR { width: 24px; height: 24px; }
 
   .quickTimings {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
     border-radius: var(--radius-md);
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.25rem;
+    width: auto;
+    max-width: 95%;
   }
 
-  .qtDivider { display: none; }
+  .qtDivider { display: inline-block; }
 
   .ctas {
     flex-direction: column;

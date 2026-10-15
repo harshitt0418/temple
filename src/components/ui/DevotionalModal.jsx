@@ -37,7 +37,7 @@ export default function DevotionalModal() {
           <h3 className={styles.successTitle}>
             {type === 'donation' ? 'Divine Gratitude' : 'Devotional Request Received'}
           </h3>
-          <p className={styles.successTelugu} lang="te">ధన్యవాదాలు · శుభం భవతు</p>
+          <p className={styles.successSubtitle}>May Lord Sri Krishna bless you and your family</p>
           <div className={styles.successDivider} aria-hidden="true">✦ ✦ ✦</div>
           <p className={styles.successMessage}>
             Jai Shri Krishna! Your details have been recorded for this <strong>official prototype demonstration</strong>.
@@ -71,7 +71,7 @@ export default function DevotionalModal() {
 
             <div className={styles.formGrid}>
               <div className={styles.field}>
-                <label className={styles.label}>Devotee Name (యజమాని పేరు) *</label>
+                <label className={styles.label}>Devotee Full Name *</label>
                 <input
                   type="text"
                   required
@@ -91,7 +91,7 @@ export default function DevotionalModal() {
               </div>
 
               <div className={styles.field}>
-                <label className={styles.label}>Gotram (గోత్రం)</label>
+                <label className={styles.label}>Gotram (Family Lineage)</label>
                 <input
                   type="text"
                   placeholder="e.g. Kashyapa / Bharadwaja"
