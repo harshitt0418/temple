@@ -175,22 +175,24 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(221, 216, 206, 0.3);
+  background-color: rgba(248, 246, 240, 0.96);
+  border: 1px solid rgba(221, 216, 206, 0.9);
   border-radius: var(--radius-pill);
-  padding: 0.5rem 1.25rem;
+  padding: 0.45rem 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .panelCtaText {
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-gold-light);
+  font-weight: 700;
+  color: var(--color-text-primary);
   font-family: var(--font-body);
+  letter-spacing: 0.02em;
 }
 
 .panelCtaBadge {
-  background-color: var(--color-gold);
-  color: var(--color-white);
+  background-color: var(--color-burgundy);
+  color: #FFFFFF;
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.2rem 0.625rem;
